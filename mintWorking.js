@@ -1,0 +1,44 @@
+'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
+var neon_js_1 = require("@cityofzion/neon-js");
+var config = require('./config.js');
+var account = neon_js_1.default.create.account('KxDgvEKzgSBPPfuVfw67oPQBSjidEiqTHURKSDL1R7yGaGYAeYnr');
+var realAddress = neon_js_1.sc.ContractParam.byteArray(account.address, 'address');
+function callSmartContract(operation, args) {
+    if (args === void 0) { args = []; }
+    var hash = config.scriptHash;
+    var networkUrl = 'http://localhost:33333';
+    var neoscanUrl = 'http://192.168.99.100:4000/api/main_net';
+    var script = neon_js_1.default.create.script({
+        scriptHash: hash,
+        operation: operation,
+        args: args
+    });
+    var request = {
+        net: neoscanUrl,
+        url: networkUrl,
+        script: script,
+        account: account,
+        address: account.address,
+        privateKey: account.privateKey,
+        publicKey: account.publicKey,
+        gas: 0,
+        balance: null
+    };
+    /*   rpc.Query.invokeScript(script)
+           .execute(networkUrl)
+           .then(res => {
+               util.inspect(res.result.stack) // You should get a result with state: "HALT, BREAK"
+           })*/
+    return neon_js_1.api.neoscan.getBalance(neoscanUrl, account.address).then(function (data) {
+        request.balance = data;
+        console.log('Invocation of: ' + operation);
+        console.log('Args: ', args);
+        return neon_js_1.default.doInvoke(request).then(function (res) { return console.log(res.response); });
+    });
+}
+var otherAddress = neon_js_1.sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address');
+callSmartContract('mintToken', [neon_js_1.default.u.str2hexstring('properties'),
+    "11111111111111",
+    otherAddress.value
+]);

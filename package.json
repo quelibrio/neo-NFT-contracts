@@ -1,0 +1,6 @@
+{
+	"main": "main.ts",
+	"dependencies": {
+		"@cityofzion/neon-js": "^4.1.1"
+	}
+}
