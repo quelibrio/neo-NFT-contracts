@@ -2,7 +2,10 @@ var setValueFunction;
 var a;
 var isPlaying;
 
+
 $(document).ready(function ($) {
+    otherAddress = window.sc.get.sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')
+
 	$('.royalSlider').royalSlider({
 		controlNavigation: 'bullets',
 		keyboardNavEnabled: true,
@@ -98,21 +101,40 @@ function music() {
 }
 
 
-
 function stopMusic(){
     document.getElementById('music').pause();
 }
 
-function previous(){
-    $("#nextCommand").text("previous");
+function convertToHex(str) {
+    var hex = '';
+    for(var i=0;i<str.length;i++) {
+        hex += ''+str.charCodeAt(i).toString(16);
+    }
+    return hex;
+}
+
+function convertFromHex(hex) {
+    var hex = hex.toString();//force conversion
+    var str = '';
+    for (var i = 0; i < hex.length; i += 2)
+        str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+    return str;
 }
 
 function previous(){
-    $("#nextCommand").text("previous");
+    window.sc.call.invoke('mintToken', [
+        convertToHex("Lalallala"),
+        convertToHex("1111111111111"), otherAddress.value]).then(function(result) {
+        $("#nextCommand").text(result);
+        console.log(result.response)
+    });
 }
 
 function next() {
-    $("#nextCommand").text("next");
+    window.sc.get.invoke('totalSupply', [otherAddress.value]).then(function(result) {
+        $("#nextCommand").text(result[0].value);
+        console.log(JSON.stringify(result[0].value))
+    });
 }
 
 function stop() {

@@ -34,7 +34,7 @@ function callSmartContract(operation, args) {
         request.balance = data;
         console.log('Invocation of: ' + operation);
         console.log('Args: ', args);
-        return neon_js_1.default.doInvoke(request).then(function (res) { return console.log(res.response); });
+        return neon_js_1.default.doInvoke(request);
     });
 }
 // let otherAddress = sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')

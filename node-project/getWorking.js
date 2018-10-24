@@ -26,21 +26,22 @@ function callSmartContract(operation, args) {
         gas: 0,
         balance: null
     };
-    neon_js_1.rpc.Query.invokeScript(script)
+    return neon_js_1.rpc.Query.invokeScript(script)
         .execute(networkUrl)
         .then(function (res) {
-        console.dir(res.result.stack); // You should get a result with state: "HALT, BREAK"
+        console.dir(res.result.stack);
+        return res.result.stack;
+        // You should get a result with state: "HALT, BREAK"
     });
-    return neon_js_1.api.neoscan.getBalance(neoscanUrl, account.address).then(function (data) {
-        request.balance = data;
-        console.log('Invocation of: ' + operation);
-        console.log('Args: ', args);
-        return neon_js_1.default.doInvoke(request).then(function (res) { return console.log(res.response); });
-    });
+    // return api.neoscan.getBalance(neoscanUrl, account.address).then(data => {
+    //     request.balance = data;
+    //     console.log('Invocation of: ' + operation);
+    //     console.log('Args: ', args);
+    //     return Neon.doInvoke(request);
+    // })
 }
-// let otherAddress = sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')
-//
-// callSmartContract('totalSupply', [otherAddress.value]);
+var otherAddress = neon_js_1.sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address');
+callSmartContract('totalSupply', [otherAddress.value]);
 module.exports = {
     sc: neon_js_1.sc,
     invoke: function () {
