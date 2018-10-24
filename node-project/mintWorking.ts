@@ -7,7 +7,7 @@ let account = Neon.create.account('KxDgvEKzgSBPPfuVfw67oPQBSjidEiqTHURKSDL1R7yGa
 let realAddress =  sc.ContractParam.byteArray(account.address, 'address');
 function callSmartContract(operation: string, args: Array<any> = []) {
     let hash = config.scriptHash;
-    let networkUrl = 'http://localhost:33333';
+    let networkUrl = 'http://192.168.99.100:30333';
     let neoscanUrl = 'http://192.168.99.100:4000/api/main_net';
 
     let script = Neon.create.script(
@@ -43,9 +43,15 @@ function callSmartContract(operation: string, args: Array<any> = []) {
             return Neon.doInvoke(request).then(res => console.log(res.response));
         });
 }
+
 let otherAddress = sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')
 callSmartContract('mintToken',
     [Neon.u.str2hexstring('properties'),
         "11111111111111",
         otherAddress.value
     ]);
+
+
+module.exports = (...args) => {
+    callSmartContract.apply(null, args);
+};
