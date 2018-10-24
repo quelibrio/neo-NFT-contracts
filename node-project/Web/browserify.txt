@@ -1,0 +1,1 @@
+browserify -r --standalone window ./exports.js > static/common.js
