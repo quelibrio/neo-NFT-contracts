@@ -1,0 +1,142 @@
+<!-- <div class="tooltip-content">
+            <div class="d3-tooltip d3-tooltip-item">
+                <div class="tooltip-head tooltip-head-green">
+                    <h3 class="d3-color-green">Hallowed Breach</h3>
+                </div>
+                <div class="tooltip-body effect-bg effect-bg-holy">
+                    <span class="d3-icon d3-icon-item d3-icon-item-large  d3-icon-item-green">
+                        <span class="icon-item-gradient">
+                            <span class="icon-item-inner icon-item-default" style="background-image: url(http://media.blizzard.com/d3/icons/items/large/unique_axe_1h_013_x1_demonhunter_male.png);">
+                            </span>
+                        </span>
+                    </span>
+                    <div class="d3-item-properties">
+                        <ul class="item-type-right">
+                            <li class="item-slot">1-Hand</li>
+                        </ul>
+                        <ul class="item-type">
+                            <li>
+                                <span class="d3-color-green">Set Axe</span>
+                            </li>
+                        </ul>
+                        <ul class="item-armor-weapon item-weapon-dps">
+                            <li class="big"><span class="value">5-6</span></li>
+                            <li>Damage Per Second</li>
+                        </ul>
+                        <ul class="item-armor-weapon item-weapon-damage">
+                            <li><p><span class="value">(5-12)</span>–<span class="value">(10–13)</span> <span class="d3-color-FF888888">Damage</span></p></li>
+                            <li><p><span class="value">1.30</span> <span class="d3-color-FF888888">Attacks per Second</span></p></li>
+                        </ul>
+                        <div class="item-before-effects"></div>
+                        <ul class="item-effects">
+                            <p class="item-property-category">Primary</p>
+                            <li class="d3-color-blue"><p><span class="value">+</span><span class="value">(981–1199)</span>–<span class="value">(1175–1490)</span> Holy Damage</p></li>
+                            <br />
+                            <li class="d3-color-blue"><span class="value">+</span><span class="value">5</span> Random Magic Properties</li>
+                        </ul>
+                        <ul class="item-itemset">
+                            <li class="item-itemset-name"><span class="d3-color-green">Hallowed Protectors</span></li>
+                            <li class="item-itemset-piece indent">
+                                <span class="d3-color-gray">Hallowed Barricade</span>
+                            </li>
+                            <li class="item-itemset-piece indent">
+                                <span class="d3-color-gray">Hallowed Baton</span>
+                            </li>
+                            <li class="item-itemset-piece indent">
+                                <span class="d3-color-gray">Hallowed Hold</span>
+                            </li>
+                            <li class="d3-color-gray item-itemset-bonus-amount">(2) Set:</li>
+                            <li class="d3-color-gray item-itemset-bonus-desc indent"><span class="value">+</span><span class="value">100</span> Resistance to All Elements</li>
+                            <li class="d3-color-gray item-itemset-bonus-desc indent">Attack Speed Increased by <span class="value">10.0</span><span class="value">%</span></li>
+                        </ul>
+                        <ul class="item-extras">
+                            <li class="item-reqlevel"><span class="d3-color-gold">Required Level: </span><span class="value">70</span></li>
+                            <li class="item-ilvl">Item Level: <span class="value">71</span></li>
+                            <li>Account Bound</li>
+                        </ul>
+                        <span class="item-unique-equipped">Unique Equipped</span>
+
+                        <ul class="item-crafting">
+                            <li>
+                                Crafted By: <span class="value">Blacksmith</span>
+                                (Level 12)
+                            </li>
+                            <li class="indent">
+                                <span class="d3-color-green">Plan: Hallowed Protectors</span>
+                            </li>
+                        </ul>
+                        <span class="clear"></span>
+                    </div>
+                </div>
+                <div class="tooltip-extension ">
+                    <div class="flavor">This axe derives its awesome and majestic power from the High Heavens.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div xmlns="http://www.w3.org/1999/xhtml" class="ui-tooltip" style="left: 614.5px; top: 510px; display: block;">
+        <div class="tooltip-content">
+            <div class="d3-tooltip d3-tooltip-item">
+                <div class="tooltip-head tooltip-head-orange">
+                    <h3 class="d3-color-orange">Utar's Roar</h3>
+                </div>
+                <div class="tooltip-body effect-bg effect-bg-cold">
+                    <span class="d3-icon d3-icon-item d3-icon-item-large  d3-icon-item-orange">
+                        <span class="icon-item-gradient">
+                            <span class="icon-item-inner icon-item-default" style="background-image: url(http://media.blizzard.com/d3/icons/items/large/unique_axe_1h_004_x1_demonhunter_male.png);">
+                            </span>
+                        </span>
+                    </span>
+                    <div class="d3-item-properties">
+                        <ul class="item-type-right">
+                            <li class="item-slot">1-Hand</li>
+                        </ul>
+                        <ul class="item-type">
+                            <li>
+                                <span class="d3-color-orange">Legendary Axe</span>
+                            </li>
+                        </ul>
+                        <ul class="item-armor-weapon item-weapon-dps">
+                            <li class="big"><span class="value">1862.9–2209.4</span></li>
+                            <li>Damage Per Second</li>
+                        </ul>
+                        <ul class="item-armor-weapon item-weapon-damage">
+                            <li><p><span class="value">(1230–1448)</span>–<span class="value">(1636–1951)</span> <span class="d3-color-FF888888">Damage</span></p></li>
+                            <li><p><span class="value">1.30</span> <span class="d3-color-FF888888">Attacks per Second</span></p></li>
+                        </ul>
+                        <div class="item-before-effects"></div>
+                        <ul class="item-effects">
+                            <p class="item-property-category">Primary</p>
+                            <li class="d3-color-blue"><p><span class="value">+</span><span class="value">(981–1199)</span>–<span class="value">(1175–1490)</span> Cold Damage</p></li>
+                            <li class="d3-color-blue"><p>Cold skills deal <span class="value">15–20</span><span class="value">%</span> more damage.</p></li>
+                            <br />
+                            <li class="d3-color-blue"><span class="value">+</span><span class="value">4</span> Random Magic Properties</li>
+                        </ul>
+                        <ul class="item-extras">
+                            <li class="item-reqlevel"><span class="d3-color-gold">Required Level: </span><span class="value">70</span></li>
+                            <li class="item-ilvl">Item Level: <span class="value">71</span></li>
+                            <li>Account Bound</li>
+                        </ul>
+                        <span class="item-unique-equipped">Unique Equipped</span>
+                        <ul class="item-crafting">
+                            <li>
+                                Crafted By: <span class="value">Blacksmith</span>
+                                (Level 12)
+                            </li>
+
+                            <li class="indent">
+                                <span class="d3-color-orange">Plan: Utar's Roar</span>
+                            </li>
+                        </ul>
+                        <span class="clear"></span>
+                    </div>
+                </div>
+
+                <div class="tooltip-extension ">
+                    <div class="flavor">"Utar's mighty blade was colder than the bitterest winter chill, hewn from the never-melting ice of the summit of Mount Paolarr." —Chronicles of the North</div>
+                </div>
+
+            </div>
+        </div>
+    </div>-->

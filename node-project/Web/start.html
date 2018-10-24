@@ -1,0 +1,599 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        Start
+    </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/tooltips.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/metro-bootstrap.css">
+    <link rel="stylesheet" href="css/royalslider.css">
+    <link rel="stylesheet" href="css/iconFont.css">
+
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="js/vendor/jquery-1.11.0.min.js"></script>
+    <script src="js/vendor/swfobject.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/jquery-ui-1.10.4.min.js"></script>
+    <script src="js/vendor/metro-slider.js"></script>
+
+    <script src="js/royalslider/jquery.royalslider.min.js"></script>
+
+    <link href="http://cdn.kendostatic.com/2014.1.318/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="http://cdn.kendostatic.com/2014.1.318/styles/kendo.default.min.css" rel="stylesheet" />
+    <script src="http://cdn.kendostatic.com/2014.1.318/js/kendo.all.min.js"></script>
+
+    <script src="js/main.js"></script>
+</head>
+<body id="start">
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><img width="40" height="40" src="images/logoto1.png"></li>
+                    <li class="active"><img width="100" height="50" src="images/logototxt.png"></li>
+                    <li><a href="start.html">Start</h5></a></li>
+                    <li><a href="eye.html">Eye exercise </a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+    <div class="container metro content">
+        <div class="row gPlayer rowMargin">
+            <div class="col-md-12 wrapper">
+                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1100" height="600" id="unityPlayer">
+                    <param name="movie" value="media/armExercise.swf" />
+                    <param name="scale" value="noscale" />
+                    <param name="wmode" value="direct" />
+                    <param name="bgcolor" value="#ffffff" />
+                    <param name="devicefont" value="false" />
+                    <param name="swliveconnect" value="false" />
+                    <param name="allowfullscreen" value="true" />
+                    <param name="allowFullScreenInteractive" value="true" />
+                    <param name="allowscriptaccess" value="always" />
+                    <param name="allownetworking" value="all" />
+                    <param name="menu" value="false" />
+                    <param name="flashvars" value="unitydebug=false&amp;deeptrace=false" />
+                    <!--[if !IE]>-->
+                    <object type="application/x-shockwave-flash" data="media/armExercise.swf" width="1100" height="600">
+                        <param name="scale" value="noscale" />
+                        <param name="wmode" value="direct" />
+                        <param name="bgcolor" value="#ffffff" />
+                        <param name="devicefont" value="false" />
+                        <param name="swliveconnect" value="false" />
+                        <param name="allowfullscreen" value="true" />
+                        <param name="allowFullScreenInteractive" value="true" />
+                        <param name="allowscriptaccess" value="always" />
+                        <param name="allownetworking" value="all" />
+                        <param name="menu" value="false" />
+                        <param name="flashvars" value="unitydebug=false&amp;deeptrace=false" />
+                        <!--<![endif]-->
+                        <a href="http://www.adobe.com/go/getflashplayer">
+                            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+                        </a>
+                        <!--[if !IE]>-->
+                    </object>
+                    <!--<![endif]-->
+                </object>
+                <div class="wrapperSlider">
+                    <input id="slider" class="balSlider" value="0" />
+                </div>
+            </div>
+        </div>
+        <div class="row rowMargin">
+            <button id="musicOn" class="playpause col-md-1 button large success">
+                <i class="icon-music"></i>
+            </button>
+            <button id="musicOff" class="playpause col-md-1 button large success">
+                <i class="icon-volume-mute"></i>
+            </button>
+            <div class="col-md-3">
+                <input id="sliderTile" class="balSliderTile" value="0" />
+            </div>
+            <button class="col-md-1 button large success" onclick="previous()">
+                <i class="icon-undo"></i>
+            </button>
+            <button id="stop" class="col-md-2 button large success" onclick="stop()">
+                <i class="icon-pause"></i>
+            </button>
+            <button id="resume" class="col-md-2 button large success" onclick="resume()">
+                <i class="icon-play"></i>
+            </button>
+            <button class="col-md-1 button large success" onclick="next()">
+                <i class="icon-redo"></i>
+            </button>
+            <div class="col-md-3">
+                <div class="multilist">
+                    <select id="required" multiple="multiple" data-placeholder="Select targets of improvement...">
+                        <option>Lose weigth</option>
+                        <option selected>Improve eyesight</option>
+                        <option>Cure bronchitis</option>
+                        <option>Be happier</option>
+                        <option selected>Be persistent</option>
+                        <option>Be successful</option>
+                        <option>Calmnes</option>
+                        <option selected>Have positive expectations</option>
+                    </select>
+                </div>
+            </div>
+
+            <!--<button class="col-md-1 button large success" onclick="rewind(15)">Rewind</button>-->
+        </div>
+        <div class="row rowMargin">
+            <div class="col-md-12">
+                <div class="royalSlider rsDefault" style="width: 960px; margin: 0 auto;">
+                    <div class="rsSlide sliderImages">
+                        <ul>
+                            <li>
+                                <div class="ui-tooltip">
+                                    <div class="tooltip-content">
+                                        <div class="d3-tooltip d3-tooltip-item">
+                                            <div class="tooltip-head tooltip-head-green">
+                                                <h3 class="d3-color-green">Feet</h3>
+                                            </div>
+                                            <div class="tooltip-body effect-bg effect-bg-holy">
+
+
+                                                <div class="d3-item-properties">
+                                                    <ul class="item-type-right">
+                                                        <li class="item-slot">Foot up </li>
+                                                    </ul>
+
+                                                    <ul class="item-itemset">
+                                                        <li class="item-itemset-name">
+                                                            <span onclick="rewind(0)" class="d3-color-green">
+                                                                <a>Foot down</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">
+                                                                <a>Foot in </a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">Foot out</span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">Circlesin both directions</span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">Leg circles in both directions</span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="item-before-effects"></div>
+                                                    <span class="clear"></span>
+                                                </div>
+                                            </div>
+                                            <div class="tooltip-extension ">
+                                                <div class="flavor">Note on last exercise.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-tooltip" style="left: 614.5px; top: 510px; display: block;">
+                                    <div class="tooltip-content">
+                                        <div class="d3-tooltip d3-tooltip-item">
+                                            <div class="tooltip-head tooltip-head-orange">
+                                                <h3 class="d3-color-orange">Hands and fingers</h3>
+                                            </div>
+                                            <div class="tooltip-body effect-bg effect-bg-cold">
+                                                <div class="d3-item-properties">
+                                                    <ul class="item-itemset">
+                                                        <li class="item-itemset-name">
+                                                            <span class="d3-color-green">
+                                                                <a>Fingers in</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">
+                                                                <a>Fingers out</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+
+                                                            <span class="d3-color-gray">Touch fingers</span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">Palms up and backwards</span>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="item-type">
+                                                        <li>
+                                                            <span class="d3-color-orange">8 repetitions</span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="item-before-effects"></div>
+                                                    <span class="item-unique-equipped">Good tempe</span>
+                                                    <span class="clear"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="tooltip-extension ">
+                                                <div class="flavor">Note changes in you while exercising. </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-tooltip" style="left: 614.5px; top: 510px; display: block;">
+                                    <div class="tooltip-content">
+                                        <div class="d3-tooltip d3-tooltip-item">
+                                            <div class="tooltip-head tooltip-head-orange">
+                                                <h3 class="d3-color-orange">Shoulders</h3>
+                                            </div>
+                                            <div class="tooltip-body effect-bg effect-bg-cold">
+                                                <div class="d3-item-properties">
+                                                    <ul class="item-itemset">
+                                                        <li class="item-itemset-name">
+                                                            <span class="d3-color-green">
+                                                                <a>Shoulders front</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">
+                                                                <a>Shoulders back</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+
+                                                            <span class="d3-color-gray">Hands twist in both directions</span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">Hallowed Hold</span>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="item-type-right">
+                                                        <li class="item-slot">Order</li>
+                                                    </ul>
+                                                    <ul class="item-type">
+                                                        <li>
+                                                            <span class="d3-color-orange"></span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="item-before-effects"></div>
+                                                    <span class="item-unique-equipped">3 Unlocked</span>
+                                                    <span class="clear"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="tooltip-extension ">
+                                                <div class="flavor">"Utar's mighty blade was colder than the bitterest winter chill, hewn from the never-melting </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rsSlide sliderImages">
+                        <ul>
+                            <li>
+                                <div class="ui-tooltip">
+                                    <div class="tooltip-content">
+                                        <div class="d3-tooltip d3-tooltip-item">
+                                            <div class="tooltip-head tooltip-head-green">
+                                                <h3 class="d3-color-green">Head</h3>
+                                            </div>
+                                            <div class="tooltip-body effect-bg effect-bg-holy">
+
+
+                                                <div class="d3-item-properties">
+                                                    <ul class="item-type-right">
+                                                        <li class="item-slot">Massage between eyes</li>
+                                                    </ul>
+
+                                                    <ul class="item-itemset">
+                                                        <li class="item-itemset-name">
+                                                            <span class="d3-color-green">
+                                                                <a>Massage near nose</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">
+                                                                <a>Massage chin</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">Massage temples</span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">Massage beginning of skull</span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">Make circles with the ears in both direction</span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="item-before-effects"></div>
+                                                    <span class="clear"></span>
+                                                </div>
+                                            </div>
+                                            <div class="tooltip-extension ">
+                                                <div class="flavor">Note on last exercise.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-tooltip" style="left: 614.5px; top: 510px; display: block;">
+                                    <div class="tooltip-content">
+                                        <div class="d3-tooltip d3-tooltip-item">
+                                            <div class="tooltip-head tooltip-head-orange">
+                                                <h3 class="d3-color-orange">Hands and fingers</h3>
+                                            </div>
+                                            <div class="tooltip-body effect-bg effect-bg-cold">
+                                                <div class="d3-item-properties">
+                                                    <ul class="item-itemset">
+                                                        <li class="item-itemset-name">
+                                                            <span class="d3-color-green">
+                                                                <a>Fingers in</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">
+                                                                <a>Fingers out</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+
+                                                            <span class="d3-color-gray">Touch fingers</span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">Palms up and backwards</span>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="item-type">
+                                                        <li>
+                                                            <span class="d3-color-orange">8 repetitions</span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="item-before-effects"></div>
+                                                    <span class="item-unique-equipped">Good tempe</span>
+                                                    <span class="clear"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="tooltip-extension ">
+                                                <div class="flavor">Note changes in you while exercising. </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-tooltip" style="left: 614.5px; top: 510px; display: block;">
+                                    <div class="tooltip-content">
+                                        <div class="d3-tooltip d3-tooltip-item">
+                                            <div class="tooltip-head tooltip-head-orange">
+                                                <h3 class="d3-color-orange">Shoulders</h3>
+                                            </div>
+                                            <div class="tooltip-body effect-bg effect-bg-cold">
+                                                <div class="d3-item-properties">
+                                                    <ul class="item-itemset">
+                                                        <li class="item-itemset-name">
+                                                            <span class="d3-color-green">
+                                                                <a>Shoulders front</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">
+                                                                <a>Shoulders back</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+
+                                                            <span class="d3-color-gray">Hands twist in both directions</span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">Hallowed Hold</span>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="item-type-right">
+                                                        <li class="item-slot">Order</li>
+                                                    </ul>
+                                                    <ul class="item-type">
+                                                        <li>
+                                                            <span class="d3-color-orange"></span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="item-before-effects"></div>
+                                                    <span class="item-unique-equipped">3 Unlocked</span>
+                                                    <span class="clear"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="tooltip-extension ">
+                                                <div class="flavor">"Utar's mighty blade was colder than the bitterest winter chill, hewn from the never-melting </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="rsSlide sliderImages">
+                        <ul>
+                            <li>
+                                <div class="ui-tooltip">
+                                    <div class="tooltip-content">
+                                        <div class="d3-tooltip d3-tooltip-item">
+                                            <div class="tooltip-head tooltip-head-green">
+                                                <h3 class="d3-color-green">Head</h3>
+                                            </div>
+                                            <div class="tooltip-body effect-bg effect-bg-holy">
+
+
+                                                <div class="d3-item-properties">
+                                                    <ul class="item-type-right">
+                                                        <li class="item-slot">Massage between eyes</li>
+                                                    </ul>
+
+                                                    <ul class="item-itemset">
+                                                        <li class="item-itemset-name">
+                                                            <span class="d3-color-green">
+                                                                <a>Massage near nose</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">
+                                                                <a>Massage chin</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">Massage temples</span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">Massage beginning of skull</span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">Make circles with the ears in both direction</span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="item-before-effects"></div>
+                                                    <span class="clear"></span>
+                                                </div>
+                                            </div>
+                                            <div class="tooltip-extension ">
+                                                <div class="flavor">Note on last exercise.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-tooltip" style="left: 614.5px; top: 510px; display: block;">
+                                    <div class="tooltip-content">
+                                        <div class="d3-tooltip d3-tooltip-item">
+                                            <div class="tooltip-head tooltip-head-orange">
+                                                <h3 class="d3-color-orange">Hands and fingers</h3>
+                                            </div>
+                                            <div class="tooltip-body effect-bg effect-bg-cold">
+                                                <div class="d3-item-properties">
+                                                    <ul class="item-itemset">
+                                                        <li class="item-itemset-name">
+                                                            <span class="d3-color-green">
+                                                                <a>Fingers in</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">
+                                                                <a>Fingers out</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+
+                                                            <span class="d3-color-gray">Touch fingers</span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">Palms up and backwards</span>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="item-type">
+                                                        <li>
+                                                            <span class="d3-color-orange">8 repetitions</span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="item-before-effects"></div>
+                                                    <span class="item-unique-equipped">Good tempe</span>
+                                                    <span class="clear"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="tooltip-extension ">
+                                                <div class="flavor">Note changes in you while exercising. </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ui-tooltip" style="left: 614.5px; top: 510px; display: block;">
+                                    <div class="tooltip-content">
+                                        <div class="d3-tooltip d3-tooltip-item">
+                                            <div class="tooltip-head tooltip-head-orange">
+                                                <h3 class="d3-color-orange">Shoulders</h3>
+                                            </div>
+                                            <div class="tooltip-body effect-bg effect-bg-cold">
+                                                <div class="d3-item-properties">
+                                                    <ul class="item-itemset">
+                                                        <li class="item-itemset-name">
+                                                            <span class="d3-color-green">
+                                                                <a>Shoulders front</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">
+                                                                <a>Shoulders back</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+
+                                                            <span class="d3-color-gray">Hands twist in both directions</span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">Hallowed Hold</span>
+                                                        </li>
+                                                    </ul>
+                                                    <ul class="item-type-right">
+                                                        <li class="item-slot">Order</li>
+                                                    </ul>
+                                                    <ul class="item-type">
+                                                        <li>
+                                                            <span class="d3-color-orange"></span>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="item-before-effects"></div>
+                                                    <span class="item-unique-equipped">3 Unlocked</span>
+                                                    <span class="clear"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="tooltip-extension ">
+                                                <div class="flavor">"Utar's mighty blade was colder than the bitterest winter chill, hewn from the never-melting </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row rowMargin">
+            <div class="col-md-4" id="nextCommand"></div>
+            <div class="col-md-4" id="count"></div>
+            <div class="col-md-4" id="fromUnity">
+                <embed src="audio/bgmusic.mp3" hidden='true' autostart='false' type="audio/mpeg" id="music" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
