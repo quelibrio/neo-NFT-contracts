@@ -105,26 +105,35 @@ function stopMusic(){
     document.getElementById('music').pause();
 }
 
-function convertToHex(str) {
-    var hex = '';
-    for(var i=0;i<str.length;i++) {
-        hex += ''+str.charCodeAt(i).toString(16);
+String.prototype.hexEncode = function(){
+    var hex, i;
+
+    var result = "";
+    for (i=0; i<this.length; i++) {
+        hex = this.charCodeAt(i).toString(16);
+        result += ("000"+hex).slice(-4);
     }
-    return hex;
+
+    return result
 }
 
-function convertFromHex(hex) {
-    var hex = hex.toString();//force conversion
-    var str = '';
-    for (var i = 0; i < hex.length; i += 2)
-        str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
-    return str;
+String.prototype.hexDecode = function(){
+    var j;
+    var hexes = this.match(/.{1,4}/g) || [];
+    var back = "";
+    for(j = 0; j<hexes.length; j++) {
+        back += String.fromCharCode(parseInt(hexes[j], 16));
+    }
+
+    return back;
 }
 
 function previous(){
     window.sc.call.invoke('mintToken', [
-        convertToHex("Lalallala"),
-        convertToHex("1111111111111"), otherAddress.value]).then(function(result) {
+            "Lalallala".hexEncode(),
+            "1111111111111".hexEncode(), 
+            otherAddress.value])
+        .then(function(result) {
         $("#nextCommand").text(result);
         console.log(result.response)
     });
