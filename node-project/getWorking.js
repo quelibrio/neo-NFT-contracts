@@ -38,8 +38,9 @@ function callSmartContract(operation, args) {
         return neon_js_1.default.doInvoke(request).then(function (res) { return console.log(res.response); });
     });
 }
-var otherAddress = neon_js_1.sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address');
-callSmartContract('totalSupply', [otherAddress.value]);
+// let otherAddress = sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')
+//
+// callSmartContract('totalSupply', [otherAddress.value]);
 module.exports = {
     sc: neon_js_1.sc,
     invoke: function () {
