@@ -37,15 +37,19 @@ function callSmartContract(operation, args) {
         return neon_js_1.default.doInvoke(request).then(function (res) { return console.log(res.response); });
     });
 }
-var otherAddress = neon_js_1.sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address');
-callSmartContract('mintToken', [neon_js_1.default.u.str2hexstring('properties'),
-    "11111111111111",
-    otherAddress.value
-]);
-module.exports = function () {
-    var args = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i] = arguments[_i];
+// let otherAddress = sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')
+// callSmartContract('mintToken',
+//     [Neon.u.str2hexstring('properties'),
+//         "11111111111111",
+//         otherAddress.value
+//     ]);
+module.exports = {
+    sc: neon_js_1.sc,
+    invoke: function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        return callSmartContract.apply(null, args);
     }
-    callSmartContract.apply(null, args);
 };

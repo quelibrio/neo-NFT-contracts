@@ -47,9 +47,9 @@ function callSmartContract(operation: string, args: Array<any> = []) {
     })
 }
 
-let otherAddress = sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')
-
-callSmartContract('totalSupply', [otherAddress.value]);
+// let otherAddress = sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')
+//
+// callSmartContract('totalSupply', [otherAddress.value]);
 
 
 module.exports = {

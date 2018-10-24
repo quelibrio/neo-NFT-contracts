@@ -44,14 +44,17 @@ function callSmartContract(operation: string, args: Array<any> = []) {
         });
 }
 
-let otherAddress = sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')
-callSmartContract('mintToken',
-    [Neon.u.str2hexstring('properties'),
-        "11111111111111",
-        otherAddress.value
-    ]);
+// let otherAddress = sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')
+// callSmartContract('mintToken',
+//     [Neon.u.str2hexstring('properties'),
+//         "11111111111111",
+//         otherAddress.value
+//     ]);
 
 
-module.exports = (...args) => {
-    callSmartContract.apply(null, args);
+module.exports = {
+    sc,
+        invoke: (...args) => {
+        return callSmartContract.apply(null, args);
+    }
 };
