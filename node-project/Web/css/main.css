@@ -1,3 +1,9 @@
+.center-cropped {
+  height: 800px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
 html, body {
     height: 100%; /* This value has to be set */
     margin: 0;
@@ -13,7 +19,7 @@ html, body {
 }
 
 #start {
-    background: url('../images/nature.jpg') no-repeat center center fixed;
+    background: url('../images/bg1.jpg') no-repeat center center fixed;
 }
 
 .container {

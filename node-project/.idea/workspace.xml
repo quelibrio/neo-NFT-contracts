@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60714bca-dbff-437e-b019-09f9567bd41f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Web/js/static/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/Web/js/static/common.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getWorking.ts" beforeDir="false" afterPath="$PROJECT_DIR$/getWorking.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mintWorking.js" beforeDir="false" afterPath="$PROJECT_DIR$/mintWorking.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mintWorking.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mintWorking.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/common.js" afterDir="false" />
-    </list>
+    <list default="true" id="60714bca-dbff-437e-b019-09f9567bd41f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -97,8 +91,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getWorking.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="47" column="1" lean-forward="true" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+            <state relative-caret-position="289">
+              <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
               <folding>
                 <element signature="e#15#84#0" expanded="true" />
               </folding>
@@ -110,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/mintWorking.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="363">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
               <folding>
                 <element signature="e#15#84#0" expanded="true" />
               </folding>
@@ -257,23 +251,23 @@
       <workItem from="1540061815650" duration="7640000" />
       <workItem from="1540070548120" duration="11280000" />
       <workItem from="1540387206395" duration="182000" />
-      <workItem from="1540388106782" duration="956000" />
+      <workItem from="1540388106782" duration="1924000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20058000" />
+    <option name="totallyTimeSpent" value="21026000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1564805" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1564805" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3290461" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.301179" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.301179" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39871383" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -357,7 +351,7 @@
     <entry file="file://$PROJECT_DIR$/mintWorking.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
           <folding>
             <element signature="e#15#84#0" expanded="true" />
           </folding>
@@ -366,8 +360,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getWorking.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="47" column="1" lean-forward="true" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+        <state relative-caret-position="289">
+          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
           <folding>
             <element signature="e#15#84#0" expanded="true" />
           </folding>

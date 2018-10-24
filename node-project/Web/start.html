@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,6 +17,7 @@
     <link rel="stylesheet" href="css/metro-bootstrap.css">
     <link rel="stylesheet" href="css/royalslider.css">
     <link rel="stylesheet" href="css/iconFont.css">
+    <link rel="stylesheet" href="css/wow.css">
 
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     <script src="js/vendor/jquery-1.11.0.min.js"></script>
@@ -29,9 +31,10 @@
     <link href="http://cdn.kendostatic.com/2014.1.318/styles/kendo.common.min.css" rel="stylesheet" />
     <link href="http://cdn.kendostatic.com/2014.1.318/styles/kendo.default.min.css" rel="stylesheet" />
     <script src="http://cdn.kendostatic.com/2014.1.318/js/kendo.all.min.js"></script>
-    <script src="js/static/common.js" ></script>
+    <script src="js/static/common.js"></script>
     <script src="js/main.js"></script>
 </head>
+
 <body id="start">
     <div class="navbar navbar-inverse">
         <div class="container">
@@ -47,52 +50,400 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><img width="40" height="40" src="images/logoto1.png"></li>
-                    <li class="active"><img width="100" height="50" src="images/logototxt.png"></li>
-                    <li><a href="start.html">Start</h5></a></li>
-                    <li><a href="eye.html">Eye exercise </a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="start.html">Tokens</a></li>
+                    <li><a href="eye.html">Breed</a></li>
+                    <li><a href="profile.html">Brawl</a></li>
+                    <li><a href="about.html">Marketplace</a></li>
                 </ul>
-            </div><!--/.nav-collapse -->
+            </div>
+            <!--/.nav-collapse -->
         </div>
     </div>
     <div class="container metro content">
-        <div class="row gPlayer rowMargin">
-            <div class="col-md-12 wrapper">
-                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1100" height="600" id="unityPlayer">
-                    <param name="movie" value="media/armExercise.swf" />
-                    <param name="scale" value="noscale" />
-                    <param name="wmode" value="direct" />
-                    <param name="bgcolor" value="#ffffff" />
-                    <param name="devicefont" value="false" />
-                    <param name="swliveconnect" value="false" />
-                    <param name="allowfullscreen" value="true" />
-                    <param name="allowFullScreenInteractive" value="true" />
-                    <param name="allowscriptaccess" value="always" />
-                    <param name="allownetworking" value="all" />
-                    <param name="menu" value="false" />
-                    <param name="flashvars" value="unitydebug=false&amp;deeptrace=false" />
-                    <!--[if !IE]>-->
-                    <object type="application/x-shockwave-flash" data="media/armExercise.swf" width="1100" height="600">
-                        <param name="scale" value="noscale" />
-                        <param name="wmode" value="direct" />
-                        <param name="bgcolor" value="#ffffff" />
-                        <param name="devicefont" value="false" />
-                        <param name="swliveconnect" value="false" />
-                        <param name="allowfullscreen" value="true" />
-                        <param name="allowFullScreenInteractive" value="true" />
-                        <param name="allowscriptaccess" value="always" />
-                        <param name="allownetworking" value="all" />
-                        <param name="menu" value="false" />
-                        <param name="flashvars" value="unitydebug=false&amp;deeptrace=false" />
-                        <!--<![endif]-->
-                        <a href="http://www.adobe.com/go/getflashplayer">
-                            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+        <div class="row gPlayer rowMargin center-cropped " style="background-image: url('images/demonhunter-bloodelf-female.jpg');">
+            <div class="col-md-12 wrapper" >
+                <div class="Grid Grid--gutters SyncHeight" queryselectoralways="48">
+                    <div class="Grid-1of2 SyncHeight-item Grid-1of3 Grid-1of4" media-large="Grid-1of3" media-wide="Grid-1of4"
+                        queryselectoralways="0" media-original="Grid-1of2 SyncHeight-item" style="height: 68px;"><a
+                            class="Link Link--block" data-modal="modal-stat-health" data-modal-analytics-type="Statistic"
+                            data-tooltip="tooltip-stat-health" queryselectoralways="30">
+                            <div class="Media Media--gutterLarge color-stat-HEALTH Media--large" media-medium="!Media--small Media--large"
+                                queryselectoralways="0" media-original="Media Media--small Media--gutterLarge color-stat-HEALTH">
+                                <div class="Media-image"><span class="Icon Icon--health Media-icon"><svg class="Icon-svg"
+                                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            viewBox="0 0 64 64">
+                                            <use href="static/components/Icon/Icon.svg#health"></use>
+                                        </svg></span></div>
+                                <div class="Media-text"><span>140,360</span>
+                                    <div class="font-semp-xSmall-white text-upper">Health</div>
+                                </div>
+                            </div>
                         </a>
-                        <!--[if !IE]>-->
-                    </object>
-                    <!--<![endif]-->
-                </object>
+                        <div class="Modal" data-modal="modal-stat-health" data-izimodal-group="stat-modals"
+                            data-izimodal-loop="data-izimodal-loop" data-analytics-type="Statistic" style="display: none;"
+                            queryselectoralways="28">
+                            <div class="Modal-back" title="Back">
+                                <div class="List">
+                                    <div class="List-item"><span class="Icon Icon--back Icon--small Modal-icon"><svg
+                                                class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                viewBox="0 0 64 64">
+                                                <use href="static/components/Icon/Icon.svg#back"></use>
+                                            </svg></span></div>
+                                    <div class="List-item">
+                                        <div class="Modal-backText">Back</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Modal-close" data-izimodal-close="data-izimodal-close"><span class="Icon Icon--close Icon--small Modal-icon"><svg
+                                        class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 0 64 64" xlink:href="/static/components/Icon/Icon.svg#close">
+                                        
+                                    </svg></span></div>
+                            <div class="StatDetails">
+                                <div class="StatDetails-body">
+                                    <div class="StatDetails-basic">
+                                        <div class="StatDetails-basic-section">
+                                            <div class="StatDetails-name">Health</div>
+                                            <div class="StatDetails-basic-value">140,360</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Grid-1of2 SyncHeight-item Grid-1of3 Grid-1of4" media-large="Grid-1of3" media-wide="Grid-1of4"
+                        queryselectoralways="0" media-original="Grid-1of2 SyncHeight-item" style="height: 68px;"><a
+                            class="Link Link--block" data-modal="modal-stat-mana" data-modal-analytics-type="Statistic"
+                            data-tooltip="tooltip-stat-mana" queryselectoralways="30">
+                            <div class="Media Media--gutterLarge color-stat-MANA Media--large" media-medium="!Media--small Media--large"
+                                queryselectoralways="0" media-original="Media Media--small Media--gutterLarge color-stat-MANA">
+                                <div class="Media-image"><span class="Icon Icon--mana Media-icon"><svg class="Icon-svg"
+                                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            viewBox="0 0 64 64">
+                                            <use xlink:href="/static/components/Icon/Icon.svg#mana"></use>
+                                        </svg></span></div>
+                                <div class="Media-text"><span>20,000</span>
+                                    <div class="font-semp-xSmall-white text-upper">Mana</div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="Modal" data-modal="modal-stat-mana" data-izimodal-group="stat-modals"
+                            data-izimodal-loop="data-izimodal-loop" data-analytics-type="Statistic" style="display: none;"
+                            queryselectoralways="28">
+                            <div class="Modal-back" title="Back">
+                                <div class="List">
+                                    <div class="List-item"><span class="Icon Icon--back Icon--small Modal-icon"><svg
+                                                class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                viewBox="0 0 64 64">
+                                                <use xlink:href="static/components/Icon/Icon.svg#back"></use>
+                                            </svg></span></div>
+                                    <div class="List-item">
+                                        <div class="Modal-backText">Back</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Modal-close" data-izimodal-close="data-izimodal-close"><span class="Icon Icon--close Icon--small Modal-icon"><svg
+                                        class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 0 64 64">
+                                        <use xlink:href="static/components/Icon/Icon.svg#close"></use>
+                                    </svg></span></div>
+                            <div class="StatDetails">
+                                <div class="StatDetails-body">
+                                    <div class="StatDetails-basic">
+                                        <div class="StatDetails-basic-section">
+                                            <div class="StatDetails-name">Mana</div>
+                                            <div class="StatDetails-basic-value">20,000</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Grid-1of2 SyncHeight-item Grid-1of3 Grid-1of4" media-large="Grid-1of3" media-wide="Grid-1of4"
+                        queryselectoralways="0" media-original="Grid-1of2 SyncHeight-item" style="height: 68px;"><a
+                            class="Link Link--block" data-modal="modal-stat-agility" data-modal-analytics-type="Statistic"
+                            data-tooltip="tooltip-stat-agility" queryselectoralways="30">
+                            <div class="Media Media--gutterLarge color-stat-AGILITY Media--large" media-medium="!Media--small Media--large"
+                                queryselectoralways="0" media-original="Media Media--small Media--gutterLarge color-stat-AGILITY">
+                                <div class="Media-image"><span class="Icon Icon--agility Media-icon"><svg class="Icon-svg"
+                                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            viewBox="0 0 64 64">
+                                            <use xlink:href="static/components/Icon/Icon.svg#agility"></use>
+                                        </svg></span></div>
+                                <div class="Media-text"><span>5,268</span>
+                                    <div class="font-semp-xSmall-white text-upper">Agility</div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="Modal" data-modal="modal-stat-agility" data-izimodal-group="stat-modals"
+                            data-izimodal-loop="data-izimodal-loop" data-analytics-type="Statistic" style="display: none;"
+                            queryselectoralways="28">
+                            <div class="Modal-back" title="Back">
+                                <div class="List">
+                                    <div class="List-item"><span class="Icon Icon--back Icon--small Modal-icon"><svg
+                                                class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                viewBox="0 0 64 64">
+                                                <use xlink:href="static/components/Icon/Icon.svg#back"></use>
+                                            </svg></span></div>
+                                    <div class="List-item">
+                                        <div class="Modal-backText">Back</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Modal-close" data-izimodal-close="data-izimodal-close"><span class="Icon Icon--close Icon--small Modal-icon"><svg
+                                        class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 0 64 64">
+                                        <use xlink:href="static/components/Icon/Icon.svg#close"></use>
+                                    </svg></span></div>
+                            <div class="StatDetails">
+                                <div class="StatDetails-body">
+                                    <div class="StatDetails-enhanced">
+                                        <div class="StatDetails-basic-section"><span class="StatDetails-name">Agility</span><span
+                                                class="StatDetails-basic-value">5,268</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Grid-1of2 SyncHeight-item Grid-1of3 Grid-1of4" media-large="Grid-1of3" media-wide="Grid-1of4"
+                        queryselectoralways="0" media-original="Grid-1of2 SyncHeight-item" style="height: 68px;"><a
+                            class="Link Link--block" data-modal="modal-stat-stamina" data-modal-analytics-type="Statistic"
+                            data-tooltip="tooltip-stat-stamina" queryselectoralways="30">
+                            <div class="Media Media--gutterLarge color-stat-STAMINA Media--large" media-medium="!Media--small Media--large"
+                                queryselectoralways="0" media-original="Media Media--small Media--gutterLarge color-stat-STAMINA">
+                                <div class="Media-image"><span class="Icon Icon--stamina Media-icon"><svg class="Icon-svg"
+                                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            viewBox="0 0 64 64">
+                                            <use xlink:href="static/components/Icon/Icon.svg#stamina"></use>
+                                        </svg></span></div>
+                                <div class="Media-text"><span>7,018</span>
+                                    <div class="font-semp-xSmall-white text-upper">Stamina</div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="Modal" data-modal="modal-stat-stamina" data-izimodal-group="stat-modals"
+                            data-izimodal-loop="data-izimodal-loop" data-analytics-type="Statistic" style="display: none;"
+                            queryselectoralways="28">
+                            <div class="Modal-back" title="Back">
+                                <div class="List">
+                                    <div class="List-item"><span class="Icon Icon--back Icon--small Modal-icon"><svg
+                                                class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                viewBox="0 0 64 64">
+                                                <use xlink:href="static/components/Icon/Icon.svg#back"></use>
+                                            </svg></span></div>
+                                    <div class="List-item">
+                                        <div class="Modal-backText">Back</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Modal-close" data-izimodal-close="data-izimodal-close"><span class="Icon Icon--close Icon--small Modal-icon"><svg
+                                        class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 0 64 64">
+                                        <use xlink:href="static/components/Icon/Icon.svg#close"></use>
+                                    </svg></span></div>
+                            <div class="StatDetails">
+                                <div class="StatDetails-body">
+                                    <div class="StatDetails-enhanced">
+                                        <div class="StatDetails-basic-section"><span class="StatDetails-name">Stamina</span><span
+                                                class="StatDetails-basic-value">7,018</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Grid-1of2 SyncHeight-item Grid-1of3 Grid-1of4" media-large="Grid-1of3" media-wide="Grid-1of4"
+                        queryselectoralways="0" media-original="Grid-1of2 SyncHeight-item" style="height: 68px;"><a
+                            class="Link Link--block" data-modal="modal-stat-critical-strike" data-modal-analytics-type="Statistic"
+                            data-tooltip="tooltip-stat-critical-strike" queryselectoralways="30">
+                            <div class="Media Media--gutterLarge color-stat-CRITICALSTRIKE Media--large" media-medium="!Media--small Media--large"
+                                queryselectoralways="0" media-original="Media Media--small Media--gutterLarge color-stat-CRITICALSTRIKE">
+                                <div class="Media-image"><span class="Icon Icon--critical-strike Media-icon"><svg class="Icon-svg"
+                                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            viewBox="0 0 64 64">
+                                            <use xlink:href="static/components/Icon/Icon.svg#critical-strike"></use>
+                                        </svg></span></div>
+                                <div class="Media-text"><span>23%</span>
+                                    <div class="font-semp-xSmall-white text-upper">Critical Strike</div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="Modal" data-modal="modal-stat-critical-strike" data-izimodal-group="stat-modals"
+                            data-izimodal-loop="data-izimodal-loop" data-analytics-type="Statistic" style="display: none;"
+                            queryselectoralways="28">
+                            <div class="Modal-back" title="Back">
+                                <div class="List">
+                                    <div class="List-item"><span class="Icon Icon--back Icon--small Modal-icon"><svg
+                                                class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                viewBox="0 0 64 64">
+                                                <use xlink:href="static/components/Icon/Icon.svg#back"></use>
+                                            </svg></span></div>
+                                    <div class="List-item">
+                                        <div class="Modal-backText">Back</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Modal-close" data-izimodal-close="data-izimodal-close"><span class="Icon Icon--close Icon--small Modal-icon"><svg
+                                        class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 0 64 64">
+                                        <use xlink:href="static/components/Icon/Icon.svg#close"></use>
+                                    </svg></span></div>
+                            <div class="StatDetails">
+                                <div class="StatDetails-body">
+                                    <div class="StatDetails-rated">
+                                        <div class="StatDetails-basic-section"><span class="StatDetails-name">Critical
+                                                Strike</span><span class="StatDetails-basic-value">22.85%</span></div>
+                                        <div class="StatDetails-rating-section"><span class="StatDetails-rating-name">Total
+                                                Rating:</span><span class="StatDetails-rating-value">925</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Grid-1of2 SyncHeight-item Grid-1of3 Grid-1of4" media-large="Grid-1of3" media-wide="Grid-1of4"
+                        queryselectoralways="0" media-original="Grid-1of2 SyncHeight-item" style="height: 68px;"><a
+                            class="Link Link--block" data-modal="modal-stat-haste" data-modal-analytics-type="Statistic"
+                            data-tooltip="tooltip-stat-haste" queryselectoralways="30">
+                            <div class="Media Media--gutterLarge color-stat-HASTE Media--large" media-medium="!Media--small Media--large"
+                                queryselectoralways="0" media-original="Media Media--small Media--gutterLarge color-stat-HASTE">
+                                <div class="Media-image"><span class="Icon Icon--haste Media-icon"><svg class="Icon-svg"
+                                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            viewBox="0 0 64 64">
+                                            <use xlink:href="static/components/Icon/Icon.svg#haste"></use>
+                                        </svg></span></div>
+                                <div class="Media-text"><span>15%</span>
+                                    <div class="font-semp-xSmall-white text-upper">Haste</div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="Modal" data-modal="modal-stat-haste" data-izimodal-group="stat-modals"
+                            data-izimodal-loop="data-izimodal-loop" data-analytics-type="Statistic" style="display: none;"
+                            queryselectoralways="28">
+                            <div class="Modal-back" title="Back">
+                                <div class="List">
+                                    <div class="List-item"><span class="Icon Icon--back Icon--small Modal-icon"><svg
+                                                class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                viewBox="0 0 64 64">
+                                                <use xlink:href="static/components/Icon/Icon.svg#back"></use>
+                                            </svg></span></div>
+                                    <div class="List-item">
+                                        <div class="Modal-backText">Back</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Modal-close" data-izimodal-close="data-izimodal-close"><span class="Icon Icon--close Icon--small Modal-icon"><svg
+                                        class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 0 64 64">
+                                        <use xlink:href="static/components/Icon/Icon.svg#close"></use>
+                                    </svg></span></div>
+                            <div class="StatDetails">
+                                <div class="StatDetails-body">
+                                    <div class="StatDetails-rated">
+                                        <div class="StatDetails-basic-section"><span class="StatDetails-name">Haste</span><span
+                                                class="StatDetails-basic-value">15.24%</span></div>
+                                        <div class="StatDetails-rating-section"><span class="StatDetails-rating-name">Total
+                                                Rating:</span><span class="StatDetails-rating-value">1,036</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Grid-1of2 SyncHeight-item Grid-1of3 Grid-1of4" media-large="Grid-1of3" media-wide="Grid-1of4"
+                        queryselectoralways="0" media-original="Grid-1of2 SyncHeight-item" style="height: 68px;"><a
+                            class="Link Link--block" data-modal="modal-stat-mastery" data-modal-analytics-type="Statistic"
+                            data-tooltip="tooltip-stat-mastery" queryselectoralways="30">
+                            <div class="Media Media--gutterLarge color-stat-MASTERY Media--large" media-medium="!Media--small Media--large"
+                                queryselectoralways="0" media-original="Media Media--small Media--gutterLarge color-stat-MASTERY">
+                                <div class="Media-image"><span class="Icon Icon--mastery Media-icon"><svg class="Icon-svg"
+                                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            viewBox="0 0 64 64">
+                                            <use xlink:href="static/components/Icon/Icon.svg#mastery"></use>
+                                        </svg></span></div>
+                                <div class="Media-text"><span>35%</span>
+                                    <div class="font-semp-xSmall-white text-upper">Mastery</div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="Modal" data-modal="modal-stat-mastery" data-izimodal-group="stat-modals"
+                            data-izimodal-loop="data-izimodal-loop" data-analytics-type="Statistic" style="display: none;"
+                            queryselectoralways="28">
+                            <div class="Modal-back" title="Back">
+                                <div class="List">
+                                    <div class="List-item"><span class="Icon Icon--back Icon--small Modal-icon"><svg
+                                                class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                viewBox="0 0 64 64">
+                                                <use xlink:href="static/components/Icon/Icon.svg#back"></use>
+                                            </svg></span></div>
+                                    <div class="List-item">
+                                        <div class="Modal-backText">Back</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Modal-close" data-izimodal-close="data-izimodal-close"><span class="Icon Icon--close Icon--small Modal-icon"><svg
+                                        class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 0 64 64">
+                                        <use xlink:href="static/components/Icon/Icon.svg#close"></use>
+                                    </svg></span></div>
+                            <div class="StatDetails">
+                                <div class="StatDetails-body">
+                                    <div class="StatDetails-rated">
+                                        <div class="StatDetails-basic-section"><span class="StatDetails-name">Mastery</span><span
+                                                class="StatDetails-basic-value">34.61%</span></div>
+                                        <div class="StatDetails-rating-section"><span class="StatDetails-rating-name">Total
+                                                Rating:</span><span class="StatDetails-rating-value">670</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Grid-1of2 SyncHeight-item Grid-1of3 Grid-1of4" media-large="Grid-1of3" media-wide="Grid-1of4"
+                        queryselectoralways="0" media-original="Grid-1of2 SyncHeight-item" style="height: 68px;"><a
+                            class="Link Link--block" data-modal="modal-stat-versatility" data-modal-analytics-type="Statistic"
+                            data-tooltip="tooltip-stat-versatility" queryselectoralways="30">
+                            <div class="Media Media--gutterLarge color-stat-VERSATILITY Media--large" media-medium="!Media--small Media--large"
+                                queryselectoralways="0" media-original="Media Media--small Media--gutterLarge color-stat-VERSATILITY">
+                                <div class="Media-image"><span class="Icon Icon--versatility Media-icon"><svg class="Icon-svg"
+                                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                            viewBox="0 0 64 64">
+                                            <use xlink:href="static/components/Icon/Icon.svg#versatility"></use>
+                                        </svg></span></div>
+                                <div class="Media-text"><span>3%</span>
+                                    <div class="font-semp-xSmall-white text-upper">Versatility</div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="Modal" data-modal="modal-stat-versatility" data-izimodal-group="stat-modals"
+                            data-izimodal-loop="data-izimodal-loop" data-analytics-type="Statistic" style="display: none;"
+                            queryselectoralways="28">
+                            <div class="Modal-back" title="Back">
+                                <div class="List">
+                                    <div class="List-item"><span class="Icon Icon--back Icon--small Modal-icon"><svg
+                                                class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                viewBox="0 0 64 64">
+                                                <use xlink:href="static/components/Icon/Icon.svg#back"></use>
+                                            </svg></span></div>
+                                    <div class="List-item">
+                                        <div class="Modal-backText">Back</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="Modal-close" data-izimodal-close="data-izimodal-close"><span class="Icon Icon--close Icon--small Modal-icon"><svg
+                                        class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        viewBox="0 0 64 64">
+                                        <use xlink:href="static/components/Icon/Icon.svg#close"></use>
+                                    </svg></span></div>
+                            <div class="StatDetails">
+                                <div class="StatDetails-body">
+                                    <div class="StatDetails-versatility">
+                                        <div class="StatDetails-basic-section"><span class="StatDetails-name">Versatility</span><span
+                                                class="StatDetails-basic-value">2.75%</span></div>
+                                        <div class="StatDetails-rating-section"><span class="StatDetails-rating-name">Total
+                                                Rating:</span><span class="StatDetails-rating-value">234</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="wrapperSlider">
                     <input id="slider" class="balSlider" value="0" />
                 </div>
@@ -279,7 +630,8 @@
                                             </div>
 
                                             <div class="tooltip-extension ">
-                                                <div class="flavor">"Utar's mighty blade was colder than the bitterest winter chill, hewn from the never-melting </div>
+                                                <div class="flavor">"Utar's mighty blade was colder than the bitterest
+                                                    winter chill, hewn from the never-melting </div>
                                             </div>
 
                                         </div>
@@ -323,7 +675,8 @@
                                                             <span class="d3-color-gray">Massage beginning of skull</span>
                                                         </li>
                                                         <li class="item-itemset-piece indent">
-                                                            <span class="d3-color-gray">Make circles with the ears in both direction</span>
+                                                            <span class="d3-color-gray">Make circles with the ears in
+                                                                both direction</span>
                                                         </li>
                                                     </ul>
                                                     <div class="item-before-effects"></div>
@@ -427,7 +780,8 @@
                                             </div>
 
                                             <div class="tooltip-extension ">
-                                                <div class="flavor">"Utar's mighty blade was colder than the bitterest winter chill, hewn from the never-melting </div>
+                                                <div class="flavor">"Utar's mighty blade was colder than the bitterest
+                                                    winter chill, hewn from the never-melting </div>
                                             </div>
 
                                         </div>
@@ -471,7 +825,8 @@
                                                             <span class="d3-color-gray">Massage beginning of skull</span>
                                                         </li>
                                                         <li class="item-itemset-piece indent">
-                                                            <span class="d3-color-gray">Make circles with the ears in both direction</span>
+                                                            <span class="d3-color-gray">Make circles with the ears in
+                                                                both direction</span>
                                                         </li>
                                                     </ul>
                                                     <div class="item-before-effects"></div>
@@ -575,7 +930,8 @@
                                             </div>
 
                                             <div class="tooltip-extension ">
-                                                <div class="flavor">"Utar's mighty blade was colder than the bitterest winter chill, hewn from the never-melting </div>
+                                                <div class="flavor">"Utar's mighty blade was colder than the bitterest
+                                                    winter chill, hewn from the never-melting </div>
                                             </div>
 
                                         </div>
@@ -596,4 +952,5 @@
         </div>
     </div>
 </body>
+
 </html>
