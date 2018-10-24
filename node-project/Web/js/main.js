@@ -1,6 +1,5 @@
 var setValueFunction;
 var a;
-var isPlaying;
 
 
 $(document).ready(function ($) {
@@ -20,9 +19,7 @@ $(document).ready(function ($) {
 			delay: 3000,
 			stopAtAction: false
 		}
-	});
-		
-	setUpUnitySWF();
+    });
 
 	$("#stop").hide();
 	stop();
@@ -68,13 +65,6 @@ $(document).ready(function ($) {
 
     function sliderTileOnSlide(e) {
         speed(e.value / 100);
-    }
-
-    isPlaying = function (audio) { return !audio.paused; }
-    a = document.getElementById('music');
-    if (!(a.play instanceof Function)) {
-        a = document.getElementById('main_ie8');
-        isPlaying = function (audio) { return audio.playState == 2; }
     }
 
     $('.playpause').on('click', function () {

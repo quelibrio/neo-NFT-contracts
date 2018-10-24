@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60714bca-dbff-437e-b019-09f9567bd41f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/audio/bgmusic.mp3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Web/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/js/static/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/Web/js/static/common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/start.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getWorking.js" beforeDir="false" afterPath="$PROJECT_DIR$/getWorking.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/getWorking.ts" beforeDir="false" afterPath="$PROJECT_DIR$/getWorking.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mintWorking.js" beforeDir="false" afterPath="$PROJECT_DIR$/mintWorking.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mintWorking.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mintWorking.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -213,7 +206,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="323" />
     <option name="y" value="43" />
     <option name="width" value="1391" />
@@ -315,15 +308,15 @@
       <workItem from="1540061815650" duration="7640000" />
       <workItem from="1540070548120" duration="11280000" />
       <workItem from="1540387206395" duration="182000" />
-      <workItem from="1540388106782" duration="6197000" />
+      <workItem from="1540388106782" duration="6796000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25299000" />
+    <option name="totallyTimeSpent" value="25898000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1564805" />

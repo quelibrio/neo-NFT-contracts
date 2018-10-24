@@ -61,7 +61,7 @@
     </div>
     <div class="container metro content">
         <div class="row gPlayer rowMargin center-cropped " style="background-image: url('images/demonhunter-bloodelf-female.jpg');">
-            <div class="col-md-12 wrapper" >
+            <div class="col-md-12 wrapper">
                 <div class="Grid Grid--gutters SyncHeight" queryselectoralways="48">
                     <div class="Grid-1of2 SyncHeight-item Grid-1of3 Grid-1of4" media-large="Grid-1of3" media-wide="Grid-1of4"
                         queryselectoralways="0" media-original="Grid-1of2 SyncHeight-item" style="height: 68px;"><a
@@ -72,7 +72,7 @@
                                 <div class="Media-image"><span class="Icon Icon--health Media-icon"><svg class="Icon-svg"
                                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                             viewBox="0 0 64 64">
-                                            <use href="static/components/Icon/Icon.svg#health"></use>
+                                            <use xlink:href="static/components/Icon/Icon.svg#health"></use>
                                         </svg></span></div>
                                 <div class="Media-text"><span>140,360</span>
                                     <div class="font-semp-xSmall-white text-upper">Health</div>
@@ -87,7 +87,7 @@
                                     <div class="List-item"><span class="Icon Icon--back Icon--small Modal-icon"><svg
                                                 class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                                 viewBox="0 0 64 64">
-                                                <use href="static/components/Icon/Icon.svg#back"></use>
+                                                <use xlink:href="static/components/Icon/Icon.svg#back"></use>
                                             </svg></span></div>
                                     <div class="List-item">
                                         <div class="Modal-backText">Back</div>
@@ -97,7 +97,7 @@
                             <div class="Modal-close" data-izimodal-close="data-izimodal-close"><span class="Icon Icon--close Icon--small Modal-icon"><svg
                                         class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                         viewBox="0 0 64 64" xlink:href="/static/components/Icon/Icon.svg#close">
-                                        
+
                                     </svg></span></div>
                             <div class="StatDetails">
                                 <div class="StatDetails-body">
@@ -120,7 +120,7 @@
                                 <div class="Media-image"><span class="Icon Icon--mana Media-icon"><svg class="Icon-svg"
                                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                             viewBox="0 0 64 64">
-                                            <use xlink:href="/static/components/Icon/Icon.svg#mana"></use>
+                                            <use xlink:href="static/components/Icon/Icon.svg#mana"></use>
                                         </svg></span></div>
                                 <div class="Media-text"><span>20,000</span>
                                     <div class="font-semp-xSmall-white text-upper">Mana</div>
@@ -462,9 +462,6 @@
             <button class="col-md-2 button large success" onclick="previous()">
                 Generate Gen0 Character
             </button>
-            <button id="stop" class="col-md-2 button large success" onclick="stop()">
-                <i class="icon-pause"></i>
-            </button>
             <button id="resume" class="col-md-2 button large success" onclick="resume()">
                 <i class="icon-play"></i>
                 Battle
@@ -495,9 +492,9 @@
             <!--<button class="col-md-1 button large success" onclick="rewind(15)">Rewind</button>-->
         </div>
         <div class="row rowMargin">
-                <div class="col-md-4" id="nextCommand"></div>
-                <div class="col-md-4" id="count"></div>
-            </div>
+            <div class="col-md-4" id="nextCommand"></div>
+            <div class="col-md-4" id="count"></div>
+        </div>
         <div class="row rowMargin">
             <div class="col-md-12">
                 <div class="royalSlider rsDefault" style="width: 960px; margin: 0 auto;">
@@ -953,7 +950,6 @@
                 </div>
             </div>
         </div>
-        
     </div>
 </body>
 
