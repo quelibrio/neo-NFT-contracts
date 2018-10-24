@@ -125,7 +125,8 @@ function previous(){
             otherAddress.value])
         .then(function(result) {
         $("#nextCommand").text(result);
-        console.log(result.response)
+        txid = result.response.txid
+        generateCharStats(txid)
     });
 }
 
@@ -134,6 +135,60 @@ function next() {
         $("#nextCommand").text(result[0].value);
         console.log(JSON.stringify(result[0].value))
     });
+}
+
+function generateCharStats(txid){
+    chunks = chunkSubstr(txid, 8)
+    populateStats(chunks)
+    console.log(chunks)
+}
+
+function populateStats(chunks){
+    $(document).xpathEvaluate('//*[@id="start"]/div[2]/div[1]/div/div[1]/div[1]/a/div/div[2]/span').text(chunks[0])
+    $(document).xpathEvaluate('//*[@id="start"]/div[2]/div[1]/div/div[1]/div[2]/a/div/div[2]/span').text(chunks[1])
+    $(document).xpathEvaluate('//*[@id="start"]/div[2]/div[1]/div/div[1]/div[3]/a/div/div[2]/span').text(chunks[2])
+    $(document).xpathEvaluate('//*[@id="start"]/div[2]/div[1]/div/div[1]/div[4]/a/div/div[2]/span').text(chunks[3])
+
+    $(document).xpathEvaluate('//*[@id="start"]/div[2]/div[1]/div/div[1]/div[5]/a/div/div[2]/span').text(chunks[4] + "%")
+    $(document).xpathEvaluate('//*[@id="start"]/div[2]/div[1]/div/div[1]/div[6]/a/div/div[2]/span').text(chunks[5] + "%")
+    $(document).xpathEvaluate('//*[@id="start"]/div[2]/div[1]/div/div[1]/div[7]/a/div/div[2]/span').text(chunks[6] + "%")
+    $(document).xpathEvaluate('//*[@id="start"]/div[2]/div[1]/div/div[1]/div[8]/a/div/div[2]/span').text(chunks[7] + "%")
+}
+
+$.fn.xpathEvaluate = function (xpathExpression) {
+    // NOTE: vars not declared local for debug purposes
+    $this = this.first(); // Don't make me deal with multiples before coffee
+ 
+    // Evaluate xpath and retrieve matching nodes
+    xpathResult = this[0].evaluate(xpathExpression, this[0], null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
+ 
+    result = [];
+    while (elem = xpathResult.iterateNext()) {
+       result.push(elem);
+    }
+ 
+    $result = jQuery([]).pushStack( result );
+    return $result;
+ }
+
+function chunkSubstr(str, size) {
+    const numChunks = Math.ceil(str.length / size)
+    const chunks = new Array(numChunks)
+  
+    for (let i = 0, o = 0; i < numChunks; ++i, o += size) {
+      chunks[i] =  parseInt(str.substr(o, size), 16)
+      if(i < 4)
+        chunks[i] = Math.round(random(chunks[i]) * 1000)
+      else
+      chunks[i] = Math.round(random(chunks[i]) * 100)
+    }
+  
+    return chunks
+  }
+
+  function random(seed) {
+    var x = Math.sin(seed) * 10000;
+    return x - Math.floor(x)
 }
 
 function stop() {
