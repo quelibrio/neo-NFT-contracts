@@ -51,7 +51,9 @@ function callSmartContract(operation, args) {
 module.exports = {
     sc,
     invoke: (...args) => {
-        return Promise.resolve([{value: config.txSample}]);
+        if(config.hardcoded) {
+            return Promise.resolve([{value: config.txSample}]);
+        }
         return callSmartContract.apply(null, args);
     }
 }

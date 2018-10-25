@@ -66,9 +66,11 @@ function callSmartContract(operation, args) {
 module.exports = {
   sc: sc,
   invoke: function invoke() {
-    return Promise.resolve([{
-      value: config.txSample
-    }]);
+    if (config.hardcoded) {
+      return Promise.resolve([{
+        value: config.txSample
+      }]);
+    }
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -137,11 +139,13 @@ function callSmartContract(operation, args) {
 module.exports = {
   sc: sc,
   invoke: function invoke() {
-    return Promise.resolve({
-      response: {
-        txid: config.txSample
-      }
-    });
+    if (config.hardcoded) {
+      return Promise.resolve({
+        response: {
+          txid: config.txSample
+        }
+      });
+    }
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
@@ -34025,4 +34029,5 @@ exports.default = {
 
 /******/ });
 });
+
 },{}]},{},[2]);
