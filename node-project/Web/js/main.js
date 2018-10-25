@@ -53,8 +53,6 @@ $(document).ready(function ($) {
 
     var required = $("#required").kendoMultiSelect().data("kendoMultiSelect");
 
-    
-
     setValueFunction = function sliderSetValue(x) {
         exerciseSlider.value(x);
     }
@@ -126,6 +124,7 @@ function previous(){
         .then(function(result) {
         $("#nextCommand").text(result);
         txid = result.response.txid
+        
         generateCharStats(txid)
     });
 }
@@ -140,7 +139,86 @@ function next() {
 function generateCharStats(txid){
     chunks = chunkSubstr(txid, 8)
     populateStats(chunks)
+    populateCaroucell(chunks)
     console.log(chunks)
+}
+heroes = 2
+page = 0
+function populateCaroucell(chunks){
+    console.log($('#heroes').children.length)
+
+    //.d3-color-default
+	epicness = ["d3-color-blue",
+	"d3-color-gray",
+	"d3-color-gold",
+	"d3-color-green",
+	"d3-color-orange",
+	"d3-color-purple",
+	"d3-color-red",
+	"d3-color-white",
+    "d3-color-yellow"]
+    
+    epicnessItem = ["tooltip-head-gray",
+    "tooltip-head-white ", 
+    "tooltip-head-blue  ", 
+    "tooltip-head-yellow ",
+    "tooltip-head-orange ",
+    "tooltip-head-purple ",
+    "tooltip-head-green  "]
+    
+    epicLevel = epicness[Math.floor(Math.random() * epicness.length)];
+    console.log(epicLevel)
+    heroes++
+
+    if(heroes % 4 == 0)
+    {
+         page = page + 1
+    }
+     $('.heroes:eq(' + page +')' ).append(
+    `<li>
+        <div class="ui-tooltip">
+            <div class="tooltip-content">
+                <div class="d3-tooltip d3-tooltip-item">
+                    <div class="tooltip-head tooltip-head-green">
+                        <h3 class="` + epicLevel + `">Feet</h3>
+                    </div>
+                    <div class="tooltip-body effect-bg effect-bg-holy">
+                        <div class="d3-item-properties">
+                            <ul class="item-type-right">
+                                <li class="item-slot">Foot up </li>
+                            </ul>
+                            <ul class="item-itemset">
+                                <li class="item-itemset-name">
+                                    <span onclick="rewind(0)" class="d3-color-green">
+                                        <a>Foot down</a>
+                                    </span>
+                                </li>
+                                <li class="item-itemset-piece indent">
+                                    <span class="d3-color-gray">
+                                        <a>Foot in </a>
+                                    </span>
+                                </li>
+                                <li class="item-itemset-piece indent">
+                                    <span class="d3-color-gray">Foot out</span>
+                                </li>
+                                <li class="item-itemset-piece indent">
+                                    <span class="d3-color-gray">Circlesin both directions</span>
+                                </li>
+                                <li class="item-itemset-piece indent">
+                                    <span class="d3-color-gray">Leg circles in both directions</span>
+                                </li>
+                            </ul>
+                            <div class="item-before-effects"></div>
+                            <span class="clear"></span>
+                        </div>
+                    </div>
+                    <div class="tooltip-extension ">
+                        <div class="flavor">Note on last exercise.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>`);
 }
 
 function populateStats(chunks){
