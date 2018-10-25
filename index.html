@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="neoNftUi">
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link href="app.less" type="text/css" rel="stylesheet/less">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/tooltips.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/metro-bootstrap.css">
+    <link rel="stylesheet" href="/css/royalslider.css">
+    <link rel="stylesheet" href="fonts/iconFont.css">
+    <link rel="stylesheet" href="/css/wow.css">
+    <script src="node-project/neo-exports.js"></script>
+</head>
+<body>
+
+<!-- Livereload script for development only (stripped during dist build) -->
+<script src="http://localhost:35729/livereload.js" data-concat="false"></script>
+
+<!-- JS from Bower Components -->
+<script src="bower_components/less.js/dist/less.js" data-concat="false"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/lodash/dist/lodash.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<!-- Add New Bower Component JS Above -->
+
+
+<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+<script src="js/vendor/jquery-1.11.0.min.js"></script>
+<script src="js/vendor/swfobject.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/vendor/jquery-ui-1.10.4.min.js"></script>
+<script src="js/vendor/metro-slider.js"></script>
+<script src="js/royalslider/jquery.royalslider.min.js"></script>
+<script src="js/main.js"></script>
+<link href="http://cdn.kendostatic.com/2014.1.318/styles/kendo.common.min.css" rel="stylesheet"/>
+<link href="http://cdn.kendostatic.com/2014.1.318/styles/kendo.default.min.css" rel="stylesheet"/>
+<script src="http://cdn.kendostatic.com/2014.1.318/js/kendo.all.min.js"></script>
+
+<!-- Main App JS -->
+<script src="app.js"></script>
+<script src="node-project/neo-exports.js" data-concat="false" data-remove="true"></script>
+<script src="modules/base/base.js"></script>
+<script src="modules/base/directive/main-nav/main-nav.js"></script>
+<script src="modules/base/partial/home/home.js"></script>
+<script src="modules/brawl/brawl.js"></script>
+<script src="modules/brawl/partial/brawl-main/brawl-main.js"></script>
+<script src="modules/breed/breed.js"></script>
+<script src="modules/breed/partial/breed-main/breed-main.js"></script>
+<script src="modules/marketplace/marketplace.js"></script>
+<script src="modules/marketplace/partial/marketplace-main/marketplace-main.js"></script>
+<script src="modules/base/partial/main/main.js"></script>
+<script src="modules/heroes/heroes.js"></script>
+<script src="modules/heroes/partial/heroes-main/heroes-main.js"></script>
+<script src="modules/heroes/directive/hero-stats/hero-stats.js"></script>
+<!-- Add New Component JS Above -->
+
+<div>
+    <div id="content" class="container">
+        <div class="row">
+            <div ui-view>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

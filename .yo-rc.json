@@ -1,0 +1,51 @@
+{
+  "generator-cg-angular": {
+    "uirouter": true,
+    "partialDirectory": "partial/",
+    "modalDirectory": "partial/",
+    "directiveDirectory": "directive/",
+    "filterDirectory": "filter/",
+    "serviceDirectory": "service/",
+    "partialTemplates": "templates/partial",
+    "directiveSimpleTemplates": "templates/directive/simple",
+    "directiveComplexTemplates": "templates/directive/complex",
+    "serviceTemplates": "templates/service",
+    "filterTemplates": "templates/filter",
+    "moduleTemplates": "templates/module",
+    "inject": {
+      "js": {
+        "file": "index.html",
+        "marker": "<!-- Add New Component JS Above -->",
+        "template": "<script src=\"<%= filename %>\"></script>"
+      },
+      "less": {
+        "relativeToModule": true,
+        "file": "<%= module %>.less",
+        "marker": "/* Add Component LESS Above */",
+        "template": "@import \"<%= filename %>\";"
+      }
+    },
+    "modules": [
+      {
+        "name": "base",
+        "file": "modules\\base\\base.js"
+      },
+      {
+        "name": "brawl",
+        "file": "modules\\brawl\\brawl.js"
+      },
+      {
+        "name": "breed",
+        "file": "modules\\breed\\breed.js"
+      },
+      {
+        "name": "marketplace",
+        "file": "modules\\marketplace\\marketplace.js"
+      },
+      {
+        "name": "heroes",
+        "file": "modules\\heroes\\heroes.js"
+      }
+    ]
+  }
+}
