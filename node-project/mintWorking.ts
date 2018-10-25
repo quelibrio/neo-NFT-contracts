@@ -40,7 +40,7 @@ function callSmartContract(operation: string, args: Array<any> = []) {
             request.balance = data;
             console.log('Invocation of: ' + operation);
             console.log('Args: ', args);
-            return Neon.doInvoke(request).then(res => console.log(res.response));
+            return Neon.doInvoke(request);
         });
 }
 

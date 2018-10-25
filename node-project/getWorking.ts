@@ -33,23 +33,25 @@ function callSmartContract(operation: string, args: Array<any> = []) {
         balance: null
     };
 
-    rpc.Query.invokeScript(script)
+    return rpc.Query.invokeScript(script)
         .execute(networkUrl)
         .then(res => {
-            console.dir(res.result.stack) // You should get a result with state: "HALT, BREAK"
+            console.dir(res.result.stack)
+            return res.result.stack;
+            // You should get a result with state: "HALT, BREAK"
         })
 
-    return api.neoscan.getBalance(neoscanUrl, account.address).then(data => {
-        request.balance = data;
-        console.log('Invocation of: ' + operation);
-        console.log('Args: ', args);
-        return Neon.doInvoke(request).then(res => console.log(res.response));
-    })
+    // return api.neoscan.getBalance(neoscanUrl, account.address).then(data => {
+    //     request.balance = data;
+    //     console.log('Invocation of: ' + operation);
+    //     console.log('Args: ', args);
+    //     return Neon.doInvoke(request);
+    // })
 }
 
-// let otherAddress = sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')
-//
-// callSmartContract('totalSupply', [otherAddress.value]);
+let otherAddress = sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')
+
+callSmartContract('totalSupply', [otherAddress.value]);
 
 
 module.exports = {
