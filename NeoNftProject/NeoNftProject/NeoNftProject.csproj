@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20181024195644_InitialCreate.cs" />
+    <Compile Remove="Migrations\20181024195644_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20181024200524_InitialCreate.cs" />
+    <Compile Remove="Migrations\20181024200524_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20181024205934_InitialCreate.cs" />
+    <Compile Remove="Migrations\20181024205934_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20181024210822_InitialCreate.cs" />
+    <Compile Remove="Migrations\20181024210822_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20181024211232_InitialCreate.cs" />
+    <Compile Remove="Migrations\20181024211232_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20181024212352_InitialCreate.cs" />
+    <Compile Remove="Migrations\20181024212352_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20181024213227_InitialCreate.cs" />
+    <Compile Remove="Migrations\20181024213227_InitialCreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Akka" Version="1.3.9" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.4" />
+    <PackageReference Include="Neo" Version="2.9.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="protocol.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

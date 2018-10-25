@@ -78,16 +78,11 @@ $(document).ready(function ($) {
     });
 });
 
-function setUpUnitySWF(){
-	swfobject.registerObject("unityPlayer", "11.2.0");
-}
-
 var count = 1;
 
 function music() {
     document.getElementById('music').play();
 }
-
 
 function stopMusic(){
     document.getElementById('music').pause();
@@ -167,6 +162,7 @@ function populateCaroucell(chunks){
     "tooltip-head-green  "]
     
     epicLevel = epicness[Math.floor(Math.random() * epicness.length)];
+    epicItem = epicnessItem[Math.floor(Math.random() * epicnessItem.length)];
     console.log(epicLevel)
     heroes++
 
@@ -179,7 +175,7 @@ function populateCaroucell(chunks){
         <div class="ui-tooltip">
             <div class="tooltip-content">
                 <div class="d3-tooltip d3-tooltip-item">
-                    <div class="tooltip-head tooltip-head-green">
+                    <div class="tooltip-head ` + epicItem + `">
                         <h3 class="` + epicLevel + `">Feet</h3>
                     </div>
                     <div class="tooltip-body effect-bg effect-bg-holy">

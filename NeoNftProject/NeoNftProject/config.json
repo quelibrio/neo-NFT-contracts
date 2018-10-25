@@ -1,0 +1,25 @@
+﻿{
+	"ApplicationConfiguration": {
+		"Paths": {
+			"Chain": "Chain_{0}",
+			"Index": "Index_{0}",
+			"CertCache": "Certs"
+		},
+		"P2P": {
+			"Port": 20333,
+			"WsPort": 10334
+		},
+		"Urls": {
+			"AddressUrl": "https://localhost:4000/address/{0}",
+			"AssetUrl": "https://localhost:4000/api/main_net/v1/get_asset/{0}",
+			"TransactionUrl": "https://localhost:4000/transaction/{0}"
+		},
+		"DataDirectoryPath": "ChainTestNet",
+		"CertCachePath": "Certs",
+		"NodePort": 20333,
+		"WsPort": 20334,
+		"UriPrefix": [ "https://localhost:20332" ],
+		"SslCert": "",
+		"SslCertPassword": ""
+	}
+}
