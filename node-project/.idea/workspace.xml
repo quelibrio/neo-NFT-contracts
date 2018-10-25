@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60714bca-dbff-437e-b019-09f9567bd41f" name="Default Changelist" comment="" />
+    <list default="true" id="60714bca-dbff-437e-b019-09f9567bd41f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Web/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Web/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/start.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/start.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -123,19 +126,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getWorking.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="32" column="31" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="31" />
+            <state relative-caret-position="374">
+              <caret line="25" column="15" lean-forward="true" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mintWorking.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="221">
               <caret line="37" selection-start-line="37" selection-end-line="37" />
               <folding>
                 <element signature="e#15#84#0" expanded="true" />
@@ -305,15 +308,15 @@
       <workItem from="1540061815650" duration="7640000" />
       <workItem from="1540070548120" duration="11280000" />
       <workItem from="1540387206395" duration="182000" />
-      <workItem from="1540388106782" duration="7542000" />
+      <workItem from="1540388106782" duration="8715000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26644000" />
+    <option name="totallyTimeSpent" value="27817000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1564805" />
@@ -322,7 +325,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3290461" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.301179" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39871383" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.40303358" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -412,20 +415,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getWorking.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="32" column="31" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mintWorking.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="221">
           <caret line="37" selection-start-line="37" selection-end-line="37" />
           <folding>
             <element signature="e#15#84#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getWorking.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="15" lean-forward="true" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
         </state>
       </provider>
     </entry>
