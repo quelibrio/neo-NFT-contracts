@@ -1,7 +1,7 @@
 <div ng-controller="HeroesMainCtrl">
     <div class="container metro content">
         <div class="row gPlayer rowMargin center-cropped " style="background-image: url('/css/images/demonhunter-bloodelf-female.jpg');">
-            <div class="col-md-12 wrapper">
+            <div class="row rowMargin">
                 <hero-stats stats="hero"></hero-stats>
                 <div class="wrapperSlider">
                     <input id="slider" class="balSlider" value="0"/>
@@ -17,6 +17,8 @@
                 <button class="col-md-2 button large success" ng-click="generate()">
                     Generate Gen0 Character
                 </button>
+            </div>
+            <div class="row rowMargin">
                 <button id="resume" class="col-md-2 button large success" ng-click="battle()">
                     <i class="icon-play"></i>
                     Battle
@@ -27,20 +29,13 @@
                 <button class="col-md-2 button large success" ng-click="tokensOfOwner()">
                     Get tokens of owner
                 </button>
-            </div>
-        </div>
-        <div class="row rowMargin">
-            <div class="col-md-8">
-                <div id="output">
-
+                <div class="row rowMargin">
+                    <div class="col-md-4" id="nextCommand"></div>
                 </div>
             </div>
-
-            <!--<button class="col-md-1 button large success" onclick="rewind(15)">Rewind</button>-->
         </div>
-        <div class="row rowMargin">
-            <div class="col-md-4" id="nextCommand"></div>
-            <div class="col-md-4" id="count"></div>
+        <div class="row rowMargin" id="output">
+
         </div>
         <div class="row rowMargin">
             <heroes-list heroes="heroes"></heroes-list>

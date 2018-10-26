@@ -24,12 +24,7 @@ angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootSco
     $scope.getCharacterCount = () => {
         nftService.balanceOf($scope).then((count) => {
             $("#output").html(count);
-            console.log(JSON.stringify(count))
         }).catch((err) => alert(JSON.stringify(err)));
-    };
-
-    $scope.getOwner = (tokenId) => {
-            nftService.ownerOf({tokenId}).then($("#output").html.bind($("#output")));
     };
 
     $scope.tokensOfOwner = () => {

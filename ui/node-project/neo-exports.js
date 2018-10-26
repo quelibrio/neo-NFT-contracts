@@ -1,13 +1,27 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";
 
-module.exports = {
-  scriptHash: 'af10ac5cbea7dafc328a57d1039fd0331aad31bf',
-  marketHash: 'b8757a57e7e11e3d45a1e5554c03891b62fb6e54',
-  txSample: '05418e900279d36a9e484060a04769bf69992058cf6b8cd7c81862f960d08e0e'
+var _require = require('@cityofzion/neon-js'),
+    Neon = _require.default,
+    api = _require.api,
+    nep5 = _require.nep5,
+    rpc = _require.rpc,
+    sc = _require.sc,
+    wallet = _require.wallet;
+
+var prepare = require('./prepare');
+
+module.exports = function (call, args, hash) {
+  var request = prepare.getRequest(call, args, hash);
+  return api.neoscan.getBalance(request.net, request.account.address).then(function (data) {
+    request.balance = data;
+    console.log('Invocation of: ' + call);
+    console.log('Args: ', request.script.args);
+    return Neon.doInvoke(request);
+  });
 };
 
-},{}],2:[function(require,module,exports){
+},{"./prepare":6,"@cityofzion/neon-js":5}],2:[function(require,module,exports){
 "use strict";
 
 var _require = require('@cityofzion/neon-js'),
@@ -19,18 +33,25 @@ var _require = require('@cityofzion/neon-js'),
     wallet = _require.wallet;
 
 var neo = {
-  get: require('./getWorking'),
-  call: require('./mintWorking'),
+  get: require('./get'),
+  call: require('./call'),
   Neon: Neon,
   api: api,
   nep5: nep5,
   sc: sc,
   wallet: wallet,
-  config: require('./config.js')
+  config: require('./neoConfig.js'),
+  getByteArrayAddress: function getByteArrayAddress(address) {
+    if (address.length !== 34) {
+      alert("Address ".concat(address, " needs to be 34 length. Instead it's ").concat(address.length, "."));
+    } else {
+      return sc.ContractParam.byteArray(address, 'address');
+    }
+  }
 };
 window.neo = neo;
 
-},{"./config.js":1,"./getWorking":3,"./mintWorking":4,"@cityofzion/neon-js":5}],3:[function(require,module,exports){
+},{"./call":1,"./get":3,"./neoConfig.js":4,"@cityofzion/neon-js":5}],3:[function(require,module,exports){
 "use strict";
 
 var _require = require('@cityofzion/neon-js'),
@@ -41,34 +62,11 @@ var _require = require('@cityofzion/neon-js'),
     sc = _require.sc,
     wallet = _require.wallet;
 
-var config = require('./config.js');
+var prepare = require('./prepare');
 
-var account = Neon.create.account('KxDgvEKzgSBPPfuVfw67oPQBSjidEiqTHURKSDL1R7yGaGYAeYnr');
-var realAddress = sc.ContractParam.byteArray(account.address, 'address');
-
-function callSmartContract(operation, args, hash) {
-  hash = hash || config.scriptHash;
-  var networkUrl = 'http://192.168.99.100:30333';
-  var neoscanUrl = 'http://192.168.99.100:4000/api/main_net';
-  console.log(operation, args);
-  var script = Neon.create.script({
-    scriptHash: hash,
-    operation: operation,
-    args: args
-  });
-  var request = {
-    net: neoscanUrl,
-    url: networkUrl,
-    script: script,
-    account: account,
-    address: account.address,
-    privateKey: account.privateKey,
-    publicKey: account.publicKey,
-    gas: 0,
-    balance: null
-  };
-  return rpc.Query.invokeScript(script).execute(networkUrl).then(function (res) {
-    console.dir(res.result.stack);
+module.exports = function (call, args, hash) {
+  var request = prepare.getRequest(call, args, hash);
+  return rpc.Query.invokeScript(request.script).execute(request.url).then(function (res) {
     return res.result.stack; // You should get a result with state: "HALT, BREAK"
   }); // return api.neoscan.getBalance(neoscanUrl, account.address).then(data => {
   //     request.balance = data;
@@ -76,101 +74,23 @@ function callSmartContract(operation, args, hash) {
   //     console.log('Args: ', args);
   //     return Neon.doInvoke(request);
   // })
-}
-
-module.exports = {
-  sc: sc,
-  invoke: function invoke() {
-    if (config.hardcoded) {
-      return Promise.resolve([{
-        value: config.txSample
-      }]);
-    }
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return callSmartContract.apply(null, args);
-  }
 };
 
-},{"./config.js":1,"@cityofzion/neon-js":5}],4:[function(require,module,exports){
+},{"./prepare":6,"@cityofzion/neon-js":5}],4:[function(require,module,exports){
 "use strict";
 
 var _require = require('@cityofzion/neon-js'),
-    Neon = _require.default,
-    api = _require.api,
-    nep5 = _require.nep5,
-    rpc = _require.rpc,
-    sc = _require.sc,
-    wallet = _require.wallet;
-
-var config = require('./config.js');
-
-var account = Neon.create.account('KxDgvEKzgSBPPfuVfw67oPQBSjidEiqTHURKSDL1R7yGaGYAeYnr');
-var realAddress = sc.ContractParam.byteArray(account.address, 'address');
-
-function callSmartContract(operation, args, hash) {
-  hash = hash || config.scriptHash;
-  var networkUrl = 'http://192.168.99.100:30333';
-  var neoscanUrl = 'http://192.168.99.100:4000/api/main_net';
-  var script = Neon.create.script({
-    scriptHash: hash,
-    operation: operation,
-    args: args
-  });
-  var request = {
-    net: neoscanUrl,
-    url: networkUrl,
-    script: script,
-    account: account,
-    address: account.address,
-    privateKey: account.privateKey,
-    publicKey: account.publicKey,
-    gas: 0,
-    balance: null
-  };
-  /*   rpc.Query.invokeScript(script)
-   .execute(networkUrl)
-   .then(res => {
-   util.inspect(res.result.stack) // You should get a result with state: "HALT, BREAK"
-   })*/
-
-  return api.neoscan.getBalance(neoscanUrl, account.address).then(function (data) {
-    request.balance = data;
-    console.log('Invocation of: ' + operation);
-    console.log('Args: ', args);
-    return Neon.doInvoke(request);
-  });
-} // let otherAddress = sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')
-// callSmartContract('mintToken',
-//     [Neon.u.str2hexstring('properties'),
-//         "11111111111111",
-//         otherAddress.value
-//     ]);
-
+    Neon = _require.default;
 
 module.exports = {
-  sc: sc,
-  invoke: function invoke() {
-    if (config.hardcoded) {
-      return Promise.resolve({
-        response: {
-          txid: config.txSample
-        }
-      });
-    }
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return callSmartContract.apply(null, args);
-  }
+  account: Neon.create.account('KxDgvEKzgSBPPfuVfw67oPQBSjidEiqTHURKSDL1R7yGaGYAeYnr'),
+  scriptHash: 'c704b868eee2f5f4455896e0dbcca6b4ad567f0b',
+  marketHash: 'b8757a57e7e11e3d45a1e5554c03891b62fb6e54',
+  networkUrl: 'http://192.168.99.100:30333',
+  neoscanUrl: 'http://192.168.99.100:4000/api/main_net'
 };
 
-},{"./config.js":1,"@cityofzion/neon-js":5}],5:[function(require,module,exports){
+},{"@cityofzion/neon-js":5}],5:[function(require,module,exports){
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -34045,4 +33965,39 @@ exports.default = {
 /******/ });
 });
 
-},{}]},{},[2]);
+},{}],6:[function(require,module,exports){
+"use strict";
+
+var config = require('./neoConfig.js');
+
+var _require = require('@cityofzion/neon-js'),
+    Neon = _require.default,
+    api = _require.api,
+    nep5 = _require.nep5,
+    rpc = _require.rpc,
+    sc = _require.sc,
+    wallet = _require.wallet;
+
+module.exports.getRequest = function (operation, args, configOverride) {
+  var useConfig = configOverride || config;
+  var hash = useConfig.scriptHash;
+  var script = Neon.create.script({
+    scriptHash: hash,
+    operation: operation,
+    args: args
+  });
+  var account = useConfig.account;
+  return {
+    net: useConfig.neoscanUrl,
+    url: useConfig.networkUrl,
+    script: script,
+    account: account,
+    address: account.address,
+    privateKey: account.privateKey,
+    publicKey: account.publicKey,
+    gas: 0,
+    balance: null
+  };
+};
+
+},{"./neoConfig.js":4,"@cityofzion/neon-js":5}]},{},[2]);
