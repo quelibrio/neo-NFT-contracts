@@ -10,13 +10,27 @@ module.exports = {
 },{}],2:[function(require,module,exports){
 "use strict";
 
-var sc = {
-  get: require('./getWorking'),
-  call: require('./mintWorking')
-};
-window.sc = sc;
+var _require = require('@cityofzion/neon-js'),
+    Neon = _require.default,
+    api = _require.api,
+    nep5 = _require.nep5,
+    rpc = _require.rpc,
+    sc = _require.sc,
+    wallet = _require.wallet;
 
-},{"./getWorking":3,"./mintWorking":4}],3:[function(require,module,exports){
+var neo = {
+  get: require('./getWorking'),
+  call: require('./mintWorking'),
+  Neon: Neon,
+  api: api,
+  nep5: nep5,
+  sc: sc,
+  wallet: wallet,
+  config: require('./config.js')
+};
+window.neo = neo;
+
+},{"./config.js":1,"./getWorking":3,"./mintWorking":4,"@cityofzion/neon-js":5}],3:[function(require,module,exports){
 "use strict";
 
 var _require = require('@cityofzion/neon-js'),
@@ -32,8 +46,8 @@ var config = require('./config.js');
 var account = Neon.create.account('KxDgvEKzgSBPPfuVfw67oPQBSjidEiqTHURKSDL1R7yGaGYAeYnr');
 var realAddress = sc.ContractParam.byteArray(account.address, 'address');
 
-function callSmartContract(operation, args) {
-  var hash = config.scriptHash;
+function callSmartContract(operation, args, hash) {
+  hash = hash || config.scriptHash;
   var networkUrl = 'http://192.168.99.100:30333';
   var neoscanUrl = 'http://192.168.99.100:4000/api/main_net';
   console.log(operation, args);
@@ -97,8 +111,8 @@ var config = require('./config.js');
 var account = Neon.create.account('KxDgvEKzgSBPPfuVfw67oPQBSjidEiqTHURKSDL1R7yGaGYAeYnr');
 var realAddress = sc.ContractParam.byteArray(account.address, 'address');
 
-function callSmartContract(operation, args) {
-  var hash = config.scriptHash;
+function callSmartContract(operation, args, hash) {
+  hash = hash || config.scriptHash;
   var networkUrl = 'http://192.168.99.100:30333';
   var neoscanUrl = 'http://192.168.99.100:4000/api/main_net';
   var script = Neon.create.script({

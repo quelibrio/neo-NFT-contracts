@@ -4,8 +4,8 @@ let config = require('./config.js');
 let account = Neon.create.account('KxDgvEKzgSBPPfuVfw67oPQBSjidEiqTHURKSDL1R7yGaGYAeYnr');
 let realAddress = sc.ContractParam.byteArray(account.address, 'address');
 
-function callSmartContract(operation, args) {
-    let hash = config.scriptHash;
+function callSmartContract(operation, args, hash) {
+    hash = hash || config.scriptHash;
     let networkUrl = 'http://192.168.99.100:30333';
     let neoscanUrl = 'http://192.168.99.100:4000/api/main_net';
 

@@ -1,21 +1,64 @@
 <div ng-controller="MarketplaceMainCtrl">
+    <div class="row">
+        <h4>Me</h4>
+        <input class="form-control" style="width:300px" ng-model="address"/>
+    </div>
+    <div class="row">
+        <button ng-click="showCreateAuction = !showCreateAuction; create={nickname: 'Thor The Mighty', tokenId: '51c2d176b7e1be634c94525f5fbd1fbe', startPrice: 300, endPrice: 850, duration: 30}; createResult='';" class="btn btn-primary">Create auction</button>
+        <form class="col-lg-12" ng-show="showCreateAuction">
+            <div class="form-group">
+                <label for="nickname">Nickname</label>
+                <input type="text" class="form-control" ng-model="create.nickname" id="nickname" aria-describedby="nicknameHelp" placeholder="The Mighty Nickname">
+                <small id="nicknameHelp" class="form-text text-muted">Everyone will see this. Get creative!</small>
+            </div>
+            <div class="form-group">
+                <label for="tokenId">Token id</label>
+                <input type="text" aria-describedby="tokenidHelp" class="form-control" ng-model="create.tokenId" id="tokenId" placeholder="Token id <<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>">
+                <small id="tokenidHelp" class="form-text text-muted">Every token has an id! Paste it here 'cos we lazy right now.</small>
+            </div>
+            <div class="form-check">
+                <label for="tokenId">Start price</label>
+                <input type="number" aria-describedby="startpriceHelp" class="form-control" ng-model="create.startPrice" id="startPrice" placeholder="300">
+                <small id="startpriceHelp" class="form-text text-muted">Yeah you need to start small, but don't give it away [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]</small>
+            </div>
+            <div class="form-check">
+                <label for="tokenId">End price</label>
+                <input type="number" aria-describedby="endpriceHelp" class="form-control" ng-model="create.endPrice" id="endPrice" placeholder="850">
+                <small id="endpriceHelp" class="form-text text-muted">Don't set it too high or it might never hit it ¯\_(ツ)_/¯</small>
+            </div>
+            <div class="form-check">
+                <label for="tokenId">Duration</label>
+                <input type="number" aria-describedby="durationHelp" class="form-control"ng-model="create.duration" id="duration" placeholder="30">
+                <small id="durationHelp" class="form-text text-muted">This auction is going to end at some point...</small>
+            </div>
+            <button type="submit" ng-click="createSaleAuction(create)" class="btn btn-primary">Auction!</button>
+            <pre ng-show="createResult">{{createResult}}</pre>
+            <hr/>
+        </form>
         <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
+            <h4>Check my stuff out!</h4>
+            <button ng-click="reloadMine()">Load My Heroes</button>
+            <heroes-list heroes="heroes"></heroes-list>
+        </div>
+        <div class="row">
+            <h4>Oh, look at all those heroes!</h4>
+            <button ng-click="reload()">Load Auction</button>
+            <div class="col-lg-4 col-md-6 mb-4" ng-repeat="item in items">
                 <div class="card h-100">
                     <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">Item One</a>
+                            <a href="#">{{item.tokenId}}</a>
                         </h4>
-                        <h5>$24.99</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                        <h5>{{item.startPrice}}</h5>
+                        <p class="card-text">{{item | json}}</p>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                     </div>
                 </div>
             </div>
-
+<!--
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
                     <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
@@ -94,7 +137,7 @@
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
         </div>
         <!-- /.row -->

@@ -3,7 +3,7 @@ var a;
 
 
 $(document).ready(function ($) {
-    otherAddress = window.sc.get.sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')
+    otherAddress = window.neo.get.sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')
 
 	$('.royalSlider').royalSlider({
 		controlNavigation: 'bullets',
@@ -112,7 +112,7 @@ String.prototype.hexDecode = function(){
 }
 
 function previous(){
-    window.sc.call.invoke('mintToken', [
+    window.neo.call.invoke('mintToken', [
             "Lalallala".hexEncode(),
             "1111111111111".hexEncode(), 
             otherAddress.value])
@@ -125,7 +125,7 @@ function previous(){
 }
 
 function next() {
-    window.sc.get.invoke('totalSupply', [otherAddress.value]).then(function(result) {
+    window.neo.get.invoke('totalSupply', [otherAddress.value]).then(function(result) {
         $("#output").text(result[0].value);
         console.log(JSON.stringify(result[0].value))
     });
