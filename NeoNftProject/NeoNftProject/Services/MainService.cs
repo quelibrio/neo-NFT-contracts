@@ -139,9 +139,9 @@ namespace NeoNftProject.Services
 				.ToList();
 		}
 
-		public ICollection<Token> GetOwnedTokens(int ownerId)
+		public ICollection<Token> GetOwnedTokens(string owner)
 		{
-			var tokens = db.Tokens.Where(c => c.AddressId == ownerId).ToList();
+            var tokens = db.Tokens.Where(c => c.Address.AddressName == owner).ToList();
 
 			return tokens;
 		}

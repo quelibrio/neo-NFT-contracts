@@ -93,9 +93,9 @@ namespace NeoNftProject.Controllers
 		}
 
 		[HttpGet("ownedTokens")]
-		public IActionResult OwnedToken(int addressId)
+		public IActionResult OwnedToken(string address)
 		{
-			var tokens = this.mainService.GetOwnedTokens(addressId);
+			var tokens = this.mainService.GetOwnedTokens(address);
 			return this.Ok(tokens);
 		}
 

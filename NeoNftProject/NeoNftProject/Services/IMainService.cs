@@ -10,7 +10,7 @@ namespace NeoNftProject.Services
 	public interface IMainService
 	{
 		ICollection<Auction> GetAuctions();
-		ICollection<Token> GetOwnedTokens(int ownerId);
+		ICollection<Token> GetOwnedTokens(string owner);
 		int CreateAuction(CreateAuctionInputModel model);
 		Auction UpdateAuction(UpdateAuctionModel model);
 		Token UpdateToken(UpdateTokenInputModel model);
