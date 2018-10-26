@@ -21,6 +21,10 @@ html, body {
     background: url('./images/bg1.jpg') no-repeat center center fixed;
 }
 
+input {
+    background-color: black;
+}
+
 .container {
     padding-right: 15px;
     padding-left: 15px;

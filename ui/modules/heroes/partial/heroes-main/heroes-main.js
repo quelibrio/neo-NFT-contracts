@@ -1,5 +1,4 @@
-angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootScope) {
-    let otherAddress = window.sc.get.sc.ContractParam.byteArray('ASP3X76d9JunQosUds3npubiDsSpm3RMXF', 'address')
+angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootScope, nftService) {
 
     $('.royalSlider').royalSlider({
         controlNavigation: 'bullets',
@@ -49,18 +48,20 @@ angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootSco
         showButtons: true
     }).data("kendoSlider1");
 
-    $scope.generate = () => {
-        window.sc.call.invoke('mintToken', [
-                "Lalallala".hexEncode(),
-                "1111111111111".hexEncode(),
-                otherAddress.value])
-            .then(function (result) {
-                $("#nextCommand").text(result);
-                let txid = result.response.txid;
+    $scope.owner = 'ASP3X76d9JunQosUds3npubiDsSpm3RMXF';
 
-                generateCharStats(txid)
-            }).catch((err) => alert(JSON.stringify(err)));
+    $scope.generate = () => {
+        nftService.mintToken(
+            $scope
+        ).then(function (txid) {
+            generateCharStats(txid);
+        }).catch((err) => alert(JSON.stringify(err)));
     };
+    $scope.strength = 65;
+    $scope.agile = 55;
+    $scope.power = 85;
+    $scope.speed = 37;
+    $scope.gen = 0;
 
     $scope.battle = () => {
         alert('Not implemented');
@@ -76,24 +77,25 @@ angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootSco
 
     function generateCharStats(txid) {
         let chunks = chunkSubstr(txid, 8);
-        let stats = {
+        let hero = {
             health: chunks[0],
             mana: chunks[1],
             agility: chunks[2],
             stamina: chunks[3],
             critical: chunks[4],
-            haste: chunks[5],
+            attackSpeed: chunks[5],
             mastery: chunks[6],
-            versatility: chunks[7]
+            versatility: chunks[7],
+            gen: 0,
+            txid
         };
-        populateStats(stats);
-        populateCaroucell(stats);
-        console.log(stats);
+        populateStats(hero);
+        populateCaroucell(hero);
     }
 
-    let heroes = 2, page = 0;
+    let heroes = 0, page = 0;
 
-    function populateCaroucell(chunks) {
+    function populateCaroucell(stats) {
         //.d3-color-default
         epicness = ["d3-color-blue",
             "d3-color-gray",
@@ -114,61 +116,80 @@ angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootSco
             "tooltip-head-green  "]
 
         epicLevel = epicness[Math.floor(Math.random() * epicness.length)];
+        epicnessLevel = epicnessItem[Math.floor(Math.random() * epicnessItem.length)];
         heroes++
 
         if (heroes % 4 == 0) {
             page = page + 1
         }
-        $('.heroes:eq(' + page + ')').append(
-            `<li>
-        <div class="ui-tooltip">
-            <div class="tooltip-content">
-                <div class="d3-tooltip d3-tooltip-item">
-                    <div class="tooltip-head tooltip-head-green">
-                        <h3 class="${epicLevel}">Feet</h3>
-                    </div>
-                    <div class="tooltip-body effect-bg effect-bg-holy">
-                        <div class="d3-item-properties">
-                            <ul class="item-type-right">
-                                <li class="item-slot">Foot up </li>
-                            </ul>
-                            <ul class="item-itemset">
-                                <li class="item-itemset-name">
-                                    <span onclick="rewind(0)" class="d3-color-green">
-                                        <a>Foot down</a>
-                                    </span>
-                                </li>
-                                <li class="item-itemset-piece indent">
-                                    <span class="d3-color-gray">
-                                        <a>Foot in </a>
-                                    </span>
-                                </li>
-                                <li class="item-itemset-piece indent">
-                                    <span class="d3-color-gray">Foot out</span>
-                                </li>
-                                <li class="item-itemset-piece indent">
-                                    <span class="d3-color-gray">Circlesin both directions</span>
-                                </li>
-                                <li class="item-itemset-piece indent">
-                                    <span class="d3-color-gray">Leg circles in both directions</span>
-                                </li>
-                            </ul>
-                            <div class="item-before-effects"></div>
-                            <span class="clear"></span>
-                        </div>
-                    </div>
-                    <div class="tooltip-extension ">
-                        <div class="flavor">Note on last exercise.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>`);
+        var newElement = `<li>
+                                <div class="ui-tooltip" style="left: 614.5px; top: 510px; display: block;">
+                                    <div class="tooltip-content">
+                                        <div class="d3-tooltip d3-tooltip-item">
+                                            <div class="tooltip-head ${epicnessLevel}">
+                                                <h3 class="${epicLevel}">${stats.txid}</h3>
+                                            </div>
+                                            <div class="tooltip-body effect-bg effect-bg-cold">
+                                                <div class="d3-item-properties">
+                                                    <ul class="item-itemset">
+                                                        <li class="item-itemset-name">
+                                                            <span class="d3-color-red">
+                                                                Health: <a>${stats.health}</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-blue">
+                                                                Mana: <a>${stats.mana}</a>
+                                                            </span>
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-gray">
+                                                                Agility: <a>${stats.agility}</a>
+                                                            </span>                                                     
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-orange">
+                                                                Stamina: <a>${stats.stamina}</a>
+                                                            </span> 
+                                                        </li>
+                                                        <span class="clear"></span>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-red">
+                                                                Critical Strike: <a>${stats.critical}%</a>
+                                                            </span> 
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-yellow">
+                                                                Attack Speed: <a>${stats.attackSpeed}%</a>
+                                                            </span> 
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-cyan" style="color: white">
+                                                                Mastery: <a>${stats.mastery}%</a>
+                                                            </span> 
+                                                        </li>
+                                                        <li class="item-itemset-piece indent">
+                                                            <span class="d3-color-green">
+                                                                Versatility: <a>${stats.versatility}%</a>
+                                                            </span> 
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="tooltip-extension ">
+                                                <div class="flavor">Generation of ${stats.gen}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>`;
+        $('.heroes:eq(' + page + ')').append(newElement);
     }
 
-    function populateStats(stats) {
+    function populateStats(hero) {
         $rootScope.safeApply(() => {
-            $scope.stats = stats
+            $scope.hero = hero
         });
     }
 
