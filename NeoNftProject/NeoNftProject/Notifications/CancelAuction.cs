@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace NeoNftProject.Notifications
 {
-	public class TransferNotification
+	public class CancelAuction
 	{
-
-		public byte[] From { get; set; }
-
-		public byte[] To { get; set; }
+		public byte[] TokenOwner { get; set; }
 
 		public BigInteger TokenId { get; set; }
+
 	}
 }

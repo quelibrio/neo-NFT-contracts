@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace NeoNftProject.Notifications
 {
-	public class TransferNotification
+	public class CanBreedWithByIdNotification
 	{
+		public BigInteger MotherId { get; set; }
 
-		public byte[] From { get; set; }
-
-		public byte[] To { get; set; }
-
-		public BigInteger TokenId { get; set; }
+		public BigInteger FatherId { get; set; }
 	}
 }
