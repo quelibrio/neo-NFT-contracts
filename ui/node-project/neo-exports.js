@@ -33980,6 +33980,12 @@ var _require = require('@cityofzion/neon-js'),
 
 module.exports.getRequest = function (operation, args, configOverride) {
   var useConfig = configOverride || config;
+
+  if (!useConfig.account.address) //when storing in json usually the configOverride needs to restore the account
+    {
+      useConfig.account = Neon.create.account(useConfig.account._WIF);
+    }
+
   var hash = useConfig.scriptHash;
   var script = Neon.create.script({
     scriptHash: hash,
