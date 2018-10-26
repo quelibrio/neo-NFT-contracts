@@ -1,54 +1,6 @@
-angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootScope, nftService) {
+angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootScope, nftService, $compile) {
 
-    $('.royalSlider').royalSlider({
-        controlNavigation: 'bullets',
-        keyboardNavEnabled: true,
-        arrowsNav: true,
-        arrowsNavAutoHide: true,
-        controlsInside: true,
-        navigateByClick: false,
-        loop: true,
-        autoPlay: {
-            enabled: false,
-            pauseOnHover: true,
-            delay: 3000,
-            stopAtAction: false
-        }
-    });
-
-    function sliderOnChange(e) {
-        rewind(e.value);
-    }
-
-    function sliderTileOnSlide(e) {
-        speed(e.value / 100);
-    }
-
-    $("#slider").kendoSlider({
-        increaseButtonTitle: "Right",
-        decreaseButtonTitle: "Left",
-        change: sliderOnChange,
-        value: 1,
-        min: 1,
-        max: 20,
-        smallStep: 1,
-        largeStep: 3,
-        showButtons: false,
-    }).data("kendoSlider");
-
-    $("#sliderTile").kendoSlider({
-        increaseButtonTitle: "Speed Up",
-        decreaseButtonTitle: "Speed down",
-        slide: sliderTileOnSlide,
-        value: 100,
-        min: 60,
-        max: 140,
-        smallStep: 20,
-        largeStep: 40,
-        showButtons: true
-    }).data("kendoSlider1");
-
-    $scope.owner = 'ASP3X76d9JunQosUds3npubiDsSpm3RMXF';
+    $scope.owner = 'AK2nJJpJr6o664CWJKi1QRXjqeic2zRp8y';
 
     $scope.generate = () => {
         nftService.mintToken(
@@ -68,12 +20,19 @@ angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootSco
     };
 
     $scope.getCharacterCount = () => {
-        window.sc.get.invoke('totalSupply', [otherAddress.value]).then(function (result) {
-            $("#nextCommand").text(result[0].value);
-            console.log(JSON.stringify(result[0].value))
+        nftService.balanceOf($scope).then((count) => {
+            $("#output").html(count);
+            console.log(JSON.stringify(count))
         }).catch((err) => alert(JSON.stringify(err)));
     };
 
+    $scope.getOwner = (tokenId) => {
+            nftService.ownerOf({tokenId}).then($("#output").html.bind($("#output")));
+    };
+
+    $scope.tokensOfOwner = () => {
+        nftService.tokensOfOwner({owner: $scope.owner}).then($("#output").html.bind($("#output")));
+    };
 
     function generateCharStats(txid) {
         let chunks = chunkSubstr(txid, 8);
@@ -122,11 +81,11 @@ angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootSco
         if (heroes % 4 == 0) {
             page = page + 1
         }
-        var newElement = `<li>
+        var newElement = $compile(`<li>
                                 <div class="ui-tooltip" style="left: 614.5px; top: 510px; display: block;">
                                     <div class="tooltip-content">
                                         <div class="d3-tooltip d3-tooltip-item">
-                                            <div class="tooltip-head ${epicnessLevel}">
+                                            <div class="tooltip-head ${epicnessLevel}" ng-click="getOwner('${stats.txid}')">
                                                 <h3 class="${epicLevel}">${stats.txid}</h3>
                                             </div>
                                             <div class="tooltip-body effect-bg effect-bg-cold">
@@ -183,7 +142,7 @@ angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootSco
                                         </div>
                                     </div>
                                 </div>
-                            </li>`;
+                            </li>`)($scope);
         $('.heroes:eq(' + page + ')').append(newElement);
     }
 
@@ -212,4 +171,53 @@ angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootSco
         var x = Math.sin(seed) * 10000;
         return x - Math.floor(x)
     }
+
+    $('.royalSlider').royalSlider({
+        controlNavigation: 'bullets',
+        keyboardNavEnabled: true,
+        arrowsNav: true,
+        arrowsNavAutoHide: true,
+        controlsInside: true,
+        navigateByClick: false,
+        loop: true,
+        autoPlay: {
+            enabled: false,
+            pauseOnHover: true,
+            delay: 3000,
+            stopAtAction: false
+        }
+    });
+
+    function sliderOnChange(e) {
+        rewind(e.value);
+    }
+
+    function sliderTileOnSlide(e) {
+        speed(e.value / 100);
+    }
+
+    $("#slider").kendoSlider({
+        increaseButtonTitle: "Right",
+        decreaseButtonTitle: "Left",
+        change: sliderOnChange,
+        value: 1,
+        min: 1,
+        max: 20,
+        smallStep: 1,
+        largeStep: 3,
+        showButtons: false,
+    }).data("kendoSlider");
+
+    $("#sliderTile").kendoSlider({
+        increaseButtonTitle: "Speed Up",
+        decreaseButtonTitle: "Speed down",
+        slide: sliderTileOnSlide,
+        value: 100,
+        min: 60,
+        max: 140,
+        smallStep: 20,
+        largeStep: 40,
+        showButtons: true
+    }).data("kendoSlider1");
+
 });

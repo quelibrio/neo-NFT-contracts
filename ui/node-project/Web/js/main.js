@@ -117,7 +117,7 @@ function previous(){
             "1111111111111".hexEncode(), 
             otherAddress.value])
         .then(function(result) {
-        $("#nextCommand").text(result);
+        $("#output").text(result);
         txid = result.response.txid
         
         generateCharStats(txid)
@@ -126,7 +126,7 @@ function previous(){
 
 function next() {
     window.sc.get.invoke('totalSupply', [otherAddress.value]).then(function(result) {
-        $("#nextCommand").text(result[0].value);
+        $("#output").text(result[0].value);
         console.log(JSON.stringify(result[0].value))
     });
 }
@@ -266,23 +266,23 @@ function chunkSubstr(str, size) {
 }
 
 function stop() {
-    $("#nextCommand").text("stop");
+    $("#output").text("stop");
     $("#resume").show();
     $("#stop").hide();
 }
 
 function resume() {
-    $("#nextCommand").text("resume");
+    $("#output").text("resume");
     $("#resume").hide();
     $("#stop").show();
 }
 
 function rewind(x) {
-    $("#nextCommand").text("rewind " + x);
+    $("#output").text("rewind " + x);
 }
 
 function speed(x) {
-    $("#nextCommand").text("speed " + x);
+    $("#output").text("speed " + x);
 }
 
 function testMethod(arg) {
@@ -293,10 +293,10 @@ function testMethod(arg) {
     var obj = swfobject.getObjectById("unityPlayer");
     if (obj) {
         $('#count').text(count);
-        var command = $("#nextCommand").text();
+        var command = $("#output").text();
 
         obj.callFromJavascript(command);
-        $("#nextCommand").text("");
+        $("#output").text("");
 
         count++;
     }

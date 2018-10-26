@@ -6,27 +6,30 @@
                 <div class="wrapperSlider">
                     <input id="slider" class="balSlider" value="0"/>
                 </div>
+                <div class="col-md-3">
+                    <input id="sliderTile" class="balSliderTile" value="0"/>
+                </div>
+                <label class="col-md-1">Strength: <input ng-model="strength"/></label>
+                <label class="col-md-1">Power: <input ng-model="power"/></label>
+                <label class="col-md-1">Agile: <input ng-model="agile"/></label>
+                <label class="col-md-1">Speed: <input ng-model="speed"/></label>
+                <label class="col-md-1">Gen: <input ng-model="gen"/></label>
+                <button class="col-md-2 button large success" ng-click="generate()">
+                    Generate Gen0 Character
+                </button>
+                <button id="resume" class="col-md-2 button large success" ng-click="battle()">
+                    <i class="icon-play"></i>
+                    Battle
+                </button>
+                <button class="col-md-2 button large success" ng-click="getCharacterCount()">
+                    Get Character Count
+                </button>
+                <button class="col-md-2 button large success" ng-click="tokensOfOwner()">
+                    Get tokens of owner
+                </button>
             </div>
         </div>
         <div class="row rowMargin">
-            <div class="col-md-3">
-                <input id="sliderTile" class="balSliderTile" value="0"/>
-            </div>
-            <label class="col-md-1">Strength: <input ng-model="strength"/></label>
-            <label class="col-md-1">Power: <input ng-model="power"/></label>
-            <label class="col-md-1">Agile: <input ng-model="agile"/></label>
-            <label class="col-md-1">Speed: <input ng-model="speed"/></label>
-            <label class="col-md-1">Gen: <input ng-model="gen"/></label>
-            <button class="col-md-2 button large success" ng-click="generate()">
-                Generate Gen0 Character
-            </button>
-            <button id="resume" class="col-md-2 button large success" ng-click="battle()">
-                <i class="icon-play"></i>
-                Battle
-            </button>
-            <button class="col-md-2 button large success" ng-click="getCharacterCount()">
-                Get Character Count
-            </button>
             <div class="col-md-8">
                 <div id="output">
 

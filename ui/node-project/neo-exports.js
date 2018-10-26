@@ -2,8 +2,8 @@
 "use strict";
 
 module.exports = {
-  scriptHash: '2411266adc4e5636e694e2ff589fe7bc3ceadf3e',
-  marketHash: '158a81a63de34c9601afcf221efdd3041a1ae17d',
+  scriptHash: 'af10ac5cbea7dafc328a57d1039fd0331aad31bf',
+  marketHash: 'b8757a57e7e11e3d45a1e5554c03891b62fb6e54',
   txSample: '05418e900279d36a9e484060a04769bf69992058cf6b8cd7c81862f960d08e0e'
 };
 
