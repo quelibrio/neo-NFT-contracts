@@ -1,0 +1,200 @@
+
+GET /api/auction
+returns array of auctions -> 
+[{"id":1,"startDate":"2018-10-24T19:20:00.89","endDate":"2018-10-24T20:40:00.89","currentPrice":1000.20,"startPrice":1000.20,"endPrice":0.00,"duration":80,"tokenId":1,"addressId":2,"isActive":1,"address":null,"token":null}]
+
+POST /api/auction// create
+Body:
+{
+	"startDate":"2018-10-24 19:20:00.890000",
+	"endDate":"2018-10-24 20:40:00.890000",
+	"startPrice":1000.20,
+	"tokenId":1,
+	"addressId":2
+}
+
+Response 
+
+id of the auction
+1
+
+PATCH /api/auction// update
+Body:
+{
+	"auctionId":1,
+	"currentPrice": 2000,
+	"endPrice": 2000,
+	"isSold": true
+}
+
+Response:
+updated auction object
+{
+    "id": 1,
+    
+"startDate": "2018-10-24T19:20:00.89",
+    
+"endDate": "2018-10-24T20:40:00.89",
+   
+ "currentPrice": 2000,
+    
+"startPrice": 1000.2,
+   
+ "endPrice": 2000,
+    
+"duration": 80,
+    
+"tokenId": 1,
+    
+"addressId": 2,
+    
+"isActive": 0,
+    
+"address": null,
+    
+"token": nul
+l
+}
+
+POST api/address // create address
+Body:
+{
+	"address":"test3"
+}
+
+Response:
+id of the address
+1
+
+POST api/token
+Body:
+{
+    "nickname": "SuperPalavVVVVVVVV",
+    "txId": "51c2d176b7e1be634c94525f5fbd1fbe",
+    "health": 110,
+    "mana": 100,
+    "agility": 200,
+    "stamina": 100,
+    "criticalStrike": 1,
+    "attackSpeed": 5,
+    "mastery": 10,
+    "versatility": 5,
+    "imageUrl": "https://tylerhollywood.files.wordpress.com/2010/01/hero.jpg",
+    "addressId": 1,
+    "experience": 100,
+    "level": 50,
+    "isBreeding": false,
+    "isBrawling": false
+}
+
+Response:
+id of the token
+1
+
+PATCH api/token
+{
+    
+"id": 1,
+    
+"nickname": "SuperPalavVVVVVVVV",
+    
+"txId": "51c2d176b7e1be634c94525f5fbd1fbe",
+    
+"health": 110,
+    
+"mana": 100,
+    
+"agility": 200,
+    
+"stamina": 100,
+    
+"criticalStrike": 1,
+    
+"attackSpeed": 5,
+    
+"mastery": 10,
+    
+"versatility": 5,
+    
+"imageUrl": "https://tylerhollywood.files.wordpress.com/2010/01/hero.jpg",
+    
+"addressId": 1,
+    
+"experience": 100,
+    
+"level": 50,
+    
+"isBreeding": false,
+    
+"isBrawling": false}
+
+Response:
+updated token object
+
+{
+    "id": 1,
+    "nickname": "SuperPalavVVVVVVVV",
+    "txId": "51c2d176b7e1be634c94525f5fbd1fbe",
+    "health": 110,
+    "mana": 100,
+    "agility": 200,
+    "stamina": 100,
+    "criticalStrike": 1,
+    "attackSpeed": 5,
+    "mastery": 10,
+    "versatility": 5,
+    "imageUrl": "https://tylerhollywood.files.wordpress.com/2010/01/hero.jpg",
+    "addressId": 1,
+    "experience": 100,
+    "level": 50,
+    "isBreeding": false,
+    "isBrawling": false,
+    "address": null,
+    "auctions": []
+}
+
+GET /api/ownedTokens?addressId={value}
+
+Response:
+array of tokens owned by this address 
+[{
+		"id": 1,
+		"nickname": "SuperPalavVVVVVVVV",
+		"txId": "51c2d176b7e1be634c94525f5fbd1fbe",
+		"health": 110,
+		"mana": 100,
+		"agility": 200,
+		"stamina": 100,
+		"criticalStrike": 1,
+		"attackSpeed": 5,
+		"mastery": 10,
+		"versatility": 5,
+		"imageUrl": "https://tylerhollywood.files.wordpress.com/2010/01/hero.jpg",
+		"addressId": 1,
+		"experience": 100,
+		"level": 50,
+		"isBreeding": false,
+		"isBrawling": false,
+		"address": null,
+		"auctions": []
+	}
+]
+
+
+POST /api/transaction // create
+Body:
+{
+	"SenderId":1,
+	"ReceiverId":2,
+	"tokenId":1
+}
+
+Response
+id of the transaction
+1
+
+GET height // get the latest block of the network (used to test if you are connected to the private network)
+2014
+
+
+
