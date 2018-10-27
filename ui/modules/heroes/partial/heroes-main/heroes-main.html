@@ -1,159 +1,44 @@
 <div ng-controller="HeroesMainCtrl">
     <div class="container metro content">
         <div class="row gPlayer rowMargin center-cropped " style="background-image: url('/css/images/demonhunter-bloodelf-female.jpg');">
-            <div class="col-md-12 wrapper">
-                <hero-stats stats="stats"></hero-stats>
+            <div class="row rowMargin">
+                <hero-stats stats="hero"></hero-stats>
                 <div class="wrapperSlider">
                     <input id="slider" class="balSlider" value="0"/>
                 </div>
+                <div class="col-md-3">
+                    <input id="sliderTile" class="balSliderTile" value="0"/>
+                </div>
+                <label class="col-md-1">Strength: <input ng-model="strength"/></label>
+                <label class="col-md-1">Power: <input ng-model="power"/></label>
+                <label class="col-md-1">Agile: <input ng-model="agile"/></label>
+                <label class="col-md-1">Speed: <input ng-model="speed"/></label>
+                <label class="col-md-1">Gen: <input ng-model="gen"/></label>
+                <button class="col-md-2 button large success" ng-click="generate()">
+                    Generate Gen0 Character
+                </button>
             </div>
-        </div>
-        <div class="row rowMargin">
-            <div class="col-md-3">
-                <input id="sliderTile" class="balSliderTile" value="0"/>
-            </div>
-            <button class="col-md-2 button large success" ng-click="generate()">
-                Generate Gen0 Character
-            </button>
-            <button id="resume" class="col-md-2 button large success" ng-click="battle()">
-                <i class="icon-play"></i>
-                Battle
-            </button>
-            <button class="col-md-2 button large success" ng-click="getCharacterCount()">
-                Get Character Count
-            </button>
-            <div class="col-md-8">
-                <div id="output">
-
+            <div class="row rowMargin">
+                <button id="resume" class="col-md-2 button large success" ng-click="battle()">
+                    <i class="icon-play"></i>
+                    Battle
+                </button>
+                <button class="col-md-2 button large success" ng-click="getCharacterCount()">
+                    Get Character Count
+                </button>
+                <button class="col-md-2 button large success" ng-click="tokensOfOwner()">
+                    Get tokens of owner
+                </button>
+                <div class="row rowMargin">
+                    <div class="col-md-4" id="nextCommand"></div>
                 </div>
             </div>
+        </div>
+        <div class="row rowMargin" id="output">
 
-            <!--<button class="col-md-1 button large success" onclick="rewind(15)">Rewind</button>-->
         </div>
         <div class="row rowMargin">
-            <div class="col-md-4" id="nextCommand"></div>
-            <div class="col-md-4" id="count"></div>
-        </div>
-        <div class="row rowMargin">
-            <div class="col-md-12">
-                <div class="royalSlider rsDefault" style="width: 960px; margin: 0 auto;">
-                    <div class="rsSlide sliderImages" id="allheroes">
-                        <ul class="heroes">
-                            <li>
-                                <div class="ui-tooltip">
-                                    <div class="tooltip-content">
-                                        <div class="d3-tooltip d3-tooltip-item">
-                                            <div class="tooltip-head tooltip-head-green">
-                                                <h3 class="d3-color-green">Feet</h3>
-                                            </div>
-                                            <div class="tooltip-body effect-bg effect-bg-holy">
-                                                <div class="d3-item-properties">
-                                                    <ul class="item-type-right">
-                                                        <li class="item-slot">Foot up</li>
-                                                    </ul>
-                                                    <ul class="item-itemset">
-                                                        <li class="item-itemset-name">
-                                                            <span onclick="rewind(0)" class="d3-color-green">
-                                                                <a>Foot down</a>
-                                                            </span>
-                                                        </li>
-                                                        <li class="item-itemset-piece indent">
-                                                            <span class="d3-color-gray">
-                                                                <a>Foot in </a>
-                                                            </span>
-                                                        </li>
-                                                        <li class="item-itemset-piece indent">
-                                                            <span class="d3-color-gray">Foot out</span>
-                                                        </li>
-                                                        <li class="item-itemset-piece indent">
-                                                            <span class="d3-color-gray">Circlesin both directions</span>
-                                                        </li>
-                                                        <li class="item-itemset-piece indent">
-                                                            <span class="d3-color-gray">Leg circles in both directions</span>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="item-before-effects"></div>
-                                                    <span class="clear"></span>
-                                                </div>
-                                            </div>
-                                            <div class="tooltip-extension ">
-                                                <div class="flavor">Note on last exercise.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="ui-tooltip" style="left: 614.5px; top: 510px; display: block;">
-                                    <div class="tooltip-content">
-                                        <div class="d3-tooltip d3-tooltip-item">
-                                            <div class="tooltip-head tooltip-head-orange">
-                                                <h3 class="d3-color-orange">Hands and fingers</h3>
-                                            </div>
-                                            <div class="tooltip-body effect-bg effect-bg-cold">
-                                                <div class="d3-item-properties">
-                                                    <ul class="item-itemset">
-                                                        <li class="item-itemset-name">
-                                                            <span class="d3-color-green">
-                                                                <a>Fingers in</a>
-                                                            </span>
-                                                        </li>
-                                                        <li class="item-itemset-piece indent">
-                                                            <span class="d3-color-gray">
-                                                                <a>Fingers out</a>
-                                                            </span>
-                                                        </li>
-                                                        <li class="item-itemset-piece indent">
-
-                                                            <span class="d3-color-gray">Touch fingers</span>
-                                                        </li>
-                                                        <li class="item-itemset-piece indent">
-                                                            <span class="d3-color-gray">Palms up and backwards</span>
-                                                        </li>
-                                                    </ul>
-                                                    <ul class="item-type">
-                                                        <li>
-                                                            <span class="d3-color-orange">8 repetitions</span>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="item-before-effects"></div>
-                                                    <span class="item-unique-equipped">Good tempe</span>
-                                                    <span class="clear"></span>
-                                                </div>
-                                            </div>
-
-                                            <div class="tooltip-extension ">
-                                                <div class="flavor">Note changes in you while exercising.</div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="rsSlide sliderImages">
-                        <ul class="heroes">
-                        </ul>
-                    </div>
-                    <div class="rsSlide sliderImages">
-                        <ul class="heroes">
-                        </ul>
-                    </div>
-                    <div class="rsSlide sliderImages">
-                        <ul class="heroes">
-                        </ul>
-                    </div>
-                    <div class="rsSlide sliderImages">
-                        <ul class="heroes">
-                        </ul>
-                    </div>
-                    <div class="rsSlide sliderImages">
-                        <ul class="heroes">
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <heroes-list heroes="heroes"></heroes-list>
         </div>
     </div>
 </div>

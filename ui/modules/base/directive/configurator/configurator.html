@@ -1,0 +1,32 @@
+<div>
+    <div class="row row-la">
+        <button ng-click="showConfigurator = !showConfigurator;" class="btn btn-primary">Show configurator</button>
+        <form class="col-lg-12" ng-show="showConfigurator">
+            <div class="form-group">
+                <label>ScriptHash
+                <input type="text" class="form-control" style="width: 400px" ng-model="config.scriptHash">
+                </label>
+            </div>
+            <div class="form-group">
+                <label>MarketplaceHash
+                    <input type="text" class="form-control" style="width: 400px" ng-model="config.marketHash">
+                </label>
+            </div>
+            <div class="form-check">
+                <label>neoscan url
+                    <input type="text" class="form-control" style="width: 400px" ng-model="config.neoscanUrl">
+                </label>
+            </div>
+            <div class="form-check">
+                <label>network url
+                    <input type="text" class="form-control" style="width: 400px" ng-model="config.networkUrl">
+                </label>
+            </div>
+            <button type="submit" ng-click="save()" class="btn btn fa fa-save">Save{{hasPending ? ' *' : ''}}</button>
+            <button type="submit" ng-click="reset()" class="btn fa fa-anchor">Reset</button>
+            <button type="submit" ng-click="undo()" class="btn fa fa-undo">Undo</button>
+            <hr/>
+        </form>
+    </div>
+
+</div>

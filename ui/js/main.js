@@ -82,23 +82,23 @@ function stopMusic(){
 
 
 function stop() {
-    $("#nextCommand").text("stop");
+    $("#output").text("stop");
     $("#resume").show();
     $("#stop").hide();
 }
 
 function resume() {
-    $("#nextCommand").text("resume");
+    $("#output").text("resume");
     $("#resume").hide();
     $("#stop").show();
 }
 
 function rewind(x) {
-    $("#nextCommand").text("rewind " + x);
+    $("#output").text("rewind " + x);
 }
 
 function speed(x) {
-    $("#nextCommand").text("speed " + x);
+    $("#output").text("speed " + x);
 }
 
 function testMethod(arg) {
@@ -109,10 +109,10 @@ function testMethod(arg) {
     var obj = swfobject.getObjectById("unityPlayer");
     if (obj) {
         $('#count').text(count);
-        var command = $("#nextCommand").text();
+        var command = $("#output").text();
 
         obj.callFromJavascript(command);
-        $("#nextCommand").text("");
+        $("#output").text("");
 
         count++;
     }

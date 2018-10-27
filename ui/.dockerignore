@@ -13,6 +13,3 @@ webpack/dlls/*.json
 # api/**/*.nedb
 *.report.html
 coverage/
-Dockerfile
-package.json
-bower.json

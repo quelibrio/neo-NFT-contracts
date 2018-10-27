@@ -4,10 +4,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
             </button>
-
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -15,6 +12,9 @@
                 <li ng-repeat="section in sections" ng-class="{active: $state.includes(section.base)}"><a
                     ui-sref="{{section.sref}}">{{ section.label }}</a></li>
             </ul>
+            <span class="nav navbar-expand-lg">
+                <configurator></configurator>
+            </span>
         </div><!--/.nav-collapse -->
     </div>
 </div>

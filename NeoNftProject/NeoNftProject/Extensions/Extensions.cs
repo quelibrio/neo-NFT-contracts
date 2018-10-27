@@ -13,8 +13,8 @@ namespace NeoNftProject.Extensions
 {
 	public static class Extensions
 	{
-		public static string GetNotificationType(this NotifyEventArgs args) =>
-			(args.State as Neo.VM.Types.Array)[0].GetByteArray().ToHexString().HexStringToString();
+        public static string GetNotificationType(this NotifyEventArgs args) => 
+            (args.State as Neo.VM.Types.Array)[0].GetByteArray().ToHexString().HexStringToString();
 
 		public static T GetNotification<T>(this NotifyEventArgs args) =>
 			(args.State as Neo.VM.Types.Array).Skip(1).CreateObject<T>();
