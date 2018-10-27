@@ -2,6 +2,10 @@ ui/dist/
 ui/temp/
 ui/**/node_modules/
 ui/bower_components/
+NeoNftProject/NeoNftProject/ChainTestNet/*
+NeoNftProject/NeoNftProject/NeoNftProject.csproj.user
+NeoNftProject/NeoNftProject/bin/*
+NeoNftProject/NeoNftProject/obj/*
 
 BreedBrawlSampleLogic/BreedBrawlSampleLogic/obj/project.assets.json
 BreedBrawlSampleLogic/BreedBrawlSampleLogic/obj/Debug/netcoreapp2.0/BreedBrawlSampleLogic.pdb
