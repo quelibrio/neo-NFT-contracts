@@ -1,10 +1,12 @@
 <div>
     <div class="row row-la">
-        <button ng-click="showConfigurator = !showConfigurator;" class="btn btn-primary">Show configurator</button>
+        <button ng-click="showConfigurator = !showConfigurator;"
+                class="btn btn-primary">{{showConfigurator ? 'Hide': 'Show'}} configurator
+        </button>
         <form class="col-lg-12" ng-show="showConfigurator">
             <div class="form-group">
                 <label>ScriptHash
-                <input type="text" class="form-control" style="width: 400px" ng-model="config.scriptHash">
+                    <input type="text" class="form-control" style="width: 400px" ng-model="config.scriptHash">
                 </label>
             </div>
             <div class="form-group">
@@ -20,6 +22,11 @@
             <div class="form-check">
                 <label>network url
                     <input type="text" class="form-control" style="width: 400px" ng-model="config.networkUrl">
+                </label>
+            </div>
+            <div class="form-check">
+                <label>my address
+                    <input type="text" class="form-control" style="width: 400px" ng-model="config.myAddress">
                 </label>
             </div>
             <button type="submit" ng-click="save()" class="btn btn fa fa-save">Save{{hasPending ? ' *' : ''}}</button>

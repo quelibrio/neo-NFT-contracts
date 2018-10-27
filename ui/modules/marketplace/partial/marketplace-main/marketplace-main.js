@@ -1,11 +1,9 @@
-angular.module('marketplace').controller('MarketplaceMainCtrl', function ($scope, $rootScope, auctionService, marketplaceService) {
-    $scope.address = 'AK2nJJpJr6o664CWJKi1QRXjqeic2zRp8y';
+angular.module('marketplace').controller('MarketplaceMainCtrl', function ($scope, $rootScope, configService, auctionService, marketplaceService) {
+    $scope.myAddress = configService.get().myAddress;
     $scope.reload = () => {
-        auctionService.get().then((items) => $scope.items = items);
-    }
-    $scope.reloadMine = () => {
-        auctionService.myTokens($scope.address).then((items) => $scope.heroes = items);
-    }
+        auctionService.get().then((items) => $rootScope.safeApply(() => $scope.items = items));
+    };
+
     $scope.createSaleAuction = async (create) => {
         $scope.createResult = null;
         return marketplaceService.createSaleAuction({owner: $scope.address, ...create})
@@ -15,5 +13,4 @@ angular.module('marketplace').controller('MarketplaceMainCtrl', function ($scope
             }));
     }
     $scope.reload();
-    $scope.reloadMine();
 });
