@@ -8,21 +8,19 @@ namespace NeoNftProject.Notifications
 {
 	public class MintTokenNotification
 	{
-        //BigInteger tokenId, byte[] owner, BigInteger agility, BigInteger attackSpeed, BigInteger criticalStrike, BigInteger nextActionAt,
-        //    BigInteger cloneWithId, BigInteger birthTime, BigInteger matronId, BigInteger sireId, BigInteger generation
+        //byte[] owner, byte health,byte mana, byte agility,
+        //byte stamina, byte criticalStrike, byte attackSpeed, byte versatility, byte mastery, BigInteger level
 
-        public BigInteger TokenId { get; set; }
+        public int TokenId { get; set; }
         public byte[] Owner { get; set; }
-        public BigInteger Agility { get; set; }
-        public BigInteger AttackSpeed { get; set; }
-        public BigInteger CriticalStrike { get; set; }
-        public BigInteger NextActionAt { get; set; }
-        public BigInteger CloneWithId { get; set; }
-        public BigInteger BirthTime { get; set; }
-        public BigInteger MatronId { get; set; }
-        public BigInteger SireId { get; set; }
-        public BigInteger Generation { get; set; }
-
-
+        public int Health { get; set; }
+        public int Mana { get; set; }
+        public int Agility { get; set; }
+        public int Stamina { get; set; }
+        public int CriticalStrike { get; set; }
+        public int AttackSpeed { get; set; }
+        public int Versatility { get; set; }
+        public int Mastery { get; set; }
+        public int Level { get; set; }
     }
 }

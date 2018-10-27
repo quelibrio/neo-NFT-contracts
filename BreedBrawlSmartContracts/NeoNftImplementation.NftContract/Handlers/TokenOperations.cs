@@ -74,20 +74,25 @@ namespace NeoNftImplementation.NftContract.Handlers
             }
             else if (operation == "mintToken")
             {
-                if (args.Length != 6)
+                if (args.Length != 10)
                 {
                     result.Value = 0;
                     return result;
                 }
 
-                byte[] owner = (byte[])args[0];
-                byte strength = (byte)args[1];
-                byte power = (byte)args[2];
-                byte agile = (byte)args[3];
-                byte speed = (byte)args[4];
-                BigInteger generation = (int)args[5];
+                byte[] tokenOwner = (byte[])args[0];
+                byte health = (byte)args[1];
+                byte mana = (byte)args[2];
+                byte agility = (byte)args[3];
+                byte stamina = (byte)args[4];
+                byte criticalStrike = (byte)args[5];
+                byte attackSpeed = (byte)args[6];
+                byte versatility = (byte)args[7];
+                byte mastery = (byte)args[8];
+                BigInteger level = (byte)args[9];
 
-                result.Value = MintToken(owner, strength, power, agile, speed, generation);
+                result.Value = MintToken(tokenOwner, health, mana, agility, stamina,
+                    criticalStrike,attackSpeed,versatility,mastery,level);
             }
             else if (operation == "approve")
             {
@@ -289,7 +294,9 @@ namespace NeoNftImplementation.NftContract.Handlers
         /// Release Promotion Gladiator
         /// </summary>
         private static BigInteger MintToken(
-            byte[] tokenOwner, byte strength, byte power, byte agile, byte speed, BigInteger generation) =>
-                NepOperations.CreateToken(tokenOwner, strength, power, agile, speed, generation);        
+            byte[] owner, byte health, byte mana, byte agility,
+            byte stamina, byte criticalStrike, byte attackSpeed, byte versatility, byte mastery, BigInteger level) =>
+                NepOperations.CreateToken(owner, health,  mana,  agility,
+                    stamina,  criticalStrike,  attackSpeed,  versatility,  mastery, level);        
     }
 }
