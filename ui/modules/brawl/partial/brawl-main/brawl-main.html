@@ -1,4 +1,6 @@
 <div ng-controller="BrawlMainCtrl">
-    <button ng-click="reload()">Reload</button>
-    <my-heroes-list address="myAddress" reload="reload"></my-heroes-list>
+    <button ng-click="reload();reload1()">Reload</button>
+    <my-heroes-list address="myAddress" reload="reload" ng-model="hero1"></my-heroes-list>
+    <my-heroes-list address="myAddress" reload="reload1" ng-model="hero2"></my-heroes-list>
+    <fight-demo hero1="hero1" hero2="hero2"></fight-demo>
 </div>

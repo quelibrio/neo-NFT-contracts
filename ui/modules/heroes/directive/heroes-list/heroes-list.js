@@ -3,13 +3,17 @@ angular.module('heroes').directive('heroesList', function ($compile, nftService)
         restrict: 'E',
         replace: true,
         scope: {
-            heroes: '='
+            heroes: '=',
+            onSelect: '='
         },
         templateUrl: 'modules/heroes/directive/heroes-list/heroes-list.html',
-        link: function (scope, element, attrs, fn) {
+        require: '?ngModel',
+        link: function (scope, element, attrs, ngModel) {
 
-            scope.getOwner = (tokenId) => {
-                nftService.ownerOf({tokenId}).then($("#output").html.bind($("#output")));
+            scope.select = (heroIndex) => {
+                let hero = scope.heroes[heroIndex - 1];
+                ngModel && ngModel.$setViewValue(hero); //set value of bound ng-model of the heroes-list directive
+                scope.onSelect && scope.onSelect(hero); //call onSelect if it has been attached
             };
 
             $(element).find('.royalSlider').royalSlider({
@@ -32,7 +36,7 @@ angular.module('heroes').directive('heroesList', function ($compile, nftService)
             heroes = 0;
             page = 0;
             scope.$watch('heroes', () => {
-                if (scope.heroes&&scope.heroes.length) {
+                if (scope.heroes && scope.heroes.length) {
                     populateCaroucell(_.last(scope.heroes));
                 }
             }, true);
@@ -76,8 +80,8 @@ angular.module('heroes').directive('heroesList', function ($compile, nftService)
                                 <div class="ui-tooltip" style="left: 614.5px; top: 510px; display: block;">
                                     <div class="tooltip-content">
                                         <div class="d3-tooltip d3-tooltip-item">
-                                            <div class="tooltip-head ${epicnessLevel}" ng-click="getOwner('${stats.txid}')">
-                                                <h3 class="${epicLevel}">${stats.txid}</h3>
+                                            <div class="tooltip-head ${epicnessLevel}" ng-click="select(${heroes})">
+                                                <h3 class="${epicLevel}">${stats.tokenId}</h3>
                                             </div>
                                             <div class="tooltip-body effect-bg effect-bg-cold">
                                                 <div class="d3-item-properties">

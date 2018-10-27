@@ -63,7 +63,7 @@ angular.module('marketplace').factory('auctionService', function ($http) {
         },
         myTokens(address) {
             let otherAddress = window.neo.getByteArrayAddress(address);
-            return $http.get(`${baseUrl}/ownedTokens?address=${otherAddress.value}`).then(response => response.result).then(() => [
+            return $http.get(`${baseUrl}/ownedTokens?address=${otherAddress.value}`).catch(err => console.log(err)).finally(response => response.result).then(() => [
                 {
                     "id": 1,
                     "nickname": "SuperPalavVVVVVVVV",

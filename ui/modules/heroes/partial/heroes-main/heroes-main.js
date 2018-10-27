@@ -21,6 +21,11 @@ angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootSco
         alert('Not implemented');
     };
 
+    /*bind to select event of heroes-list*/
+    $scope.selectHero = (hero) => {
+        nftService.ownerOf({tokenId: hero.txid}).then($("#output").html.bind($("#output")));
+    };
+
     $scope.getCharacterCount = () => {
         nftService.balanceOf($scope).then((count) => {
             $("#output").html(count);
