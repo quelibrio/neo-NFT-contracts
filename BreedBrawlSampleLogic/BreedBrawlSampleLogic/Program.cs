@@ -41,9 +41,9 @@ namespace BreedBrawlSampleLogic
 
         static void Main(string[] args)
         {
-            // bool winner = Brawl(P1, P2);
+             bool winner = Brawl(P1, P2);
             // Player P3 = Breed(P1, P2);
-            Player P4 = Mutate(P1, 50);
+            //Player P4 = Mutate(P1, 50);
         }
 
         //returns 0 player1 wins, 1 player2 wins
@@ -56,7 +56,7 @@ namespace BreedBrawlSampleLogic
                 damageP1 = criticalStrikeP1 ? (int)(damageP1 * 1.5) : damageP1;
 
                 bool criticalStrikeP2 = randP2.Next(100) > player2.criticalStrike;
-                int damageP2 = (player2.agility / 7) * (1 + player2.attackSpeed / 100) * (1 - player1.versatility / 100) - -(int)randP1.Next(player1.mastery);
+                int damageP2 = (player2.agility / 7) * (1 + player2.attackSpeed / 100) * (1 - player1.versatility / 100) - randP1.Next(player1.mastery);
                 damageP2 = criticalStrikeP2 ? (int)(damageP2 * 1.5) : damageP2;
 
                 Console.WriteLine("Player1 attacks for " + damageP1);
