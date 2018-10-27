@@ -12,11 +12,15 @@ angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootSco
         }).catch((err) => alert(JSON.stringify(err)));
     };
     $scope.heroes = [];
-    $scope.strength = 65;
-    $scope.agile = 55;
-    $scope.power = 85;
-    $scope.speed = 37;
-    $scope.gen = 0;
+    $scope.health = 65;
+    $scope.mana = 55;
+    $scope.agility = 75;
+    $scope.stamina = 150;
+    $scope.criticalStrike = 42;
+    $scope.attackSpeed = 32;
+    $scope.versatility = 37;
+    $scope.mastery = 37;
+    $scope.level = 0;
     $scope.battle = () => {
         alert('Not implemented');
     };
@@ -42,7 +46,7 @@ angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootSco
             attackSpeed: chunks[5],
             mastery: chunks[6],
             versatility: chunks[7],
-            gen: 0,
+            level: 0,
             txid
         };
         $scope.heroes.push(hero);

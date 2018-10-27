@@ -39,8 +39,19 @@ namespace NeoNftProject.Extensions
 						{
 							SetPropertyValue(property.Name, instance, BigInteger.Parse(valueAsString));
 						}
-					}
-					else if (property.PropertyType == typeof(byte[]))
+                    }
+                    else if (property.PropertyType == typeof(int))
+                    {
+                        var valueAsString = rawValue.ToHexString();
+                        var parsed = string.IsNullOrEmpty(valueAsString) ? 0 : Convert.ToInt32(valueAsString, 16);
+                        SetPropertyValue(property.Name, instance, parsed);
+
+                        //if (int.TryParse(valueAsString, out int defaultInt))
+                        //{
+                        //    SetPropertyValue(property.Name, instance, int.Parse(valueAsString ));
+                        //}
+                    }
+                    else if (property.PropertyType == typeof(byte[]))
 					{
 						SetPropertyValue(property.Name, instance, rawValue);
 					}

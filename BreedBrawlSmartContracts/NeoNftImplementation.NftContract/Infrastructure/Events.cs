@@ -16,14 +16,13 @@ namespace NeoNftImplementation.NftContract.Infrastructure
         public static event deleApproved Approved;
         public static void RaiseApproved(byte[] owner, byte[] approved, BigInteger tokenId) => Approved(owner, approved, tokenId);
 
-        public delegate void deleBirth(BigInteger tokenId, byte[] owner, BigInteger agility, BigInteger attackSpeed, BigInteger criticalStrike, BigInteger nextActionAt,
-            BigInteger cloneWithId, BigInteger birthTime, BigInteger matronId, BigInteger sireId, BigInteger generation);
+        public delegate void deleBirth(BigInteger tokenId, byte[] owner, BigInteger health, BigInteger mana, BigInteger agility, BigInteger stamina, BigInteger criticalStrike,
+            BigInteger attackSpeed, BigInteger versatility, BigInteger mastery, BigInteger level);
         [DisplayName("birth")]
         public static event deleBirth Birthed;
-        public static void RaiseBirthed(BigInteger tokenId, byte[] owner, BigInteger agility, BigInteger attackSpeed, BigInteger criticalStrike, BigInteger nextActionAt,
-            BigInteger cloneWithId, BigInteger birthTime, BigInteger matronId, BigInteger sireId, BigInteger generation) => Birthed(
-                tokenId, owner, agility, attackSpeed, criticalStrike, nextActionAt,
-                cloneWithId, birthTime, matronId, sireId, generation);
+        public static void RaiseBirthed(BigInteger tokenId,byte[] owner, BigInteger health, BigInteger mana, BigInteger agility, BigInteger stamina, BigInteger criticalStrike, 
+            BigInteger attackSpeed, BigInteger versatility, BigInteger mastery, BigInteger level) => Birthed(
+                tokenId, owner, health, mana, agility, stamina, criticalStrike, attackSpeed, versatility, mastery, level);
 
         public delegate void deleGladiatorCloned(byte[] owner, BigInteger motherId, BigInteger motherCd, BigInteger fatherId, BigInteger fatherCd);
         [DisplayName("gladiatorCloned")]

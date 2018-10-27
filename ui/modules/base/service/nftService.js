@@ -1,23 +1,42 @@
 angular.module('base').factory('nftService',function(configService) {
-
     var nftService = {
         mintToken({
             owner,
-            speed,
-            strength,
-            agile,
-            power,
-            gen
+            health,
+            mana,
+            agility,
+            stamina,
+            criticalStrike,
+            attackSpeed,
+            versatility,
+            mastery,
+            level
                   }) {
             let otherAddress = window.neo.getByteArrayAddress(owner);
             let address = otherAddress.value;
+			console.log([
+                address,
+                +health,
+                +mana,
+                +agility,
+                +stamina,
+                +criticalStrike,
+				+attackSpeed,
+                +versatility,
+                +mastery,
+                +level
+                ])
             return window.neo.call('mintToken', [
                 address,
-                +strength,
-                +power,
-                +speed,
-                +agile,
-                +gen
+                +health,
+                +mana,
+                +agility,
+                +stamina,
+                +criticalStrike,
+				+attackSpeed,
+                +versatility,
+                +mastery,
+                +level
                 ], configService.get()).then(result => result.response.txid);
         },
         balanceOf({

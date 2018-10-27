@@ -61,11 +61,27 @@ namespace NeoNftProject.Actors
                         else if (type == "birth")
                         {
                             var mintTokenNotification = notification.GetNotification<MintTokenNotification>();
-                            var token = new Token(); 
-                            token.Agility = (int)mintTokenNotification.Agility;
-                            token.AttackSpeed = (int)mintTokenNotification.AttackSpeed;
-                            token.CriticalStrike = (int)mintTokenNotification.CriticalStrike;
+                            var token = new Token();
+                            var owner = mintTokenNotification.Owner.ToHexString();
+                            token.Health = mintTokenNotification.Health;
+                            token.Mana = mintTokenNotification.Mana;
+                            token.Agility = mintTokenNotification.Agility;
+                            token.Stamina = mintTokenNotification.Stamina;
+                            token.CriticalStrike = mintTokenNotification.CriticalStrike;
+                            token.AttackSpeed = mintTokenNotification.AttackSpeed;
+                            token.Versatility = mintTokenNotification.Versatility;
+                            token.Mastery = mintTokenNotification.Mastery;
+                            token.Level = mintTokenNotification.Level;
+                            token.Experience = 0;
+                            var address = db.Addresses.FirstOrDefault(c =>  owner == c.AddressName);
+                            if (address == null)
+                            {
+                                address = new Data.Address();
+                                address.AddressName = owner;
+                                db.Add(address);
+                            }
 
+                            token.Address = address;
                             db.Add(token);
                             db.SaveChanges();
                         }

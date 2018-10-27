@@ -132,11 +132,15 @@ namespace NeoNftImplementation.NftContract.Handlers
             else if (operation == "createGenerationZeroFromAuction_app")
             {
                 byte[] tokenOwner = (byte[])args[0];
-                byte strength = (byte)args[1];
-                byte power = (byte)args[2];
-                byte agile = (byte)args[3];
-                byte speed = (byte)args[4];
-                BigInteger generation = (int)args[5];
+                byte health = (byte)args[1];
+                byte mana = (byte)args[2];
+                byte agility = (byte)args[3];
+                byte stamina = (byte)args[4];
+                byte criticalStrike = (byte)args[5];
+                byte attackSpeed = (byte)args[6];
+                byte versatility = (byte)args[7];
+                byte mastery = (byte)args[8];
+                BigInteger level = (byte)args[9];
 
                 byte[] marketAddress = DataAccess.GetMarketAddressAsBytes();
                 if (callingScript.AsBigInteger() != marketAddress.AsBigInteger())
@@ -144,8 +148,10 @@ namespace NeoNftImplementation.NftContract.Handlers
                     result.Value = false;
                     return result;
                 }
-
-                result.Value = NepOperations.CreateToken(tokenOwner, strength, power, agile, speed, generation);
+                // BigInteger tokenId,byte[] owner, BigInteger health, BigInteger mana, BigInteger agility, BigInteger stamina, BigInteger criticalStrike, 
+                //BigInteger attackSpeed, BigInteger versatility, BigInteger mastery, BigInteger level
+                result.Value = NepOperations.CreateToken(tokenOwner, health, mana, agility, stamina, 
+                    criticalStrike, attackSpeed, versatility, mastery,level);
             }
             else
             {
@@ -196,7 +202,7 @@ namespace NeoNftImplementation.NftContract.Handlers
             uint nowtime = Blockchain.GetHeader(Blockchain.GetHeight()).Timestamp;
             BigInteger cooldown = GetCooldown(cooldownLevel);
 
-            motherToken.IsPregnant = 1;
+            motherToken.IsBreeding = 1;
             motherToken.CloneWithId = fatherId;
             motherToken.CanBreedAfter = nowtime + cooldown;
 
@@ -250,7 +256,7 @@ namespace NeoNftImplementation.NftContract.Handlers
 
                     motherToken.CloneWithId = 0;
                     motherToken.CanBreedAfter = 0;
-                    motherToken.IsPregnant = 0;
+                    motherToken.IsBreeding = 0;
                     motherToken.CooldownLevel += 1;
                     DataAccess.SetToken(motherId.AsByteArray(), motherToken);
 
@@ -258,8 +264,11 @@ namespace NeoNftImplementation.NftContract.Handlers
                     fatherToken.CooldownLevel += 1;
                     DataAccess.SetToken(fatherId.AsByteArray(), fatherToken);
 
-                    Events.RaiseBirthed(tokenId.AsBigInteger(), token.Owner, token.IsPregnant, token.IsReady, token.CooldownLevel, token.CanBreedAfter,
-                        token.CloneWithId, token.BirthTime, token.MotherId, token.FatherId, token.Generation);
+                    //BigInteger tokenId,byte[] owner, BigInteger health, BigInteger mana, BigInteger agility, BigInteger stamina, BigInteger criticalStrike, 
+                    //BigInteger attackSpeed, BigInteger versatility, BigInteger mastery, BigInteger level
+
+                    Events.RaiseBirthed(tokenId.AsBigInteger(), token.Owner, token.Health, token.Mana, token.Agility, token.Stamina,
+                        token.CriticalStrike, token.AttackSpeed, token.Versatility, token.Mastery, token.Level);
 
                     return 1;
                 }
@@ -301,7 +310,7 @@ namespace NeoNftImplementation.NftContract.Handlers
                     if (fatherTokenRaw.Length > 0)
                     {
                         TokenInfo fatherToken = (TokenInfo)(object)fatherTokenRaw;
-                        if (motherToken.CanBreedAfter > 0 && motherToken.IsPregnant == 1 && fatherToken.CanBreedAfter > 0)
+                        if (motherToken.CanBreedAfter > 0 && motherToken.IsBreeding == 1 && fatherToken.CanBreedAfter > 0)
                         {
                             return true;
                         }
