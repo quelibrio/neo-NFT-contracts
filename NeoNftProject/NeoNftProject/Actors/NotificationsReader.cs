@@ -7,6 +7,7 @@ using NeoNftProject.Notifications;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Threading.Tasks;
 using static Neo.Ledger.Blockchain;
 
@@ -39,15 +40,15 @@ namespace NeoNftProject.Actors
 						var type = notification.GetNotificationType();
 						if (type == "transfer")
 						{
-							var transferNotification = notification.GetNotification<TransferNotification>();
-                            var receiverHexString = transferNotification.To.ToHexString();
-                            var senderHexString = transferNotification.From.ToHexString();
-                            var tokenId = transferNotification.TokenId;
+                            TransferNotification transferNotification = notification.GetNotification<TransferNotification>();
+                            string receiverHexString = transferNotification.To.ToHexString();
+                            string senderHexString = transferNotification.From.ToHexString();
+                            BigInteger tokenId = transferNotification.TokenId;
 
 
-                            var receiver = db.Addresses.FirstOrDefault(c => c.AddressName == receiverHexString);
-                            var sender = db.Addresses.FirstOrDefault(c => c.AddressName == senderHexString);
-                            var token = db.Tokens.FirstOrDefault(c => c.TxId == tokenId.ToString());
+                            Data.Address receiver = db.Addresses.FirstOrDefault(c => c.AddressName == receiverHexString);
+                            Data.Address sender = db.Addresses.FirstOrDefault(c => c.AddressName == senderHexString);
+                            Token token = db.Tokens.FirstOrDefault(c => c.TxId == tokenId.ToString());
 
                             var transaction = new Transaction();
                             transaction.Receiver = receiver;
@@ -60,9 +61,10 @@ namespace NeoNftProject.Actors
 						}
                         else if (type == "birth")
                         {
-                            var mintTokenNotification = notification.GetNotification<MintTokenNotification>();
-                            var token = new Token();
-                            var owner = mintTokenNotification.Owner.ToHexString();
+                            MintTokenNotification mintTokenNotification = notification.GetNotification<MintTokenNotification>();
+                            Token token = new Token();
+                            string owner = mintTokenNotification.Owner.ToHexString();
+                            token.TxId = mintTokenNotification.TokenId.ToString();
                             token.Health = mintTokenNotification.Health;
                             token.Mana = mintTokenNotification.Mana;
                             token.Agility = mintTokenNotification.Agility;
@@ -73,7 +75,7 @@ namespace NeoNftProject.Actors
                             token.Mastery = mintTokenNotification.Mastery;
                             token.Level = mintTokenNotification.Level;
                             token.Experience = 0;
-                            var address = db.Addresses.FirstOrDefault(c =>  owner == c.AddressName);
+                            Data.Address address = db.Addresses.FirstOrDefault(c =>  owner == c.AddressName);
                             if (address == null)
                             {
                                 address = new Data.Address();
@@ -84,6 +86,63 @@ namespace NeoNftProject.Actors
                             token.Address = address;
                             db.Add(token);
                             db.SaveChanges();
+                        }
+                        else if (type == "auction")
+                        {
+                            CreateSaleAuctionNotification auctionCreatedNotification = notification.GetNotification<CreateSaleAuctionNotification>();
+                            Auction auction = new Auction();
+                            auction.StartDate = DateTime.Now;
+                            auction.StartPrice = (decimal)auctionCreatedNotification.BeginPrice;
+                            auction.IsActive = 1;
+                            auction.EndPrice = (decimal)auctionCreatedNotification.EndPrice;
+                            auction.Duration = (long)auctionCreatedNotification.Duration;
+                            Token token = db.Tokens.FirstOrDefault(c => c.TxId == auctionCreatedNotification.TokenId.ToString());
+
+                            if (token != null)
+                            {
+                                auction.Token = token;
+                                db.Auctions.Add(auction);
+                                db.SaveChanges();
+
+                            }
+                        }
+                        else if (type == "cancelAuction")
+                        {
+                            CancelAuctionNotification cancelAuctionNotification = notification.GetNotification<CancelAuctionNotification>();
+                            Token token = db.Tokens.Include(c=> c.Address).FirstOrDefault(c => c.TxId == cancelAuctionNotification.TokenId.ToString() && c.Address.AddressName == cancelAuctionNotification.TokenOwner.ToHexString());
+                            if (token != null)
+                            {
+                                Auction auction = db.Auctions.FirstOrDefault(c => c.Token == token);
+                                auction.EndDate = DateTime.Now;
+                                auction.IsActive = 0;
+                                db.Update(auction);
+                                db.SaveChanges();
+
+                            }
+
+                        }
+                        else if (type == "auctionBuy")
+                        {
+                            BuyOnAuctionNotification buyOnAuctionNotification = notification.GetNotification<BuyOnAuctionNotification>();
+
+                            Auction auction = db.Auctions.FirstOrDefault(c => c.TokenId == buyOnAuctionNotification.TokenId && c.IsActive == 1);
+                            Token token = db.Tokens.FirstOrDefault(c => c.TxId == buyOnAuctionNotification.TokenId.ToString());
+                            Data.Address address = db.Addresses.FirstOrDefault(c => c.AddressName == buyOnAuctionNotification.Buyer.ToHexString());
+
+                            if (token != null && auction != null && address != null)
+                            {
+                                if (token.Address != address)
+                                {
+                                    auction.IsActive = 0;
+                                    auction.EndPrice = (decimal)buyOnAuctionNotification.CurrentBuyPrice;
+                                    auction.CurrentPrice = (decimal)buyOnAuctionNotification.CurrentBuyPrice;
+                                    token.Address = address;
+
+                                    db.Update(auction);
+                                    db.Update(token);
+                                    db.SaveChanges();
+                                }
+                            }
                         }
 
 					}

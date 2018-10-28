@@ -9,16 +9,14 @@ namespace NeoNftProject.Notifications
 	public class CreateSaleAuctionNotification
 	{
 
-		public byte[] TokenOwner { get; set; }
-
-		public BigInteger TokenId { get; set; }
-
-		public BigInteger StartPrice { get; set; }
-
-		public BigInteger EndPrice { get; set; }
-
-		public BigInteger Duration { get; set; }
+        public byte[] Owner { get; set; }
+        public BigInteger TokenId { get; set; }
+        public BigInteger BeginPrice { get; set; }
+        public BigInteger EndPrice { get; set; }
+        public BigInteger Duration { get; set; }
+        public int SellType { get; set; }
+        public uint SellTime { get; set; }
 
 
-	}
+    }
 }
