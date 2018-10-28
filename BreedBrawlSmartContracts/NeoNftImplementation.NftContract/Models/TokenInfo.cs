@@ -14,6 +14,8 @@ namespace NeoNftImplementation.NftContract.Models
         public int IsPregnant;
         public int IsReady; //bool can be pregnant (not in cd)
 
+        public BigInteger ApprovalExpiration;
+
         public BigInteger CooldownLevel; //uint256 base cd (when parents are conceived, they can be triggered at the same time. If the parent cd arrives, they can be father or mother again; if the mother cd arrives, they can have children, and they can be father or mother again after birth.)
         public BigInteger CanBreedAfter; //uint256 next time or birth time
         public BigInteger CloneWithId;//uint256 If the child is pregnant, it is the husband id, otherwise=0
