@@ -3,7 +3,7 @@ angular.module('marketplace').controller('MarketplaceMainCtrl', function ($scope
     $scope.reload = () => {
         auctionService.get().then((items) => $rootScope.safeApply(() => $scope.items = items));
     };
-
+    $scope.create = {startPrice: 300, endPrice: 850, duration: 30};
     $scope.createSaleAuction = async (create) => {
         $scope.createResult = null;
         return marketplaceService.createSaleAuction({owner: $scope.address, ...create})
