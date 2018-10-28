@@ -89,10 +89,14 @@ namespace NeoNftImplementation.NftContract.Infrastructure
             byte[] key = Keys.Approval(tokenId);
             return Storage.Get(Storage.CurrentContext, key);            
         }
-
-        public static void SetApprovedAddress(byte[] tokenId, byte[] address)
+   
+        public static void SetApprovedAddress(byte[] tokenId, byte[] address, BigInteger duration)
         {
             byte[] key = Keys.Approval(tokenId);
+            TokenInfo token = GetToken(tokenId);
+            var nowtime = Blockchain.GetHeader(Blockchain.GetHeight()).Timestamp;
+            token.ApprovalExpiration = nowtime + duration;
+
             Storage.Put(Storage.CurrentContext, key, address);
         }
 
