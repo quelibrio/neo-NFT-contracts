@@ -89,7 +89,7 @@ namespace TransfairExpiration
             }
             else if (operation == "lend")
             {
-                if (args.Length != 4)
+                if (args.Length < 3 || args.Length > 4)
                 {
                     return false;
                 }
@@ -108,14 +108,58 @@ namespace TransfairExpiration
                 {
                     return false;
                 }
-
-                BigInteger duration = (BigInteger)args[3];
+                BigInteger duration = 9999999999999999;
+                if (args.Length == 4)
+                {
+                    duration = (BigInteger)args[3];
+                }
 
                 return Lend(from, to, tokenId, duration);
+            }
+            else if(operation == "isLendActive")
+            {
+                if (args.Length != 1)
+                {
+                    return false;
+                }
+                return IsLendActive((BigInteger)args[0]);
+                
+            }
+            else if(operation == "returnToOwner")
+            {
+                if (args.Length != 1)
+                {
+                    return false;
+                }
+
+                BigInteger tokenId = (BigInteger)args[0];
+                bool isActive = IsLendActive(tokenId);
+
+                if(!isActive)
+                {
+                    byte[] owner = OwnerOf(tokenId);
+                    object[] rawToken = GetTokenAsObjects(tokenId.AsByteArray());
+                    TokenInfo token = (TokenInfo)(object)rawToken;
+
+                    if (Runtime.CheckWitness(token.Owner) || Runtime.CheckWitness(token.OriginalOwner))
+                        Transfer(owner, token.OriginalOwner, tokenId);
+                }
             }
             return false;
         }
 
+        static bool IsLendActive(BigInteger tokenId)
+        {
+            object[] rawToken = GetTokenAsObjects(tokenId.AsByteArray());
+            TokenInfo token = (TokenInfo)(object)rawToken;
+
+            var nowtime = Blockchain.GetHeader(Blockchain.GetHeight()).Timestamp;
+            if (nowtime > token.LendExpiration)
+            {
+                return false;
+            }
+            return true;
+        }
         /// <summary>
         /// Total amount
         /// </summary>
@@ -212,6 +256,8 @@ namespace TransfairExpiration
 
             TokenInfo token = new TokenInfo();
             token.Owner = owner;
+            //Used to check if lend is possible
+            token.OriginalOwner = token.Owner;
             //Blockchain.GetHeader(Blockchain.GetHeight()).Timestamp;
 
             DataAccess.SetToken(tokenId, token);
@@ -255,13 +301,24 @@ namespace TransfairExpiration
             return true;
         }
 
+        public static object[] GetTokenAsObjects(byte[] id)
+        {
+            byte[] key = Keys.Token(id);
+            byte[] bytes = Storage.Get(Storage.CurrentContext, id);
+            if (bytes.Length == 0)
+            {
+                return new object[0];
+            }
+
+            return (object[])Neo.SmartContract.Framework.Helper.Deserialize(bytes);
+        }
+
         public static bool Lend(byte[] from, byte[] to, BigInteger tokenId, BigInteger expiration)
         {
             if (from.Length != 20 || to.Length != 20)
             {
                 return false;
             }
-
             if (from == to)
             {
                 return true;
@@ -272,14 +329,16 @@ namespace TransfairExpiration
             {
                 return false;
             }
-
             if (from != token.Owner)
             {
                 return false;
             }
 
-            token.OriginalOwner = token.Owner;
-            token.Expiration = expiration;
+            if (!Runtime.CheckWitness(token.OriginalOwner))
+                return false;
+
+            var nowtime = Blockchain.GetHeader(Blockchain.GetHeight()).Timestamp;
+            token.LendExpiration = expiration + nowtime;
             token.Owner = to;
 
             DataAccess.SetToken(tokenId.AsByteArray(), token);

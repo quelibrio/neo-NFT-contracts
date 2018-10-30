@@ -15,6 +15,6 @@ namespace TransfairExpiration
     {
         public byte[] Owner;
         public byte[] OriginalOwner;
-        public BigInteger Expiration;
+        public BigInteger LendExpiration;
     }
 }
