@@ -1,7 +1,19 @@
 {
-	"main": "main.ts",
-	"dependencies": {
-		"@cityofzion/neon-js": "^4.1.1",
-		"babel-polyfill": "^6.26.0"
-	}
+    "main": "main.ts",
+    "scripts": {
+        "test": "node tests.js",
+        "test_debug": "node %NODE_DEBUG_OPTION% tests.js"
+    },
+    "devDependencies": {
+        "@types/expect": "^1.20.3",
+        "@types/mocha": "^5.2.5",
+        "lodash": "^4.17.11",
+        "mocha": "^5.2.0",
+        "ts-mocha": "^2.0.0",
+        "typescript": "^3.1.4"
+    },
+    "dependencies": {
+        "@cityofzion/neon-js": "^4.1.1",
+        "babel-polyfill": "^6.26.0"
+    }
 }
