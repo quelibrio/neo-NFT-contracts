@@ -27,9 +27,7 @@ namespace TransfairExpiration
                 {
                     return false;
                 }
-
                 byte[] owner = (byte[])args[0];
-                BigInteger generation = (int)args[5];
 
                 return CreateToken(owner);
             }
