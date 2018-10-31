@@ -13,7 +13,7 @@
             </div>-->
             <div class="form-group">
                 <label for="tokenId">Token id</label>
-                <input type="text" aria-describedby="tokenidHelp" class="form-control" ng-model="create.hero.id" id="tokenId"
+                <input type="text" aria-describedby="tokenidHelp" class="form-control" ng-model="create.hero.txId" id="tokenId"
                        placeholder="Token id <<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>">
                 <small id="tokenidHelp" class="form-text text-muted">Every token has an id! Paste it here 'cos we lazy right now.</small>
             </div>
@@ -46,104 +46,28 @@
             <my-heroes-list address="myAddress" reload="reloadMyHeroes" ng-model="create.hero"></my-heroes-list>
         </div>
         <div class="row">
-            <h4>Oh, look at all those heroes!</h4> <h6>hardcoded</h6>
-            <button ng-click="reload()">Load Auction</button>
-            <div class="col-lg-4 col-md-6 mb-4" ng-repeat="item in items">
+            <h4>Oh, look at all those heroes!</h4>
+            <button ng-click="reloadAuctions()">Load Auction</button>
+            <div class="col-lg-12 col-md-6 mb-4" ng-repeat="auction in auctions">
                 <div class="card h-100">
-                    <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                    <div class="col-lg-12">
+                        <hero-stats stats="auction.stats"></hero-stats>
+                    </div>
                     <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">{{item.tokenId}}</a>
+                            <a href="#">{{auction.tokenId}}</a>
                         </h4>
-                        <h5>{{item.startPrice}}</h5>
-                        <p class="card-text">{{item | json}}</p>
+                        <h5>Start Price: CGAS
+                            <small>{{auction.startPrice / 100000000}}</small>
+                        </h5>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                        <button class="btn btn-primary">Buy</button>
+                        <button class="btn btn-close" ng-show="auction.isMine">Cancel</button>
                     </div>
                 </div>
+                <hr/>
             </div>
-            <!--
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Item Two</a>
-                                    </h4>
-                                    <h5>$24.99</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Item Three</a>
-                                    </h4>
-                                    <h5>$24.99</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Item Four</a>
-                                    </h4>
-                                    <h5>$24.99</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Item Five</a>
-                                    </h4>
-                                    <h5>$24.99</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a href="#">Item Six</a>
-                                    </h4>
-                                    <h5>$24.99</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-                                </div>
-                            </div>
-                        </div>-->
-
         </div>
         <!-- /.row -->
 

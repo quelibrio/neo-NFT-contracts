@@ -4,13 +4,18 @@ angular.module('marketplace').factory('marketplaceService', function (configServ
     var marketplaceService = {
         createSaleAuction({
                               owner,
-                              tokenId,
+                              hero: {
+                                  txId
+                              },
                               startPrice,
                               endPrice,
                               duration
                           }) {
             let address = neo.getByteArrayAddress(owner);
-            return neo.call.invoke('createSaleAuction', [address, tokenId, startPrice, endPrice, duration], configService.get())
+            return neo.call('createSaleAuction', [address.value, +txId, +startPrice, +endPrice, +duration], {
+                    ... configService.get(),
+                    scriptHash: configService.get().marketHash
+                })
                 .then(function (result) {
                     return JSON.stringify(result.response, null, 4);
                 })

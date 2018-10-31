@@ -1,0 +1,9 @@
+<div>
+    <div class="row" ng-show="heroes">
+        <div class="alert alert-info" ng-show="!heroes.length">No heroes. Hit "Load my heroes" or create a new Hero!</div>
+        <heroes-list heroes="heroes" ng-show="heroes.length" ng-model="hero"></heroes-list>
+    </div>
+    <div class="alert alert-danger" ng-hide="heroes">
+        No address set! Check configurator :)
+    </div>
+</div>

@@ -8,7 +8,6 @@ angular.module('heroes').directive('heroStats', function () {
         templateUrl: 'modules/heroes/directive/hero-stats/hero-stats.html',
         link: function (scope, element, attrs, fn) {
 
-
         }
     };
 });

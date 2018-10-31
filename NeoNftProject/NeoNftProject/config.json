@@ -10,9 +10,9 @@
 			"WsPort": 10334
 		},
     "Urls": {
-      "AddressUrl": "https://192.168.99.100:4000/address/{0}",
-      "AssetUrl": "https://192.168.99.100:4000/api/main_net/v1/get_asset/{0}",
-      "TransactionUrl": "https://192.168.99.100:4000/transaction/{0}"
+      "AddressUrl": "http://192.168.99.100:4000/address/{0}",
+      "AssetUrl": "http://192.168.99.100:4000/api/main_net/v1/get_asset/{0}",
+      "TransactionUrl": "http://192.168.99.100:4000/transaction/{0}"
     },
 		"DataDirectoryPath": "ChainTestNet",
 		"CertCachePath": "Certs",

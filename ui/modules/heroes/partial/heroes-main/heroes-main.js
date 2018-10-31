@@ -7,7 +7,15 @@ angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootSco
             $scope
         ).then(function (txid) {
             $rootScope.safeApply(() => {
-                generateCharStats(txid);
+                generateCharStats(_.pick($scope, [
+                    'health',
+                    'mana',
+                    'agility',
+                    'stamina',
+                    'criticalStrike',
+                    'attackSpeed',
+                    'versatility',
+                    'mastery']));
             });
         }).catch((err) => alert(JSON.stringify(err)));
     };
@@ -40,20 +48,20 @@ angular.module('heroes').controller('HeroesMainCtrl', function ($scope, $rootSco
         nftService.tokensOfOwner({owner: $scope.owner}).then($("#output").html.bind($("#output")));
     };
 
-    function generateCharStats(txid) {
-        let chunks = chunkSubstr(txid, 8);
-        let hero = {
-            health: chunks[0],
-            mana: chunks[1],
-            agility: chunks[2],
-            stamina: chunks[3],
-            critical: chunks[4],
-            attackSpeed: chunks[5],
-            mastery: chunks[6],
-            versatility: chunks[7],
-            level: 0,
-            txid
-        };
+    function generateCharStats(hero) {
+        /*  let chunks = chunkSubstr(txid, 8);
+         let hero = {
+         health: chunks[0],
+         mana: chunks[1],
+         agility: chunks[2],
+         stamina: chunks[3],
+         critical: chunks[4],
+         attackSpeed: chunks[5],
+         mastery: chunks[6],
+         versatility: chunks[7],
+         level: 0,
+         txid
+         };*/
         $scope.heroes.push(hero);
         populateStats(hero);
     }

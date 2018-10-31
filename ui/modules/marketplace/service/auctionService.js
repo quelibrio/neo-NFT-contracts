@@ -2,61 +2,90 @@ angular.module('marketplace').factory('auctionService', function ($http) {
     let baseUrl = 'http://localhost:5001/api';
     var auctionService = {
         get() {
-            return $http.get(`${baseUrl}/auction`).then(response => response.result).then(() => [
+            return $http.get(`${baseUrl}/auction`).then(response => response.data).then(() => [
                     {
-                        "startDate": "2018-10-24 19:20:00.890000",
-                        "endDate": "2018-10-24 20:40:00.890000",
-                        "startPrice": 1000.20,
-                        "tokenId": 112386,
-                        "addressId": 12562
+                        stats: {
+                            health: 5790,
+                            mana: 1010,
+                            agility: 100,
+                            stamina: 123,
+                            criticalStrike: 41,
+                            attackSpeed: 34,
+                            versatility: 6,
+                            mastery: 78,
+                            gen: 0
+                        },
+                        "startDate": "2018-10-28 13:20:00.890000",
+                        "endDate": "2018-10-29 20:40:00.890000",
+                        "startPrice": 471000000000,
+                        "tokenId": 12,
+                        isMine: true
                     }, {
-                        "startDate": "2018-10-24 19:20:00.890000",
+                        stats: {
+                            health: 3790,
+                            mana: 5010,
+                            agility: 600,
+                            stamina: 23,
+                            criticalStrike: 1,
+                            attackSpeed: 39,
+                            versatility: 61,
+                            mastery: 18,
+                            gen: 0
+                        },
+                        "startDate": "2018-10-24 12:20:00.890000",
                         "endDate": "2018-10-24 20:40:00.890000",
-                        "startPrice": 561.3,
-                        "tokenId": 69541,
-                        "addressId": 2321687
+                        "startPrice": 790900090000,
+                        "tokenId": 11,
+                        isMine: true
                     }, {
-                        "startDate": "2018-10-24 19:20:00.890000",
+                        stats: {
+                            health: 1790,
+                            mana: 1010,
+                            agility: 600,
+                            stamina: 23,
+                            criticalStrike: 1,
+                            attackSpeed: 39,
+                            versatility: 61,
+                            mastery: 8,
+                            gen: 0
+                        },
+                        "startDate": "2018-10-24 11:53:00.890000",
                         "endDate": "2018-10-24 20:40:00.890000",
-                        "startPrice": 3451.1,
-                        "tokenId": 18670936,
+                        "startPrice": 6900000000,
+                        "tokenId": 19,
                         "addressId": 25232
                     }, {
-                        "startDate": "2018-10-24 19:20:00.890000",
+                        stats: {
+                            health: 541,
+                            mana: 1010,
+                            agility: 600,
+                            stamina: 23,
+                            criticalStrike: 1,
+                            attackSpeed: 39,
+                            versatility: 61,
+                            mastery: 8,
+                        },
+                        "startDate": "2018-10-24 11:53:00.890000",
                         "endDate": "2018-10-24 20:40:00.890000",
-                        "startPrice": 643.6,
-                        "tokenId": 1235089156,
-                        "addressId": 207877
+                        "startPrice": 6900000000,
+                        "tokenId": 19,
+                        "addressId": 25232
                     }, {
-                        "startDate": "2018-10-24 19:20:00.890000",
+                        stats: {
+                            health: 790,
+                            mana: 1010,
+                            agility: 600,
+                            stamina: 23,
+                            criticalStrike: 1,
+                            attackSpeed: 39,
+                            versatility: 61,
+                            mastery: 8,
+                        },
+                        "startDate": "2018-10-24 11:53:00.890000",
                         "endDate": "2018-10-24 20:40:00.890000",
-                        "startPrice": 744,
-                        "tokenId": 121587,
-                        "addressId": 2987
-                    }, {
-                        "startDate": "2018-10-24 19:20:00.890000",
-                        "endDate": "2018-10-24 20:40:00.890000",
-                        "startPrice": 876,
-                        "tokenId": 175982117,
-                        "addressId": 2867
-                    }, {
-                        "startDate": "2018-10-24 19:20:00.890000",
-                        "endDate": "2018-10-24 20:40:00.890000",
-                        "startPrice": 907,
-                        "tokenId": 62936123671,
-                        "addressId": 2756
-                    }, {
-                        "startDate": "2018-10-24 19:20:00.890000",
-                        "endDate": "2018-10-24 20:40:00.890000",
-                        "startPrice": 32,
-                        "tokenId": 24755641,
-                        "addressId": 2235
-                    }, {
-                        "startDate": "2018-10-24 19:20:00.890000",
-                        "endDate": "2018-10-24 20:40:00.890000",
-                        "startPrice": 124,
-                        "tokenId": 3,
-                        "addressId": 253329857
+                        "startPrice": 6900000000,
+                        "tokenId": 21,
+                        "addressId": 25232
                     }
                 ]
             );

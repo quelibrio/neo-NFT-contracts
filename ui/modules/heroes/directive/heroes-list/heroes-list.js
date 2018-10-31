@@ -83,7 +83,7 @@ angular.module('heroes').directive('heroesList', function ($compile, nftService)
                                     <div class="tooltip-content" id="hero-${heroes}">
                                         <div class="d3-tooltip d3-tooltip-item">
                                             <div class="tooltip-head ${epicnessLevel}" ng-click="select(${heroes})">
-                                                <h3 class="${epicLevel}">${stats.txid}</h3>
+                                                <h3 class="${epicLevel}">${stats.txId}</h3>
                                             </div>
                                             <div class="tooltip-body effect-bg effect-bg-cold">
                                                 <div class="d3-item-properties">
@@ -111,7 +111,7 @@ angular.module('heroes').directive('heroesList', function ($compile, nftService)
                                                         <span class="clear"></span>
                                                         <li class="item-itemset-piece indent">
                                                             <span class="d3-color-red">
-                                                                Critical Strike: <a>${stats.critical}%</a>
+                                                                Critical Strike: <a>${stats.criticalStrike}%</a>
                                                             </span> 
                                                         </li>
                                                         <li class="item-itemset-piece indent">
@@ -134,7 +134,7 @@ angular.module('heroes').directive('heroesList', function ($compile, nftService)
                                             </div>
 
                                             <div class="tooltip-extension ">
-                                                <div class="flavor">Generation of ${stats.gen}</div>
+                                                <div class="flavor">Generation of ${stats.gen || 0}</div>
                                             </div>
                                         </div>
                                     </div>

@@ -3,20 +3,27 @@
         <div class="row gPlayer rowMargin center-cropped " style="background-image: url('/css/images/demonhunter-bloodelf-female.jpg');">
             <div class="row rowMargin">
                 <hero-stats stats="hero"></hero-stats>
-                <div class="wrapperSlider">
-                    <input id="slider" class="balSlider" value="0"/>
+                <!-- <div class="wrapperSlider">
+                     <input id="slider" class="balSlider" value="0"/>
+                 </div>
+                 <div class="col-md-3">
+                     <input id="sliderTile" class="balSliderTile" value="0"/>
+                 </div>-->
+                <div class="row">
+                    <label class="col-md-1">Health: <input ng-model="health"/></label>
+                    <label class="col-md-1">Mana: <input ng-model="mana"/></label>
+                    <label class="col-md-1">Agility: <input ng-model="agility"/></label>
+                    <label class="col-md-1">Stamina: <input ng-model="stamina"/></label>
                 </div>
-                <div class="col-md-3">
-                    <input id="sliderTile" class="balSliderTile" value="0"/>
+                <div class="row">
+                    <label class="col-md-1">Critical Strike: <input ng-model="criticalStrike"/></label>
+                    <label class="col-md-1">Attack Speed: <input ng-model="attackSpeed"/></label>
+                    <label class="col-md-1">Versatility: <input ng-model="versatility"/></label>
+                    <label class="col-md-1">Mastery: <input ng-model="mastery"/></label>
+                    <button class="col-md-2 button large success" ng-click="generate()">
+                        Generate Gen0 Character
+                    </button>
                 </div>
-                <label class="col-md-1">Strength: <input ng-model="strength"/></label>
-                <label class="col-md-1">Power: <input ng-model="power"/></label>
-                <label class="col-md-1">Agile: <input ng-model="agile"/></label>
-                <label class="col-md-1">Speed: <input ng-model="speed"/></label>
-                <label class="col-md-1">Gen: <input ng-model="gen"/></label>
-                <button class="col-md-2 button large success" ng-click="generate()">
-                    Generate Gen0 Character
-                </button>
             </div>
             <div class="row rowMargin">
                 <button id="resume" class="col-md-2 button large success" ng-click="battle()">

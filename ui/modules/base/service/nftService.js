@@ -21,7 +21,7 @@ angular.module('base').factory('nftService',function(configService) {
                 +agility,
                 +stamina,
                 +criticalStrike,
-				+attackSpeed,
+                +attackSpeed,
                 +versatility,
                 +mastery,
                 +level
@@ -37,7 +37,7 @@ angular.module('base').factory('nftService',function(configService) {
                 +versatility,
                 +mastery,
                 +level
-                ], configService.get()).then(result => result.response.txid);
+                ], configService.get()).then(result => result.response.txId);
         },
         balanceOf({
             owner
