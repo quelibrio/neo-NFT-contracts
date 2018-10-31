@@ -271,9 +271,11 @@ namespace TransfairExpiration
 
             DataAccess.SetToken(tokenId, token);
             DataAccess.SetTotalSupply(tokenId);
+            DataAccess.IncreaseAddressBalance(owner);
 
             return tokenId.AsBigInteger();
         }
+
 
         /// <summary>
         /// Transfer the token ownership
