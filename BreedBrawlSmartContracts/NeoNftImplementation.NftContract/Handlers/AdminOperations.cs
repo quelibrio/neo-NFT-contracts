@@ -147,7 +147,7 @@ namespace NeoNftImplementation.NftContract.Handlers
 
                 token.CloneWithId = 0;
                 token.CanBreedAfter = 0;
-                token.IsBreeding = 0;
+                token.IsPregnant = 0;
 
                 DataAccess.SetToken(id.AsByteArray(), token);
 

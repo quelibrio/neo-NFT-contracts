@@ -2,22 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="044210d6-80ee-47ec-959c-3f7343da39e6" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../node-smart-contract-tests/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../node-smart-contract-tests/token-expiration/token-expiration-basic.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../node-smart-contract-tests/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node-project/NeoJs.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node-project/tests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node-project/token-expiration-spec/token-expiration-basic.spec.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node-project/token-expiration-spec/token-expiration-basic.spec.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node-project/token-expiration-spec/token-expiration-basic.spec.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node-project/token-expiration-spec/token-expiration-basic.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node-project/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/ContractMain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/ContractMain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Handlers/AdminOperations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Handlers/AdminOperations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Handlers/MarketOperations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Handlers/MarketOperations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Handlers/NepOperations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Handlers/NepOperations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Infrastructure/DataAccess.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Infrastructure/DataAccess.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Infrastructure/Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Infrastructure/Events.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Infrastructure/Keys.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Infrastructure/Keys.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Models/AuctionRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Models/AuctionRecord.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Models/GenerationZeroPrice.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Models/GenerationZeroPrice.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Models/GenerationZeroRecord.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Models/GenerationZeroRecord.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Models/MarketAuction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Models/MarketAuction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Models/OperationResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Models/OperationResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/NeoNftImplementation.MarketContract.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/NeoNftImplementation.MarketContract.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Properties/AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/Properties/AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/build.tasks" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/build.tasks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.MarketContract/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/ContractMain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/ContractMain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Handlers/AdminOperations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Handlers/AdminOperations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Handlers/GameOperations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Handlers/GameOperations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Handlers/NepOperations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Handlers/NepOperations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Handlers/TokenOperations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Handlers/TokenOperations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Infrastructure/DataAccess.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Infrastructure/DataAccess.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Infrastructure/Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Infrastructure/Events.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Infrastructure/Keys.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Infrastructure/Keys.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Models/AttributeConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Models/AttributeConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Models/OperationResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Models/OperationResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Models/TokenInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Models/TokenInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Models/TransferInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Models/TransferInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/NeoNftImplementation.NftContract.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/NeoNftImplementation.NftContract.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Properties/AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/Properties/AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/build.tasks" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/build.tasks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.NftContract/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/NeoNftImplementation.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/ContractMain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/ContractMain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/Infrastructure/DataAccess.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/Infrastructure/DataAccess.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/Infrastructure/Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/Infrastructure/Events.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/Infrastructure/Keys.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/Infrastructure/Keys.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/Models/TokenInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/Models/TokenInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/Properties/AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/Properties/AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/TokenExpiration.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/TokenExpiration.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/build.tasks" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/build.tasks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/../BreedBrawlSmartContracts/TokenExpiration/packages.config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node-project/neoConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/node-project/neoConfig.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node-project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node-project/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node-project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node-project/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node-project/prepare.js" beforeDir="false" afterPath="$PROJECT_DIR$/node-project/prepare.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node-project/token-expiration-spec/token-expiration-basic.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node-project/token-expiration-spec/token-expiration-basic.spec.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -92,31 +125,21 @@
       <file leaf-file-name="token-expiration-basic.spec.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/node-project/token-expiration-spec/token-expiration-basic.spec.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="137">
+              <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
-                <element signature="e#85#147#0" expanded="true" />
+                <element signature="e#85#182#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="async_hooks.js" pinned="false" current-in-tab="false">
-        <entry file="mock://internal/async_hooks.js">
-          <provider selected="true" editor-type-id="vmFileEditor" />
-        </entry>
-      </file>
-      <file leaf-file-name="inspector_async_hook.js" pinned="false" current-in-tab="false">
-        <entry file="mock://internal/inspector_async_hook.js">
-          <provider selected="true" editor-type-id="vmFileEditor" />
         </entry>
       </file>
       <file leaf-file-name="tests.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node-project/tests.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -129,20 +152,48 @@
       <file leaf-file-name="NeoJs.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node-project/NeoJs.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+            <state relative-caret-position="-1">
+              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="neoConfig.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node-project/neoConfig.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="get.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node-project/get.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prepare.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node-project/prepare.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
+                <element signature="e#517#615#0" expanded="true" />
+                <element signature="e#672#941#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <file leaf-file-name="call.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node-project/call.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+            <state relative-caret-position="220">
+              <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -150,8 +201,8 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node-project/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+            <state relative-caret-position="140">
+              <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -248,7 +299,6 @@
         <option value="$PROJECT_DIR$/modules/base/service/configService.js" />
         <option value="$PROJECT_DIR$/modules/heroes/directive/hero-stats/hero-stats.js" />
         <option value="$PROJECT_DIR$/modules/brawl/partial/brawl-main/brawl-main.html" />
-        <option value="$PROJECT_DIR$/node-project/neoConfig.js" />
         <option value="$PROJECT_DIR$/modules/marketplace/partial/marketplace-main/marketplace-main.js" />
         <option value="$PROJECT_DIR$/modules/brawl/partial/brawl-main/brawl-main.js" />
         <option value="$PROJECT_DIR$/modules/marketplace/partial/marketplace-main/marketplace-main.html" />
@@ -257,12 +307,13 @@
         <option value="$PROJECT_DIR$/modules/heroes/directive/my-heroes-list/my-heroes-list.html" />
         <option value="$PROJECT_DIR$/modules/base/directive/configurator/configurator.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/node-project/prepare.js" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/node-project/tests.ts" />
         <option value="$PROJECT_DIR$/node-project/tests.js" />
         <option value="$PROJECT_DIR$/node-project/package.json" />
         <option value="$PROJECT_DIR$/node-project/NeoJs.ts" />
+        <option value="$PROJECT_DIR$/node-project/neoConfig.js" />
+        <option value="$PROJECT_DIR$/node-project/prepare.js" />
         <option value="$PROJECT_DIR$/node-project/token-expiration-spec/token-expiration-basic.spec.ts" />
       </list>
     </option>
@@ -1320,7 +1371,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="80" y="-8" width="1848" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="15" />
@@ -1413,11 +1463,12 @@
     <MESSAGE value="Marketplace -&gt; create auction / load my heroes / load auctions (not tested on privnet)" />
     <MESSAGE value="Refactored &quot;node-project&quot; aka easy-neo&#10;Added configurator.&#10;Removed old web project." />
     <MESSAGE value="Fix restoring account instance after storing config in configurator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix restoring account instance after storing config in configurator" />
+    <MESSAGE value="tests initial" />
+    <option name="LAST_COMMIT_MESSAGE" value="tests initial" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -1648,47 +1699,6 @@
     <entry file="file://$PROJECT_DIR$/node-project/token-expiration-spec/token-expiration-basic.spec.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/node-project/get.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" selection-start-column="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node-project/neoConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-          <folding>
-            <element signature="e#71#442#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/base/service/nftService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="39" column="17" selection-start-line="28" selection-start-column="48" selection-end-line="39" selection-end-column="17" />
-          <folding>
-            <element signature="e#819#1093#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node-project/prepare.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node-project/call.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node-project/neo-exports.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3760">
@@ -1718,14 +1728,7 @@
     <entry file="file://$PROJECT_DIR$/node-project/tests.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node-project/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="53" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1743,23 +1746,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node-project/get.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node-project/call.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/node-project/NeoJs.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        <state relative-caret-position="-1">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/base/service/nftService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="28" column="41" lean-forward="true" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#819#1093#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node-project/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node-project/prepare.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#517#615#0" expanded="true" />
+            <element signature="e#672#941#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node-project/neoConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node-project/token-expiration-spec/token-expiration-basic.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="137">
+          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
-            <element signature="e#85#147#0" expanded="true" />
+            <element signature="e#85#182#0" expanded="true" />
           </folding>
         </state>
       </provider>

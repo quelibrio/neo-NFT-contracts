@@ -184,8 +184,7 @@ namespace NeoNftImplementation.NftContract.Handlers
         /// <summary>
         /// Generate new token data and record
         /// </summary>
-        public static BigInteger CreateToken(byte[] owner, byte health, byte mana, byte agility, 
-            byte stamina, byte criticalStrike, byte attackSpeed, byte versatility, byte mastery, BigInteger level)
+        public static BigInteger CreateToken(byte[] owner, byte health, byte criticalStrike, byte agility, byte attackSpeed, BigInteger generation)
         {
             if (owner.Length != 20)
             {
@@ -207,31 +206,29 @@ namespace NeoNftImplementation.NftContract.Handlers
 
             TokenInfo token = new TokenInfo();
             token.Owner = owner;
-            token.IsBreeding = 0;
+            token.IsPregnant = 0;
+            token.IsReady = 0;
             token.CanBreedAfter = 0;
             token.CloneWithId = 0;
             token.BirthTime = Blockchain.GetHeader(Blockchain.GetHeight()).Timestamp;
             token.MotherId = 0;
             token.FatherId = 0;
-            token.Health = health;
-            token.Mana = mana;
+            token.Generation = generation;
+            token.CooldownLevel = token.Generation;
             token.Agility = agility;
-            token.Stamina = stamina;
-            token.CriticalStrike = criticalStrike;
             token.AttackSpeed = attackSpeed;
-            token.Versatility = versatility;
-            token.Mastery = mastery;
-            token.Level = level;
+            token.CriticalStrike = criticalStrike;
+
 
 
             DataAccess.SetToken(tokenId, token);
             DataAccess.SetTotalSupply(tokenId);
             DataAccess.IncreaseAddressBalance(owner);
-
+            
             Events.RaiseBirthed(
-                tokenId.AsBigInteger(), token.Owner, token.Health, token.Mana,
-                token.Agility, token.Stamina, token.CriticalStrike, token.AttackSpeed, 
-                token.Versatility, token.Mastery, token.Level);
+                tokenId.AsBigInteger(), token.Owner, token.Agility, token.AttackSpeed,
+                token.CriticalStrike, token.CanBreedAfter, token.CloneWithId, token.BirthTime, 
+                token.MotherId, token.FatherId, token.Generation);
 
             return tokenId.AsBigInteger();
         }
