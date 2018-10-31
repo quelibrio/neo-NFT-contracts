@@ -21,6 +21,18 @@ namespace TransfairExpiration
             {
                 return Name();
             }
+            else if (operation == "mintToken")
+            {
+                if (args.Length != 1)
+                {
+                    return false;
+                }
+
+                byte[] owner = (byte[])args[0];
+                BigInteger generation = (int)args[5];
+
+                return CreateToken(owner);
+            }
             else if (operation == "symbol")
             {
                 return Symbol();
@@ -62,7 +74,6 @@ namespace TransfairExpiration
 
                 return TokensOfOwner(owner);
             }
-
             else if (operation == "transfer")
             {
                 if (args.Length != 3)
