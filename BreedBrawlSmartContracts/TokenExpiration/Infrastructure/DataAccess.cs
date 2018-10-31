@@ -50,6 +50,20 @@ namespace TransfairExpiration
             Storage.Put(Storage.CurrentContext, key, bytes);
         }
 
+        public static void IncreaseAddressBalance(byte[] address)
+        {
+            byte[] key = Keys.AddressBalanceKey(address);
+            byte[] currentBalanceBytes = Storage.Get(Storage.CurrentContext, key);
+            BigInteger currentBalance = 0;
+            if (currentBalanceBytes.Length != 0)
+            {
+                currentBalance = currentBalanceBytes.AsBigInteger();
+            }
+
+            currentBalance += 1;
+            Storage.Put(Storage.CurrentContext, address, currentBalance.AsByteArray());
+        }
+
         public static void RemoveApproval(byte[] tokenId)
         {
             byte[] key = Keys.Approval(tokenId);

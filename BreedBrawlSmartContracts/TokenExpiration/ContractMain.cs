@@ -27,9 +27,7 @@ namespace TransfairExpiration
                 {
                     return false;
                 }
-
                 byte[] owner = (byte[])args[0];
-                BigInteger generation = (int)args[5];
 
                 return CreateToken(owner);
             }
@@ -273,9 +271,11 @@ namespace TransfairExpiration
 
             DataAccess.SetToken(tokenId, token);
             DataAccess.SetTotalSupply(tokenId);
+            DataAccess.IncreaseAddressBalance(owner);
 
             return tokenId.AsBigInteger();
         }
+
 
         /// <summary>
         /// Transfer the token ownership
