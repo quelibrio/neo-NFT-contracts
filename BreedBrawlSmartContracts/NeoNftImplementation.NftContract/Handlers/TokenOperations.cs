@@ -98,8 +98,20 @@ namespace NeoNftImplementation.NftContract.Handlers
             {
                 byte[] approvedAddress = (byte[])args[0];
                 BigInteger tokenId = (BigInteger)args[1];
+                BigInteger duration = 0;
+                if (args.Length == 3)
+                    duration = (BigInteger)args[2];
 
-                result.Value = Approve(approvedAddress, tokenId);
+                result.Value = Approve(approvedAddress, tokenId, duration);
+            }
+
+            else if (operation == "approveDuration")
+            {
+                byte[] approvedAddress = (byte[])args[0];
+                BigInteger tokenId = (BigInteger)args[1];
+                BigInteger duration = (BigInteger)args[2];
+
+                result.Value = Approve(approvedAddress, tokenId, duration);
             }
 
             else if (operation == "transferFrom_app")
@@ -182,7 +194,7 @@ namespace NeoNftImplementation.NftContract.Handlers
         /// Get the auction house address
         /// </summary>
         private static byte[] GetMarketAddress() => DataAccess.GetMarketAddressAsBytes();
-        
+
         /// <summary>
         /// After authorizing, transfer the author's gladiator assets to others
         /// </summary>
@@ -225,6 +237,14 @@ namespace NeoNftImplementation.NftContract.Handlers
                 return false;
             }
 
+            if (token.ApprovalExpiration != 0 && token.ApprovalExpiration < Blockchain.GetHeader(Blockchain.GetHeight()).Timestamp)
+            {
+                token.ApprovalExpiration = 0;
+                DataAccess.SetToken(tokenId.AsByteArray(), token);
+                DataAccess.RemoveApproval(tokenId.AsByteArray());
+                return false;
+            }
+
             if (Runtime.CheckWitness(approvedAddress))
             {
                 token.Owner = to;
@@ -259,7 +279,8 @@ namespace NeoNftImplementation.NftContract.Handlers
         /// <summary>
         /// Authorize someone to operate one of their own gladiators
         /// </summary>
-        private static bool Approve(byte[] approvedAddress, BigInteger tokenId)
+        /// 
+        private static bool Approve(byte[] approvedAddress, BigInteger tokenId, BigInteger duration)
         {
             if (approvedAddress.Length != 20)
             {
@@ -278,7 +299,7 @@ namespace NeoNftImplementation.NftContract.Handlers
             {
                 // only one third-party spender can be approved
                 // at any given time for a specific token
-                DataAccess.SetApprovedAddress(tokenId.AsByteArray(), approvedAddress);
+                DataAccess.SetApprovedAddress(tokenId.AsByteArray(), approvedAddress, duration);
 
                 Events.RaiseApproved(token.Owner, approvedAddress, tokenId);
 
