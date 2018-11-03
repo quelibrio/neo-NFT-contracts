@@ -346,6 +346,8 @@ namespace NeoNftImplementation.MarketContract.Handlers
             BigInteger startPrice, BigInteger endPrice, 
             BigInteger duration, int sellType)
         {
+
+            Runtime.Notify("Initiating SaleItemWithType");
             if (tokenOwner.Length != 20)
             {
                 Runtime.Log("Owner error.");
@@ -356,12 +358,14 @@ namespace NeoNftImplementation.MarketContract.Handlers
             {
                 return false;
             }
+            Runtime.Notify("Price validation passed");
 
             if (endPrice < ContractMain.MinTxFee)
             {
                 // End price cannot be lower than the minimum handling fee
                 return false;
             }
+            Runtime.Notify("Fee validation passed.");
 
             //if (Runtime.CheckWitness(tokenOwner))
             // Items are placed in the auction house
@@ -371,8 +375,10 @@ namespace NeoNftImplementation.MarketContract.Handlers
                 ExecutionEngine.ExecutingScriptHash,
                 tokenId
             };
+            Runtime.Notify("Initiating app call");
 
             bool appCallSuccess = (bool)ContractMain.NftContractCall("transferFrom_app", args);
+            Runtime.Notify(appCallSuccess ? "app call success" : "app call failed");
             if (appCallSuccess)
             {
                 var nowtime = Blockchain.GetHeader(Blockchain.GetHeight()).Timestamp;
@@ -386,7 +392,7 @@ namespace NeoNftImplementation.MarketContract.Handlers
                     EndPrice = endPrice,
                     Duration = duration
                 };
-
+                
                 DataAccess.SetAuction(tokenId.AsByteArray(), auction);
                 Events.RaiseAuctioned(tokenOwner, tokenId, startPrice, endPrice, duration, sellType, nowtime);
 

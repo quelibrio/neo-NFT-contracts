@@ -21,7 +21,7 @@ namespace NeoNftImplementation.MarketContract
         /// <summary>
         /// 
         /// </summary>
-        [Appcall("c704b868eee2f5f4455896e0dbcca6b4ad567f0b")]
+        [Appcall("ae0e436c61d4568a0cb8c37997bcdc3cab99f6f2")]
         public static extern object NftContractCall(string operation, object[] args);
 
         /// <summary>

@@ -16,8 +16,6 @@ namespace NeoNftProject.Actors
 	public class NotificationsReader : UntypedActor
 	{
 		private readonly string connectionString;
-		
-
 
 		public NotificationsReader(IActorRef blockchain, string connectionString)
 		{
@@ -65,6 +63,7 @@ namespace NeoNftProject.Actors
                             Token token = new Token();
                             string owner = mintTokenNotification.Owner.ToHexString();
                             token.TxId = mintTokenNotification.TokenId.ToString();
+                            token.Nickname = "Olaf";
                             token.Health = mintTokenNotification.Health;
                             token.Mana = mintTokenNotification.Mana;
                             token.Agility = mintTokenNotification.Agility;
